@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><#$shopinfo[0]['shopname']#></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="<#$Theme['T']['css']#>/web/css.css">
+<link href="<#$Theme['P']['js']#>/swiper/swiper.css" rel="stylesheet" />
+</head>
+<body>
+
+<nav id="header" class="h5_header clearfix">
+
+<span><#$shopinfo[0]['shopname']#></span>
+</nav>
+<div class="flash">
+<div class="swiper-container">
+      <div class="swiper-wrapper">
+     	
+     		
+     		<volist name="ad" id="vo">
+     		<div  class="swiper-slide">
+     		<eq name="vo['mode']" value="1">
+     		<a href="<#:U('userauth/showad',array('id'=>$vo['id']))#>"><img src="<#$vo.ad_thumb#>" ></a>
+     		<else/>
+     		<img src="<#$vo.ad_thumb#>">
+     		</eq>
+     		</div>
+     		  </volist>   		
+     		
+      	   
+      </div>
+    </div>
+    <div class="pagination"></div>
+</div>
+<div id="body"><!-- -----------------------------手机注册------------------------------ -->
+<section id="sms" class="main ">
+
+
+
+
+<div class="mt_20"><a id="sms_vcode_fetch"
+	href="javascript:void(0);" class="btn_common ok_btn">获取短信验证码</a></div>
+</section><section id="sms_vcode" class="main hid"><input type="hidden"
+	name="act" value="regup"><input id="sms_resend" type="hidden"
+	name="resend" value="">
+<p class="hint_16">你的手机<b id="sms_confirm_mobile"></b>会收到一条含有验证码的短信，请输入。</p>
+<div class="mod mod_more mt_2">
+<div class="h5_input"><input id="sms_vcode_input" type="tel"
+	name="smscode" maxlength="6" placeholder="请输入6位数字验证码" validate="vcode"></div>
+</div>
+<div class="input_error hid">我是错误显示</div>
+
+
+
+</section><!-- ------------------------邮箱注册--------------------------- -->
+<div id="error_wraper" class="hint_error hid">
+<div id="error_mes">我是错误显示</div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="<#$Theme['P']['js']#>/swiper/swiper.js"></script>
+
+<script>
+           var mySwiper = new Swiper('.swiper-container',{
+        	    pagination: '.pagination',
+        	    loop:true,
+        	    grabCursor: true,
+        	    paginationClickable: true,
+        	    calculateHeight:true,
+        		autoplay:3000,
+        	  });
+ </script>
+</html>

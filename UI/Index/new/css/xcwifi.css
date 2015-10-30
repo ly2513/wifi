@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+
+body{font:14px , "微软雅黑";-webkit-text-size-adjust:100%; color:#444650; }
+a{color:#444650;text-decoration:none}
+a:hover{color:#298DDA;text-decoration:underline}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+p{word-wrap:break-word}
+.f_l{ float:left;}
+.f_r{ float:right;}
+h1{ font-size:40px; color:#333333; font-family:"宋体"; font-weight: bold; line-height:50px;}
+
+.wifi_main{ width:100%;height:auto; font-family:"微软雅黑"; clear:both; background-color:#F5F7FA }
+.wifi_top{ height:35px; border-bottom:1px solid #E7E7E7; line-height:29px;}
+.wifi_menu{ height:90px;}
+.menu1{ width:600px; float:right; margin-top:10px; line-height:50px;}
+.menu1 span{ width:110px; height:50px; display:block; font-size:22px; text-align:center; float:left; font-family:"΢ź"; margin-right:5px; font-weight:700;}
+.menu1 span a:hover{display:block; width:110px; height:50px; background-color:#0066FF; color:#FFFFFF;}
+.wifi_logo { width: auto; margin-left:20px; float:left;}
+#cur{ display:block; width:110px; height:50px; background-color:#0066FF; color:#FFFFFF;}
+
+
+
+.wifi_top0{ height:125px; background-image:url(../images/01_r1_c1.jpg); clear:both; overflow:hidden; background-repeat:repeat-x; background-color:#FFF}
+.wifi_mu{ width:578px; height:42px; background-image:url(../images/01_r4_c10.jpg); line-height:42px; margin:5px; font-size:16px; text-align:center}
+.wifi_mu a{ display:inline; margin-left:15px; margin-right:15px; color:#000}
+.wifi_menu0{ height:45px; clear:both; overflow:hidden; width:100%; background-image:url(../images/01_r4_c1.jpg); line-height:45px; font-size:14px; text-align:center;}
+.wifi_menu0 a{ width:100px; color:#FFFFFF; margin-right:20px; display:inline;  margin-left:30px;}
+
+.wifi_hotimg{  background-color:#003399; width:100%;  }
+.wifi_hot{ height:420px; background-color:#0066FF;}
+.wifi_c{ width:980px; margin:0px auto;  }
+.wifi_c_1{ clear:both; }
+.wifi_c_1 ul{}
+.wifi_c_1 ul li{ display:block; width:300px; height:108px; float:left; margin:10px; background-color:#0099FF;}
+.wifi_c_2{ clear:both;background-image:url(../images/dot.jpg);  background-repeat:no-repeat; background-position:10px 10px; height:60px; border-bottom:1px solid #DDDDDD; }
+.wifi_c_2 span{ margin-left:40px; margin-right:10px;}
+.wifi_c_3{ color:#666666; }
+.wifi_c_4{ height:330px; background-color:#F3F3F3; clear:both; overflow:hidden; width:100%;}
+.c4{ width:980px; margin:0px auto ; clear:both;}
+.c4_1{ width:255px; height:250px; margin-right:50px;}
+.c4_2{ width:285px; height:270px; margin-right:35px;}
+.c4_2 ul{ margin-left:10PX;}
+.c4_2 ul li{ line-height:30px; font-size:14px; border-bottom:1px  dotted  #CCCCCC;  }
+.c4_3{ width:265px; height:270px;}
+.c_1{ text-align:center;}
+.c_2{ width:800px; margin:0px auto; height:120px; overflow:hidden; }
+.c_2 ul{}
+.c_2 ul li{ display:block; width:110px; height:110px; float:left; }
+.c0_1{ height:856px;width:100%; background-color:#EEEEEE; clear:both;}
+.c0_2{ width:100%; height:360px; clear:both;background-color:#FFF }
+.c0_4{ width:100%;background-color:#FFF}
+.c0_3{ width:100%; background-color:#F3F6FB; overflow:hidden; }
+.c0_2_1{ background-color:#5BBDFF; width:100%; line-height:50px; font-size:16px; color:#FFFFFF; text-align:left; text-indent:2em;}
+.c0_2_7{  background-color:#5BBDFF; width:100%; line-height:28px; font-size:16px;  color:#FFFFFF; text-align:left; padding-left:50px; }
+.wifi_c1{ width:980px; height:100%; margin:0px auto; background-image:url(../images/01_r7_c8.jpg); background-position:center; background-repeat:no-repeat;  }
+.wifi_c2{ width:980px; margin:0px auto;  border-bottom:1px solid #CCCCCC; overflow:hidden;}
+.wifi_c3{ width:920px;   margin:0px auto; overflow:hidden;}
+.w0{ width:980px; margin:0px auto;}
+.mu{ margin-right:30px; font-size:14px}
+.c0_2_2{ font-family:"宋体"; line-height:30px; text-indent:2em;  font-size:14px; color: #666666}
+.c0_2_3{ background-image:url(../images/05_r4_c4.jpg); padding-left:100px; background-position:left 10px; margin-left:40px; background-repeat:no-repeat; font-family:"微软雅黑"; font-size:14px; line-height:25px;}
+.c0_2_4{ background-image:url(../images/05_r8_c3.jpg); padding-left:100px; background-position:left 10px; margin-left:40px; background-repeat:no-repeat; font-family:"微软雅黑"; font-size:14px; line-height:25px;}
+.c0_2_5{ width:500px; margin:0px auto; background-image:url(../images/05_r12_c8.jpg); background-position:left 5px; font-size:14px; line-height:20px; padding:10px; padding-left:50px; color:#298DDA; background-repeat:no-repeat; }
+.c0_2_6{ width:600px; margin:0px auto; line-height:26px; font-size:14px;}
+.c0_2_8{ text-align:center; width:980px; margin:0px auto}
+.c0_2_10{ text-align:left;  margin-left:30px; float:left}
+.buy_c{ width:870px; margin:0px auto; background-image:url(../images/04_r4_c3.jpg); background-position:left; background-repeat:no-repeat; height:260px;}
+.buy_c_1{ margin-left:200px; line-height:30px; color:#666666 }
+.wifi_w1{ width:380px; text-align:center;}
+.wifi_w2{ width:530px; margin-right:20px; line-height:26px; margin-left:40px; }
+.wifi_w3{ width:530px; margin-right:20px; line-height:36px; margin-left:10px; font-size:16px; font-family:"微软雅黑"; }
+.wifi_w2 p{ margin-bottom:5px;}
+.main_d_1{ width:600px; margin:0px auto; }
+.main_d_1 ul{}
+.main_d_1 ul li{ display:block; width:120px; height:150px; float:left; line-height:30px; text-align:center;}
+
+.h50{ height:50px; clear:both; text-align:right;}
+.h30{ height:30px; clear:both;}
+.h15{ height:15px; clear:both;}
+
+.h10{ height:10px; clear:both;}
+.c{ height:0px; line-height:0px; clear:both; overflow:hidden;}
+.f40{ font-size:40px; font-weight:bold; line-height:50px;}
+.f14{ font-size:14px; line-height:30px;}
+.f141{ font-size:14px; }
+.f12{ font-size:12px; }
+.fblue{ font-size:34px; line-height:36px; color:#298DDA; font-family:"微软雅黑"; }
+.f27{ font-size:27px; line-height:30px; font-family: "微软雅黑"; color:#000;}
+.f20{ font-size:20px; line-height:30px; font-family: "微软雅黑"; color:#000;}
+.f17{ font-size:17px; line-height:30px; font-family: "微软雅黑"; color:#000;}
+.f25{ font-size:25px; line-height:30px; font-family: "微软雅黑"; color:#000;}
+.f45{ font-size:25px;}
+.t2{ height:30px; line-height:30px;  background-image:url(../images/news.jpg); background-repeat:no-repeat;}
+.t3{ height:30px; line-height:30px;  background-image: url(../images/dt.jpg); background-repeat:no-repeat;}
+.wifi_bottom{ background-image:url(../images/01_r18_c2.jpg); height:278px; clear:both; overflow:hidden}
+.wifi_b{ width:980px; margin:0px auto; height:220px;}
+.wifi_b_1{ width:230px; float:left;margin:5px;}
+.wifi_b_2{ width: auto;width:230px; margin:8px; padding-top:8px; background-image:url(../images/08_r16_c8.jpg); background-repeat:repeat-x;background-position:center 30px; float:left; line-height:28px;}
+.white{ color:#FFFFFF;}
+.white a:link{ color:#FFFFFF;}
+
+.white a:visited{ color:#FFFFFF}
+.white a:hover{ color:#97AA50;}
+.gray { color:#B4B4B6;}
+.gray  a:link{ color:#B4B4B6;}
+
+.gray  a:visited{ color:#B4B4B6}
+.gray  a:hover{ color:#97AA50;}
+
+h2{ font-family:"宋体"; font-size:14px; font-weight:900; }
+.green{ color:#97AA50}
+.green a:link{ color:#97AA50}
+
+.green a:visited{ color:#97AA50}
+.green a:hover{ color:#B4B4B6;}
+h3{ line-height:30px; font-size:16px; font-family:"微软雅黑"; }
+.wifi_b1{text-align: center}
+.yj_1{ width:450px; text-align:center}
+.yj_2{ width:400px; margin-left:50px;}
+.org{ color:#FF9900;}
+
+
+.product {
+	PADDING-TOP: 20px
+}
+.product UL LI {
+	MARGIN: 0px 40px 12px 0px; WIDTH: 300px; FLOAT: left; HEIGHT: 108px; OVERFLOW: hidden
+}
+.product UL LI A {
+	WIDTH: 100%; BACKGROUND: url(../images/Ray.png) no-repeat; FLOAT: left; HEIGHT: 100%
+}
+.product UL LI A:hover {
+	WIDTH: 100%; BACKGROUND: url(../images/Ray.png) no-repeat; FLOAT: left; HEIGHT: 100%
+}
+.product UL LI.cp1 A {
+	BACKGROUND-POSITION: -300px 0px
+}
+.product UL LI.cp1 A:hover {
+	BACKGROUND-POSITION: 0px 0px
+}
+.product UL LI.cp2 A {
+	BACKGROUND-POSITION: -300px -108px
+}
+.product UL LI.cp2 A:hover {
+	BACKGROUND-POSITION: 0px -108px
+}
+.product UL LI.cp3 A {
+	BACKGROUND-POSITION: -300px -216px
+}
+.product UL LI.cp3 A:hover {
+	BACKGROUND-POSITION: 0px -216px
+}
+.product UL LI.cp4 A {
+	BACKGROUND-POSITION: -300px -324px
+}
+.product UL LI.cp4 A:hover {
+	BACKGROUND-POSITION: 0px -324px
+}
+.product UL LI.cp5 A {
+	BACKGROUND-POSITION: -300px -432px
+}
+.product UL LI.cp5 A:hover {
+	BACKGROUND-POSITION: 0px -432px
+}
+.product UL LI.cp6 A {
+	BACKGROUND-POSITION: -300px -540px
+}
+.product UL LI.cp6 A:hover {
+	BACKGROUND-POSITION: 0px -540px
+}
+.product UL LI.cp3 {
+	MARGIN-RIGHT: 0px
+}
+.product UL LI.cp6 {
+	MARGIN-RIGHT: 0px
+}
+
+
+
+.wifi_news{ margin:0px auto;height:auto;   background-color:#FFF; }
+.wifi_news_t{ width:100%;  height:120px; border-bottom:2px solid   #E8E8E8; background-color:#FFF; }
+.news_t_1{ width:980px; margin:0px auto; height:auto; overflow:hidden; clear:both;}
+.nl{ margin:20px; padding-bottom:10px; border-bottom:1px solid #E8E8E8;  width:750px; line-height:30px; margin-left:40px;}
+.black{ color:#000;}
+.black a:link{ color:#000}
+.black a:visited{ color:#000}
+.black a:hover{ color:#51A8FF}
+.gy{ color: #999;}
+.gy a:link{ color: #999}
+.gy a:visited{ color: #999}
+.gy a:hover{ color:#51A8FF}
+.mp{ height:40px; text-indent:3em; line-height:35px;}
+.np1{ width:900px; margin:0px auto; padding:30px;}
+.nt{ text-align:center; line-height:40px;}
+
+/**/
+.hardtitle{  font-family:"微软雅黑";font-size:32px;font-weight: 700;color:#000; }
+.p1{color:#5abdff;text-align:center;font-size:16px;line-height: 40px;}
+.p2{color:#5abdff;padding-left:50px;font-size:16px;line-height: 40px;font-weight: 700;}
+.hiwifis1{height: 590px;display: block;background: url(../images/hibg.jpg) repeat-x;}
+.mc{margin: 0 auto;width:1080px;}
+
+.c0_2_11{margin:0 auto; background-color:#5BBDFF; width:90%; line-height:60px; font-size:16px; color:#FFFFFF; text-align:left; text-indent:2em;}
+.c0_2_12{margin:0 auto;  width:90%; line-height:30px; font-size:18px;font-weight: 700; color:#5abdff; text-align:right; text-indent:2em;}
+.frienda{float:left;display: block;margin-right: 30px;}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<!-- libraries -->
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="<#$Theme['P']['root']#>/bootadmin/css/compiled/form-showcase.css" type="text/css" media="screen" />
+	
+<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content">
+    	 <div class="container-fluid">
+            <div id="pad-wrapper" class="form-page">
+            	
+                <div class="row-fluid form-wrapper">
+                 		<div class="span12">
+                            <h4>编辑路由信息</h4>
+                        </div>
+                    <!-- left column -->
+                    <div class="span8 column">
+                        <form name="do" method="post" action="<#:U('edit');#>">
+                        <div class="alert span9" style="display: none;">
+						  <span id="alertmsg"></span>
+						</div>
+                            <div class="field-box">
+                                <label>路由器名称:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="路由器名称不能超过20个字" data-placement="right" name="routename" id="routename" value="<#$info.routename#>"/>
+                            	
+                            </div>
+                             <div class="field-box">
+                                <label>MAC地址:</label>
+                                <input class="span8" type="text" name="gw_id" id="gw_id" value="<#$info.gw_id#>"/>
+                            </div>
+                            
+                             <div class="field-box">
+                                <label>路由排序:</label>
+                                <input class="span8" type="text" name="sortid" id="sortid" value="<#$info.sortid#>" />
+                            </div>
+                             
+                              <div class="field-box ">
+                              
+                              <input type="hidden" name="id" id="id" value="<#$info.id#>">
+                               
+                                <input type="submit"   class="btn-glow primary "  id="btn_save" value="确认编辑">
+                               &nbsp;&nbsp;
+                               <input type="button"   class="btn-glow  " id="btn_back" value="返回列表">
+                              
+                              
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span4 column pull-right">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+    <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+     <script src="<#$Theme['P']['root']#>/bootadmin/js/jquery.uniform.min.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+          
+                 
+<!-- call this page plugins -->
+    <script type="text/javascript">
+    	
+    	 
+        $(function () {
+        	
+            // add uniform plugin styles to html elements
+            $("input:checkbox, input:radio").uniform();
+            $('#btn_back').bind('click',function(){
+				location.href="<#:U('index')#>";
+			});
+           
+            
+        });
+    </script>
+</body>
+</html>

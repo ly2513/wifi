@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:Css"/>
+	<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/uniform.css" />
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=18E7F3FA5b3d576acdfafbee1f491217"></script>
+</head>
+<body>
+
+
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+
+
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a></div>
+  <h1>栏目编辑</h1>
+  </div>
+<!--End-breadcrumbs-->
+  <div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>编辑</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <form action="<#:U('index/web/editcatelog')#>" method="post" class="form-horizontal" enctype="multipart/form-data">
+ <div class="control-group">
+              <label class="control-label">栏目类别 :</label>
+              <div class="controls">
+               	<select name="mode" id="mode" onchange="showBox(this);">
+               			<option value="0" <eq name="info['mode']" value="0">selected</eq>>图文</option>
+               			<option value="1" <eq name="info['mode']" value="1">selected</eq>>链接</option>
+               			<option value="2" <eq name="info['mode']" value="2">selected</eq>>电话号码</option>
+               			<option value="3" <eq name="info['mode']" value="3">selected</eq>>地图导航</option>
+               	</select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">栏目名称 :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="栏目名称 "  name="title" id="title" value="<#$info.title#>" />
+              </div>
+            </div>
+          
+            <div class="control-group">
+              <label class="control-label">栏目描述:</label>
+              <div class="controls">
+              	<textarea name="info" id="info" class="span11"><#$info.info#></textarea>  
+              </div>
+            </div>
+
+           
+             <div id="box2" class="hide box">
+	             <div class="control-group">
+	              <label class="control-label">电话号码:</label>
+	              <div class="controls">
+	 					<input type="text" class="span11" placeholder="请输入电话号码"  name="tel" id="tel" value="<#$info.tel#>" />
+	              </div>
+	            </div>
+            </div>
+            <div id="box1" class="hide box">
+	             <div class="control-group">
+	              <label class="control-label">链接网址:</label>
+	              <div class="controls">
+	 					<input type="text" class="span11" placeholder="请输入网址"  name="url" id="url" value="<#$info.url#>" />
+	              </div>
+	            </div>
+            </div>
+            <div id="box3" class="hide box">
+             <div class="control-group">
+              <label class="control-label">地图标识 :</label>
+              <div class="controls">
+               <input type="text" class="span4" placeholder="输入地址查询 " name="mapsearch" id="mapsearch" value="<#$wapinfo.address#>"/><button type="button" class="btn btn-info" onclick="GetAdd();">查询</button></br></br>
+                <div id="allmap" style="width:600px;height:500px;"></div>
+              </div>
+             </div>
+              <div class="control-group">
+              <label class="control-label">坐标 :</label>
+              <div class="controls">
+                <input type="text" class="span6" placeholder="坐标 " name="point" id="point" readonly="true" value="<#$info.point_x#>,<#$info.point_y#>"/>
+              <input type="hidden" name="point_x" id="point_x" readonly="true" value="<#$info.point_x#>"/>
+                <input type="hidden"  name="point_y" id="point_y" readonly="true"  value="<#$info.point_y#>"/>
+              </div>
+            </div>
+            </div>
+             <div class="control-group">
+              <label class="control-label">栏目图片:</label>
+              <div class="controls"><img src="<#$info['titlepic']#>" style="width:200px;"/><br>
+               <input type="file"  name="img">
+                
+              </div>
+              <div class="controls">
+              <span class="help-block blue span8">建议上传图片规格:720*480</span>
+                
+              </div>
+              
+            </div>
+             <div class="control-group">
+	              <label class="control-label">栏目排序:</label>
+	              <div class="controls">
+	 					<input type="text" class="span4" placeholder=""  name="sort" id="sort" value="<#$info.sort#>" />
+	              </div>
+	            </div>
+            <div class="form-actions">
+            
+            	<input type="hidden" name="id" value="<#$info.id#>">
+              <button type="submit" class="btn btn-success">保存</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</div>
+</div>
+
+<!--end-main-container-part-->
+
+   <include file="Pub:foot"/>
+
+
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.uniform.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+
+
+
+<script>
+function showBox(obj){
+	key=$(obj).val();
+	
+	$(".box").hide();
+	$("#box"+key).show();
+}
+
+var map = new BMap.Map("allmap");
+var px=<empty name="wapinfo.point_x">116.403909<else/><#$wapinfo.point_x#></empty>;
+var py=<empty name="wapinfo.point_y">39.915156<else/><#$wapinfo.point_y#></empty>;
+var myGeo = new BMap.Geocoder();
+map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+map.centerAndZoom(new BMap.Point(px, py), 15);
+var marker1 = new BMap.Marker(new BMap.Point(px, py));  // 创建标注
+marker1.enableDragging();    //可拖拽
+// 将标注添加到地图中
+marker1.addEventListener("click", showInfo);
+marker1.addEventListener("dragend",showInfo);
+function showInfo(e){
+ //alert(e.point.lng + ", " + e.point.lat);
+ $("#point_x").val(e.point.lng);
+ $("#point_y").val(e.point.lat);
+ var s=""+e.point.lng+","+e.point.lat+"";
+ $("#point").val(s);
+}
+map.addOverlay(marker1);   
+map.addEventListener("click", function(e){
+	  	marker1.setPosition(e.point);
+	    $("#point_x").val(e.point.lng);
+	    $("#point_y").val(e.point.lat);
+	    var s=""+e.point.lng+","+e.point.lat+"";
+	    $("#point").val(s);
+});
+function GetAdd(){
+	add=$('#mapsearch').val();
+	myGeo.getPoint(add, function(point){
+		  if (point) {
+		    map.centerAndZoom(point, 16);
+		    marker1.setPosition(point);
+		    $("#point_x").val(point.lng);
+		    $("#point_y").val(point.lat);
+		    var s=""+point.lng+","+point.lat+"";
+		    $("#point").val(s);
+		  }else{
+			  alert('没有找到匹配的坐标信息,请检查搜索的地址是否存在');
+		  }
+	}, "全国");
+}
+$(document).ready(function(){
+	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
+});
+
+$(document).ready(function(){
+	
+	$('#web3g').trigger('click');
+});
+
+//map.addEventListener("click", showInfo);
+</script>
+</body>
+</html>

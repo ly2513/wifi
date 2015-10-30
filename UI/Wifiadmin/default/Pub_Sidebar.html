@@ -1,0 +1,64 @@
+  <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+        <volist name="nav" id="vo">
+        <if condition="$vo['pid'] eq 1">
+       		<if condition="in_array($vo['id'],$navids)">
+       			<if condition="$vo['single'] eq 1">
+       				<if condition="(strtolower($nownav['m']) eq strtolower($vo['m']) ) && strtolower($nownav['a']) eq strtolower($vo['a'])">
+	        		  <li class="active">
+	                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+	                </div>
+	        		<else/>
+	        		    <li>
+	        		</if>
+           			    <a href="<#:U(''.$vo['m'].'/'.$vo['a'].'')#>"  >
+                      <i class="<#$vo.ico#>"></i>
+                      <span><#$vo.title#></span>
+                    </a>
+            	    </li>
+       		  <else/>
+       	
+				      <if condition="$nownav['a'] eq $vo['id']">
+        		    <li class="active">
+                  <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                  </div>
+        		  <else/>
+        		    <li>
+        		  </if>
+       			  <a class="dropdown-toggle" href="#" >
+                <i class="<#$vo.ico#>"></i>
+                <span><#$vo.title#></span>
+                <i class="icon-chevron-down"></i>
+              </a>
+              <if condition="$nownav['a'] eq $vo['id']">
+        		    <ul class="active submenu">
+        		  <else/>
+        		    <ul class="submenu">
+        		  </if>
+         
+        			<volist name="nav" id="sonnode">
+        			 	<if condition="$sonnode['pid'] eq $vo['id']">
+        			 		<if condition="in_array($sonnode['id'],$navids)">
+		                	<li>
+		                    <a href="<#:U(''.$sonnode['m'].'/'.$sonnode['a'].'')#>"><#$sonnode['title']#></a>
+                        
+		                  </li>
+	                </if>
+                </if>
+              </volist>
+            </ul>
+           </li>
+       		</if>
+       </if>
+       		</if>
+       		
+       </volist>
+        </ul>
+    </div>
+
+    <!-- end sidebar -->

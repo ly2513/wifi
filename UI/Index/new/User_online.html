@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a> <a href="#" class="current">上网统计</a> </div>
+    <h1>上网统计</h1>
+ 
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+            
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i></span>
+            <h5>统计列表</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                		<th>编号</th>
+	        			<th>认证口令</th>
+	        		
+	        			<th>MAC地址</th>
+	        			<th>认证时间</th>
+	        			<th>最后在线时间</th>
+	        			<th>分配IP</th>
+                </tr>
+              </thead>
+              <tbody>
+           <volist name="lists" id="vo">
+        				<tr>
+	        			<td><#$i#></td>
+	        			<td><#$vo.token#> </td>
+	        			
+	        			<td><#$vo.mac#></td>
+	        			<td><#$vo.login_time|date='Y-m-d H:i:s',####></td>
+	        			<td><empty name="vo['last_time']"><else/><#$vo.last_time|date='Y-m-d H:i:s',####></empty></td>
+	        			<td><#$vo.login_ip#></td>
+	        			</tr>
+        		</volist>
+               
+              </tbody>
+            </table>
+          </div>
+        
+        </div>
+        
+         <div class="pagination pull-right">
+          	<#$page#>
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+   <include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+
+</body>
+</html>

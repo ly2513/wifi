@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--代理商平台</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+</head>
+<body>
+<include file="Pub:top"/>
+<include file="Pub:Nav"/>
+<!--main-container-part-->
+<div id="content">
+  <!--breadcrumbs-->
+    <div id="content-header">
+        <div id="breadcrumb">
+            <a href="<#:U('index/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a>
+            <a href="#" class="current">广告推送设置</a>
+        </div>
+        <h1>广告推送设置</h1>
+    </div>
+    <!--End-breadcrumbs-->
+    <div class="container-fluid" >
+        <hr>
+        <div class="row-fluid">
+            <div class="span8">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-align-justify"></i></span>
+                        <h5>广告推送设置</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form name='' class="form-horizontal" action="" method="post">
+                            <div class="control-group">
+                                <div class="alert span9" style="display: none;margin: 10px 0 10px 150px;">
+                                    <span id="alertmsg"></span>
+                                </div>
+                            </div>    
+                            <div class="control-group">
+                                <label class="control-label">推送状态:</label>
+                                <div class="controls">
+                                    <label class="radio">
+                                        <input  name="pushflag" type="radio" value="1" <if condition="$info['pushflag'] eq 1">checked</if>/>启用广告推送
+                                    </label>
+                                    <label class="radio">
+                                        <input name="pushflag"  type="radio" value="0" <if condition="$info['pushflag'] eq 0">checked</if>/>暂停广告推送
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">广告展示时间:</label>
+                                <div class="controls">
+                                    <input class="span11" type="text"  data-toggle="tooltip" data-trigger="focus" title="广告展示时间,最低3秒" data-placement="right" name="showtime" id="showtime" value="<#$info['showtime']#>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">   
+                                <input type="hidden" name="action" value="set" />
+                                <input type="submit" class="btn btn-success" id="btn_save" value="保存信息" style="margin: 20px;">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="span4 column pull-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/jquery.uniform.min.js"></script>
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$('#pushadv').trigger('click');
+});
+</script>
+
+  <script type="text/javascript">
+                     
+
+                        $(function () {
+                            
+                            // add uniform plugin styles to html elements
+                            $("input:checkbox, input:radio").uniform();
+
+                        });
+                    </script>
+</body>
+</html>

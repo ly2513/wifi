@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<title><#$shopinfo[0]['shopname']#></title>
+<link href="<#$Theme['T']['css']#>/ui-base.css"  rel="stylesheet" />
+<link href="<#$Theme['T']['css']#>/ui-color.css"  rel="stylesheet"/>
+<link href="<#$Theme['T']['css']#>/login.css"  rel="stylesheet"/>
+<title><#$shopinfo[0]['shopname']#></title>
+</head>
+<body>
+<include  file="public:head"/>
+<div class="newsbox">
+	<div class="newshead">
+		<div class="newtitle"><#$adinfo.title#></div>
+		<div>日期:<#$adinfo.add_time|date='Y-m-d',####></div>
+	</div>
+	<div class="newsinfo">
+		<#$adinfo.info|htmlspecialchars_decode#>
+	</div>
+	<a class="btn_base corner-all-10 c-ml-f1 c-eee  t-bla us uba b-wh " href="javascript:void(0);" id="btn_back">返回首页</a>
+	
+</div>
+
+<include file="public:foot"/>
+<script type="text/javascript" src="<#$Theme['P']['js']#>/jquery.js"></script>
+<script>
+
+	$(document).ready(function(){
+		  
+		$('#btn_back').bind('click',function(){
+			history.go(-1);
+		});
+	});
+
+	
+</script>
+</body>
+</html>

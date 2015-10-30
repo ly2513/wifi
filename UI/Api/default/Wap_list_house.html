@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><#$nowclass['title']#>-- <#$siteinfo.shopname#></title>
+	<link rel="stylesheet"  href="<#$Theme['P']['root']#>/wap/css/house/global.css">
+<link href="<#$Theme['P']['root']#>/wap/css/house/style.css" rel='stylesheet' type='text/css' />
+	<script src="<#$Theme['P']['js']#>/jquery.min.js" type="text/javascript"></script>
+<script src="<#$Theme['P']['root']#>/wap/js/house/global.js" type="text/javascript"></script>
+<script src="<#$Theme['P']['root']#>/wap/js/house/web.js" type="text/javascript"></script>
+
+<script language="javascript">$(document).ready(web_obj.page_init);</script>
+</head>
+
+<body>
+<div id="web_page_contents_loading"><img src="<#$Theme['P']['root']#>/wap/img/loading.gif" /></div><div id="header" class="wrap">
+	<ul>
+		<!--<li class="first"><a href="javascript:back(-1);"></a></li>-->
+		<li class="home first"><a href="<#:U('Api/Wap/index',array('sid'=>$nowclass['uid']))#>"></a></li>
+		<li class="tel"><a href="tel:<#$siteinfo.tel#>" class="autotel"></a></li>		<li class="lbs"><a href="<#:showmapurl($siteinfo)#>"></a></li>
+	</ul>
+</div><div id="web_page_contents"><div class="wrap" id="column">
+<div class="list-type-2">
+<volist name="listinfo" id="so">
+		<div class="item">
+		<div class="info">
+			<h1><a href="<#:U('Wap/info',array('sid'=>$so['uid'],'cid'=>$so['cid'],'id'=>$so['id']))#>"><#$so['title']#></a></h1>
+			<h2><#$so['desc']|substr=0,30#></h2>
+		</div>
+		<div class="detail"><a href="<#:U('Wap/info',array('sid'=>$so['uid'],'cid'=>$so['cid'],'id'=>$so['id']))#>"></a></div>
+	</div>
+	</volist>
+		
+		
+	</div>
+	<div class="pagelist">
+<eq name="p" value="1"><else/><a  href="/index.php?g=Api&m=Wap&a=lists&sid=<#$siteinfo['uid']#>&cid=<#$wechaid#>&classid=<php>echo $_GET['classid'];</php>&token=<#$info['token']#>&p=<php>echo $p-1;</php>">上一页</a></eq>
+	<?php
+
+	if($p<$page){
+
+		echo '<a  href="/index.php?g=Api&m=Wap&a=lists&sid='.$siteinfo['uid'].'&cid='.$wechaid.'&classid='.(int)$_GET['classid'].'&token='.$info['token'].'&p='.($p+1).'">下一页</a>';
+
+	}else{
+
+		
+
+	}
+
+?>
+</div>
+	</div></div></body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:Css"/>
+	<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/uniform.css" />
+	<link  href="<#$Theme['P']['root']#>/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+
+
+
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a></div>
+  <h1>栏目编辑</h1>
+  </div>
+<!--End-breadcrumbs-->
+  <div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>编辑</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <form action="<#:U('index/web/addarts')#>" method="post" class="form-horizontal" enctype="multipart/form-data">
+ <div class="control-group">
+              <label class="control-label">所属栏目 :</label>
+              <div class="controls">
+               	<select name="cid" id="cid">
+               	<option value="-1>">请选择文章所属栏目</option>
+               		<volist name="catelog" id="vo">
+               			<option value="<#$vo.id#>"><#$vo.title#></option>
+               		</volist>
+               			
+               		
+               	</select>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">文章标题 :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="文章标题 "  name="title" id="title" value="" />
+              </div>
+            </div>
+           <div class="control-group">
+              <label class="control-label">缩略图:</label>
+              <div class="controls">
+               <input type="file"  name="img">
+                
+              </div>
+              <div class="controls">
+              <span class="help-block blue span8">建议上传图片规格:720*480</span>
+                
+              </div>
+              
+            </div>
+            <div class="control-group">
+              <label class="control-label">文章描述:</label>
+              <div class="controls">
+              	<textarea name="desc" id="desc" class="span11"></textarea>  
+              </div>
+            </div>
+
+           
+           
+	             <div class="control-group">
+	              <label class="control-label">内容:</label>
+	              <div class="controls">
+	 				  <textarea class="textarea_editor span11" rows="20" placeholder="输入内容 ..." name="info"></textarea>	
+	              </div>
+	            </div>
+          
+          
+            
+            
+             <div class="control-group">
+	              <label class="control-label">是否置顶:</label>
+	              <div class="controls">
+	              	<input type="checkbox" name="topflag" value="1"/>
+	 						              </div>
+	        </div>
+            <div class="form-actions">
+            
+            
+              <button type="submit" class="btn btn-success">保存</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</div>
+</div>
+
+<!--end-main-container-part-->
+
+   <include file="Pub:foot"/>
+
+
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.uniform.js"></script> 
+<script src="<#$Theme['P']['root']#>/kindeditor/kindeditor-min.js" type="text/javascript"></script>
+	<script src="<#$Theme['P']['root']#>/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+
+
+
+<script>
+KindEditor.ready(function(K) {
+	K.create('textarea[name="info"]', {
+		autoHeightMode : true,
+		items:['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template',  'cut', 'copy', 'paste',
+		        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+		        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+		        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+		        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+		        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 
+		        'flash', 'media', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+		        'anchor', 'link', 'unlink', '|', 'about'],
+		        afterUpload:false,
+		        allowFlashUpload:false,
+		        allowFileUpload:false,
+		        allowImageUpload:false,
+		        allowMediaUpload:false,
+	});
+});
+$(document).ready(function(){
+	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
+});
+$(document).ready(function(){
+
+	$('#web3g').trigger('click');
+});
+</script>
+</body>
+</html>

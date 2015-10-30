@@ -1,0 +1,11 @@
+[ 2015-03-25T11:47:21+08:00 ] 211.103.232.43 /index.php/js/1.js
+ERR: 无法加载模块:Js
+
+[ 2015-03-25T11:51:31+08:00 ] 211.103.232.43 /index.php/index/js/1.js
+ERR: 无法加载模块:Js
+
+[ 2015-03-25T11:51:40+08:00 ] 211.103.232.43 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+
+[ 2015-03-25T17:32:37+08:00 ] ERR: 自动认证错误:INSERT INTO `wifi_authlist` (`uid`,`add_date`,`over_time`,`update_time`,`login_time`,`last_time`,`shopid`,`routeid`,`browser`,`token`,`mode`,`mac`,`login_ip`,`agent`) VALUES (1020,'2015-03-25','',1427275957,1427275957,1427275957,'20','41','Chrome','0fa2efef8faa924052fae6d1c3dfd2a0','2','44:2a:60:f4:02:ea','211.103.232.43','Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.48 Safari/537.36 QQBrowser/8.0.3197.400')
+[ 2015-03-25T17:33:11+08:00 ] ERR: 自动认证错误:INSERT INTO `wifi_authlist` (`uid`,`add_date`,`over_time`,`update_time`,`login_time`,`last_time`,`shopid`,`routeid`,`browser`,`token`,`mode`,`mac`,`login_ip`,`agent`) VALUES (1021,'2015-03-25','',1427275991,1427275991,1427275991,'20','41','Chrome','15ae689f977eaaad96890af36a54c957','2','44:2a:60:f4:02:ea','211.103.232.43','Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.48 Safari/537.36 QQBrowser/8.0.3197.400')

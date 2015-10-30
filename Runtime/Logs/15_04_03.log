@@ -1,0 +1,7 @@
+[ 2015-04-03T06:24:38+08:00 ] 140.207.54.80 /index.php/weichat/command/gh_dd8c103f67bd?signature=9aaed800df95b6da8ee5df3c5349f14f3768e2c5&timestamp=1428013477&nonce=1681047141
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+
+[ 2015-04-03T13:18:06+08:00 ] 211.103.232.43 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<link href="<#$Theme['P']['root']#>/bootadmin/css/compiled/tables.css" type="text/css" rel="stylesheet"  />
+	
+<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+   	<div class="container-fluid">
+            <div id="pad-wrapper" >
+            	 <!-- orders table -->
+            <div class="table-wrapper orders-table section">
+                <div class="row head">
+                    <div class="col-md-12">
+                        <h4>角色列表</h4>
+                    </div>
+                </div>
+
+                <div class="row filter-block">
+                    <div class="pull-right">
+                  
+                    </div>
+                </div>
+
+                <div class="">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1">
+                                   		 编号
+                                </th>
+                                <th class="col-md-2">
+                                    <span class="line"></span>
+                                    			角色名称
+                                </th>
+                                  <th class="col-md-2">
+                                    <span class="line"></span>
+                                    	备注信息
+                                </th>
+                                <th class="col-md-2">
+                                    <span class="line"></span>
+                                    	状态
+                                </th>
+                               
+                                <th class="col-md-1">
+                                    <span class="line"></span>
+                                    		操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<volist name="lists" id="vo">
+                        		<!-- row -->
+                            <tr class="<eq name="i" value="1">first</eq>">
+                                <td>
+                                   <#$i#>
+                                </td>
+                                <td>
+                                   <#$vo.name#>
+                                </td>
+                                  <td>
+                                   <#$vo.remark#>
+                                </td>
+                                 <td>
+                                   <#:getStatus($vo['status'])#>
+                                </td>
+                                <td>
+                                  <a href="<#:U('roleaccess',array('id'=>$vo['id']))#>">权限管理</a>|
+                                  <a href="<#:U('editrole',array('id'=>$vo['id']))#>"> 编辑     </a>|
+                                  
+                                   <a href="javascript:drop_confirm('您确定要删除吗?','<#:U('delrole',array('id'=>$vo['id']))#>');" > 删除     </a>
+                                  
+                                </td>
+                            </tr>
+                        	</volist>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            
+            	<div class="">
+            		<#$page#>
+            	</div>
+            </div>
+            <!-- end orders table -->
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+ <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+ <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+  
+</body>
+</html>

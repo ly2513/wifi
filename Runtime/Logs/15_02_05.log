@@ -1,0 +1,3 @@
+[ 2015-02-05T06:24:33+08:00 ] 119.147.146.189 /index.php/api/ping/%3Fgw_id%253DACA213ACEO3C%2526sys_uptime%253D10379%2526sys_memfree%253D41724%2526sys_load%253D0.10%2526wifidog_uptime%253D10352
+ERR: 非法操作?gw_id%3daca213aceo3c%26sys_uptime%3d10379%26sys_memfree%3d41724%26sys_load%3d0
+

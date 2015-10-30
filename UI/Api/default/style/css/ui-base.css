@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+
+/*圆角*/
+.corner-all-1{
+	-webkit-border-radius: .1em;
+	border-radius: .1em;
+}
+.corner-all-2{
+	-webkit-border-radius: .2em;
+	border-radius: .2em;
+}
+.corner-all-3{
+	-webkit-border-radius: .3em;
+	border-radius: .3em;
+}
+.corner-all-6{
+	-webkit-border-radius: .6em;
+	border-radius: .6em;
+}
+.corner-all-4{
+	-webkit-border-radius: .4em;
+	border-radius: .4em;
+}
+.corner-all-8{
+	-webkit-border-radius: .8em;
+	border-radius: .8em;
+}
+.corner-all-10{
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
+}
+/*margin属性*/
+.mr-tb-10{margin:1em 0em;}
+.mr-tb-5{margin:.5em 0em;}
+/*标签*/
+.lb_title{line-height: 1.5em;font-size:1.2em;display: inline-block;}
+/*阴影*/
+.us {
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .3)
+}
+.us1 {
+	-webkit-box-shadow: 0 1px 4px rgba(120, 120, 120, .3);
+	box-shadow: 0 1px 4px rgba(120, 120, 120, .3)
+}
+
+
+.us-input-focus{
+	-moz-box-shadow:0 0 12px #387bbe;-webkit-box-shadow:0 0 12px #387bbe;box-shadow:0 0 12px #387bbe;
+}
+.us-input{
+	-webkit-box-shadow: inset 0 1px 4px rgba(0,0,0,.2);box-shadow: inset 0 1px 4px rgba(0,0,0,.2);
+}
+.us-i {
+	-webkit-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, .4);
+	box-shadow: inset 0px 2px 3px rgba(0, 0, 0, .4)
+}
+/*边框*/
+.uba
+{
+	border:1px solid;
+	
+}
+.uba1
+{
+	border:2px solid;	
+}
+.uba2
+{
+	border:3px solid;	
+}
+
+.ubt
+{
+	border-top:1px solid;
+}
+.ubb
+{
+	border-bottom:1px solid;
+}
+
+.ubl
+{
+	border-left:1px solid;
+}
+
+.ubr
+{
+	border-right:1px solid;
+}
+/*表单属性*/
+
+.iptbox{padding: 0.4em;border:1px solid #ccc;margin:0 auto;}
+.ipt{height: 1.4em;font-size:1em;line-height: 1.4em; padding:0.2em;width:100%;border: 0;box-sizing: border-box;background: transparent none;outline: 0!important;}
+.ipt-textarea{font-size:1em;line-height: 1.4em; padding:0.2em;width:100%;border: 0;box-sizing: border-box;background: transparent none;outline: 0!important;}

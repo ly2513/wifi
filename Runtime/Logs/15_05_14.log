@@ -1,0 +1,6 @@
+[ 2015-05-14T05:40:16+08:00 ] 119.147.146.189 /index.php/api/ping/%3Fgw_id%3DACA213ACEO3C%26sys_uptime%3D82487%26sys_memfree%3D40388%26sys_load%3D0.12%26wifidog_uptime%3D82290
+ERR: 非法操作?gw_id=aca213aceo3c&sys_uptime=82487&sys_memfree=40388&sys_load=0
+
+[ 2015-05-14T15:40:10+08:00 ] 211.103.232.43 /index.php/index/js/1.js
+ERR: 无法加载模块:Js
+

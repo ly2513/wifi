@@ -1,0 +1,29 @@
+[ 2015-05-03T05:45:51+08:00 ] 119.147.146.194 /index.php/api/ping/%3Fgw_id%253DACA213ACEO3C%2526sys_uptime%253D8682%2526sys_memfree%253D41668%2526sys_load%253D0.06%2526wifidog_uptime%253D8485
+ERR: 非法操作?gw_id%3daca213aceo3c%26sys_uptime%3d8682%26sys_memfree%3d41668%26sys_load%3d0
+
+[ 2015-05-03T06:07:25+08:00 ] 183.60.52.11 /index.php/api/ping/%253Fgw_id%25253DACA213ACEO3C%252526sys_uptime%25253D8682%252526sys_memfree%25253D41668%252526sys_load%25253D0.06%252526wifidog_uptime%25253D8485
+ERR: 非法操作%3fgw_id%253daca213aceo3c%2526sys_uptime%253d8682%2526sys_memfree%253d41668%2526sys_load%253d0
+
+[ 2015-05-03T06:07:39+08:00 ] 180.153.214.178 /index.php/api/ping/%253Fgw_id%25253DACA213ACEO3C%252526sys_uptime%25253D8682%252526sys_memfree%25253D41668%252526sys_load%25253D0.06%252526wifidog_uptime%25253D8485
+ERR: 非法操作%3fgw_id%253daca213aceo3c%2526sys_uptime%253d8682%2526sys_memfree%253d41668%2526sys_load%253d0
+
+[ 2015-05-03T06:28:29+08:00 ] 180.153.4.19 /index.php/api/ping/%25253Fgw_id%2525253DACA213ACEO3C%25252526sys_uptime%2525253D8682%25252526sys_memfree%2525253D41668%25252526sys_load%2525253D0.06%25252526wifidog_uptime%2525253D8485
+ERR: 非法操作%253fgw_id%25253daca213aceo3c%252526sys_uptime%25253d8682%252526sys_memfree%25253d41668%252526sys_load%25253d0
+
+[ 2015-05-03T14:40:44+08:00 ] 112.235.206.253 /index.php/index/index/js/1.js
+ERR: 非法操作js
+
+[ 2015-05-03T14:44:32+08:00 ] 112.235.206.253 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+
+[ 2015-05-03T14:50:06+08:00 ] 112.235.206.253 /index.php/index/index/js/1.js
+ERR: 非法操作js
+
+[ 2015-05-03T19:42:12+08:00 ] 140.207.54.76 /index.php/weichat/command/gh_dd8c103f67bd?signature=86e050a5c0bcee9ecb68fc4835b16d8c3aa85f03&timestamp=1430653332&nonce=637589487
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_authlist WHERE uid =
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_member WHERE id =
+

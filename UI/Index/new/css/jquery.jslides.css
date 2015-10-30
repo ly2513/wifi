@@ -1,0 +1,9 @@
+﻿html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, blockquote, pre, form, fieldset, table, th, td, span{padding:0;margin:0;}
+#full-screen-slider { width:100%; height:390px; float:left; position:relative}
+#slides { display:block; width:100%; height:390px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none; position:absolute; left:50%; top:340px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#FFF }
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#0092CE}

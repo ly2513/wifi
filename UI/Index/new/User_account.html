@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+
+<div id="content">
+<div id="content-header">
+  <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a>  <a href="#" class="current">修改密码</a> </div>
+  <h1>修改密码</h1>
+</div>
+<div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>修改密码</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <form name='form' action="index.php?m=User&a=doaccount" method="post" class="form-horizontal">
+       		<div class="control-group">
+       		<div class="span1"></div>
+       			<div class="alert alert-block span10 hide" id="msgbox"> 
+              <h4 class="alert-heading">提示信息</h4>
+             <div id="alertmsg"></div>
+              </div>
+       		</div>
+			<div class="control-group">
+              <label class="control-label">登录帐号:</label>
+              <div class="controls">
+               <input type="text" placeholder="" disabled="" class="span4" value=" <#$Think.session.user#>">
+              </div>
+            </div>
+            <div class="control-group"  id="wxacc">
+              <label class="control-label">新密码 :</label>
+              <div class="controls">
+                <input type="password" class="span4" placeholder="请输入密码"  name='password' />
+              </div>
+            </div>
+            
+       
+            <div class="form-actions">
+              <input type="submit" class="btn btn-success" name="sub" value="保存"/>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</div></div>
+<include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+
+</body>
+</html>

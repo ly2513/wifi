@@ -1,0 +1,4 @@
+[ 2015-04-09T15:42:37+08:00 ] 140.207.54.74 /index.php/weichat/command/gh_dd8c103f67bd?signature=0c353444701bc082e81344e0e471dac3f3a7fe54&timestamp=1428565356&nonce=2127524839
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+

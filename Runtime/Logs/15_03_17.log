@@ -1,0 +1,12 @@
+[ 2015-03-17T14:57:57+08:00 ] 211.103.232.43 /index.php/api/userauth/reg.html
+ERR: 模板不存在[./UI/Api/default/Userauth_reg$model6.html]
+
+[ 2015-03-17T14:58:05+08:00 ] 211.103.232.43 /index.php/api/userauth/reg.html
+ERR: 模板不存在[./UI/Api/default/Userauth_reg$model6.html]
+
+[ 2015-03-17T14:58:12+08:00 ] 211.103.232.43 /index.php/api/userauth/login.html
+ERR: 模板不存在[./UI/Api/default/Userauth_login$model6.html]
+
+[ 2015-03-17T15:58:54+08:00 ] 119.147.207.158 /index.php/wifiadmin/pub/getadrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+

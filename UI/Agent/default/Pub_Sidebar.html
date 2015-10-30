@@ -1,0 +1,60 @@
+ <!-- sidebar -->
+    <div id="sidebar-nav">
+        <ul id="dashboard-menu">
+        <volist name="menu" id="navnode">
+        	<empty name="navnode['nodes']">
+        		<if condition="$nav['m'] eq $navnode['model'] && $nav['a'] eq $navnode['action']">
+        		<li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+        		<else/>
+        		<li>
+        		</if>
+        		
+                <a href="<#:U(''.$navnode['model'].'/'.$navnode['action'].'')#>">
+                    <i class="<#$navnode.ico#>"></i>
+                    <span><#$navnode.name#></span>
+                </a>
+            	</li>
+        	<else/>
+				<if condition="$nav['m'] eq $navnode['model'] && $nav['a'] eq $navnode['action']">
+        		<li class="active">
+                <div class="pointer">
+                    <div class="arrow"></div>
+                    <div class="arrow_border"></div>
+                </div>
+        		<else/>
+        		<li>
+        		</if>
+                <a class="dropdown-toggle" href="#" id="<#$navnode.model#>_<#$navnode.action#>">
+                   <i class="<#$navnode.ico#>"></i>
+                    <span><#$navnode.name#></span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                			<if condition="$nav['m'] eq $navnode['model'] && $nav['a'] eq $navnode['action']">
+        		<ul class="active submenu">
+        		<else/>
+        		<ul class="submenu">
+        		</if>
+                
+                	<volist name="navnode['nodes']" id="sonnode">
+                	   <li>
+                        <a href="<#:U(''.$navnode['model'].'/'.$sonnode['action'].'')#>"><#$sonnode['name']#></a>
+                    	</li>
+
+                	  </volist>
+                   
+                </ul>
+            </li>
+        	</empty>
+        </volist>
+        
+           
+        </ul>
+    </div>
+    <!-- end sidebar -->
+    <div style="display: none">
+       
+      </div>

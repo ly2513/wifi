@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><#$nowclass['title']#>-- <#$siteinfo.shopname#></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+
+<link href="<#$Theme['P']['root']#>/wap/css/yl/news.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script>
+
+window.onload = function (){
+
+	var oWin = document.getElementById("win");
+	var oLay = document.getElementById("overlay");	
+	var oBtn = document.getElementById("popmenu");
+	var oClose = document.getElementById("close");
+	oBtn.onclick = function (){
+		oLay.style.display = "block";
+		oWin.style.display = "block";	
+	};
+	oLay.onclick = function (){
+		oLay.style.display = "none";
+		oWin.style.display = "none"	;
+	}
+};
+</script>
+
+<body id="listhome1">
+	<div id="ui-header">
+		<div class="fixed">
+			<a class="ui-title" id="popmenu">选择分类</a>
+			<a class="ui-btn-left_pre" href="javascript:history.go(-1)"></a>
+			<a class="ui-btn-right" href="/index.php?g=Api&m=Wap&a=lists&&sid=<#$siteinfo.uid#>&classid=<php>echo $_GET['classid'];</php>&token=<#$info['token']#>&p=<#$p#>"></a>
+		</div>
+	</div>
+	<div id="overlay"></div>
+	<div id="win">
+		<ul class="dropdown"> 
+		<volist name="classinfo" id="vo">
+			<li>
+				<a href="<#:showclass_common($vo,$wechaid)#>">
+					<span><#$vo.title#></span>
+				</a>
+			</li>
+		</volist> 	
+			<div class="clr"></div>
+		</ul>
+	</div>
+	<div class="Listpage">
+		<div class="top46"></div>
+    	<div id="todayList">
+		<ul  class="todayList">
+			<volist name="listinfo" id="so">   
+			<li>
+				<if condition="$so['linkurl']">
+					<a href="<#$so['linkurl']#>">
+				<else />
+					<a href="<#:U('Wap/info',array('sid'=>$so['uid'],'cid'=>$so['cid'],'id'=>$so['id']))#>">
+				</if>
+				<div class="img"><img src="<#$so.newspic#>"></div>
+				<h2><#$so['title']#></h2>
+				<p class="onlyheight"><#$so['smalltitle']#></p>
+				<div class="commentNum"></div>
+				</a>
+			</li>
+ 			</volist>
+		</ul>
+	</div>
+
+<section id="Page_wrapper">
+
+	<div id="pNavDemo" class="c-pnav-con">
+		<section class="c-p-sec">
+			<div class='c-p-pre <eq name="p" value="1"> c-p-grey </eq> '><span class="c-p-p"><em></em></span><a <eq name="p" value="1"><else/>href="<#:C('site_url')#>/index.php?g=Api&m=Wap&a=lists&sid=<#$siteinfo['uid']#>&classid=<php>echo $_GET['classid'];</php>&token=<#$info['token']#>&p=<php>echo $p-1;</php>"</eq>  >上一页</a></div>
+			<div class="c-p-cur">
+			<div class="c-p-arrow c-p-down">
+				<span><#$p#>/<#$page#></span><span></span>
+			</div>
+			<select class="c-p-select" onchange="dourl('<#:C('site_url')#>/index.php?g=Api&m=Wap&a=lists&sid=<#$siteinfo['uid']#>&cid=<#$wechaid#>&classid=<php>echo $_GET['classid'];</php>&token=<#$info.token#>&p='+this.value)">
+			<?php
+				for($i=1;$i<=$page;$i++){
+					if($i==$p){
+						echo '<option value="'.$i.'" selected>第'.$i.'页</option>';
+					}else{
+						echo '<option value="'.$i.'">第'.$i.'页</option>';
+					}
+				}
+			?>
+			</select>
+	</div>
+	<div class='c-p-next <eq name="p" value="$page"> c-p-grey </eq>'  >
+		<?php
+			if($p<$page){
+				echo '<a href="/index.php?g=Api&m=Wap&a=lists&sid='.$siteinfo['uid'].'&cid='.$wechaid.'&classid='.(int)$_GET['classid'].'&token='.$info['token'].'&p='.($p+1).'">';
+			}else{
+				echo '<a>';
+			}
+		?>
+		下一页</a><span class="c-p-p"><em></em></span>
+	</div>
+
+</section>
+
+</div>
+
+</section>
+
+</div>
+
+
+<div class="copyright"  >
+
+<empty name="siteinfo.shopname"> <#$info['wxname']#><else/> <#$siteinfo.shopname#></empty>
+
+</div>
+
+
+
+<script>
+
+function dourl(url){
+
+location.href= url;
+
+}
+
+</script>
+
+<div style="display:none"> </div>
+
+
+
+</body>
+</html>

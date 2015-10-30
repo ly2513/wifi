@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/uniform.css" />
+<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/select2.css" />
+
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+
+<div id="content">
+<div id="content-header">
+  <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a>  <a href="#" class="current">商户信息</a> </div>
+  <h1>商户信息</h1>
+</div>
+<div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>编辑</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <form action="<#:U('info')#>?m=User&a=doindex" method="post" class="form-horizontal" enctype="multipart/form-data">
+
+            <div class="control-group">
+              <label class="control-label">商户名称 :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="商户名称"  name="shopname" id="shopname" value="<#$info.shopname#>" />
+                <span class="help-block">输入您商铺的名称。</span> 
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">联系人 :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="联系人" name="linker" id="linker" value="<#$info.linker#>" maxlength="20"/>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">手机号码 :</label>
+              <div class="controls">
+                <input type="text"  class="span11" placeholder="手机号码"  name="phone" id="phone" value="<#$info.phone#>" maxlength="11"/>
+              </div>
+            </div>
+			<div class="control-group">
+              <label class="control-label">消费水平:</label>
+              <div class="controls" >
+              <volist name="enumdata.shoplevel" id="vo">
+              
+                <label style="float:left;margin-left:10px;">
+                  <input type="checkbox" value="<#$vo.key#>" name="shoplevel[]"  <php>if(strpos($info['shoplevel'],"#".$vo['key']."#")>-1){echo "checked";} </php> />
+                  <#$vo.txt#>
+                </label>
+              </volist>
+               
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">行业类型:</label>
+              <div class="controls">
+              <volist name="enumdata.trades" id="vo">
+               
+                <label style="float:left;margin-left:10px;">
+                  <input type="checkbox" value="<#$vo.key#>" name="trade[]" <php>if(strpos($info['trade'],"#".$vo['key']."#")>-1){echo "checked";} </php> />
+                  <#$vo.txt#></label>
+              </volist>
+            
+               <span class="help-block"style="float:left;margin-left:10px;">选择您所处的行业类型，可多选</span> 
+              </div>
+            </div>
+              <label class="control-label">商圈选择:</label>
+                <div class="controls">
+            <div class="control-group">
+                  <select name="province" id="province" class="span3"></select>
+                  <select name="city" id="city" class="span3"></select>
+                  <select name="area" id="area" class="span3"></select> 
+                </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">店铺地址 :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="店铺地址 " name="address" id="address" value="<#$info.address#>"/>
+               <span class="help-block">输入店铺的所在地址。</span> 
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">logo :</label>
+              <div class="controls">
+                 <input type="file"  name="img">
+                 <if condition="$info['logo'] neq null">
+                 	</br>
+                 	<img src="<#$info['logo']#>" style="width:200px;"/>
+                 </if>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success">保存</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</div></div>
+   <include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.uniform.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/select2.min.js"></script> 
+  <script src="<#$Theme['P']['js']#>/jsAddress.js"></script>
+                    <script type="text/javascript">
+                    addressInit('province', 'city', 'area', '<#$info.province#>', '<#$info.city#>', '<#$info.area#>');
+                    </script>
+<script>
+$(document).ready(function(){
+	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
+	
+	$('select').select2();
+});
+</script>
+</body>
+</html>

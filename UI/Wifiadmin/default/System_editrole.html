@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<!-- libraries -->
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="<#$Theme['P']['root']#>/bootadmin/css/compiled/form-showcase.css" type="text/css" media="screen" />
+	
+<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+   	<div class="container-fluid">
+            <div id="pad-wrapper" class="form-page">
+            	<form name="" action="" method="post">
+                <div class="row-fluid form-wrapper">
+                 		<div class="span12">
+                            <h4>编辑角色</h4>
+                        </div>
+                    <!-- left column -->
+                    <div class="span8 column">
+                        <form name="">
+                        <div class="alert span10" style="display: none;">
+						  <span id="alertmsg"></span>
+						</div>
+                         	<div class="field-box">
+                                <label>角色名称:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="请输入角色名称" data-placement="right" name="name" id="name" value="<#$info['name']#>"/>
+                            </div>
+                             <div class="field-box">
+                                <label>备注信息:</label>
+                                <input class="span8" type="text"  name="remark" id="remark" value="<#$info.remark#>"/>
+                            </div>
+                           <div class="field-box">
+                                <label>角色状态:</label>
+                             	 <div class="span8">
+                                    <label class="radio">
+                                        <input type="radio" name="status" id="status1" value="1" <eq name="info['status']" value="1">checked</eq> />
+                                        	正常
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="status" id="status2" value="0" <eq name="info['status']" value="0">checked</eq>/>
+                                        		停用
+                                    </label>
+                                </div>                   
+                            </div>
+                             
+                           
+                              <div class="field-box ">
+								<input type="hidden" name="id" value="<#$info.id#>">
+                                <input type="submit"   class="btn-glow primary " id="btn_save" value="保存信息">
+                                &nbsp;
+								<a class="btn-glow  " href="<#:U('role')#>">返回列表</a>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span4 column pull-right">
+
+                    </div>
+                </div>
+            	</form>
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/jquery.uniform.min.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+  <script type="text/javascript">
+                     
+
+                        $(function () {
+                        	
+                            // add uniform plugin styles to html elements
+                            $("input:checkbox, input:radio").uniform();
+
+                        });
+                    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+  <ul>
+    <li class="<if condition="($a == 'index')">active"</if>" ><a href="<#:U('User/index')#>"><i class="icon icon-home"></i> <span>首页</span></a> </li>
+     <li class="<if condition="($a == 'info')">active"</if>"> <a href="<#:U('User/info')#>"><i class="icon icon-group"></i> <span>商户信息</span></a> </li>
+    <li class="<if condition="($a == 'application')">active"</if>"> <a href="<#:U('User/application')#>"><i class="icon icon-cogs"></i> <span>应用设置</span></a> </li>
+    <li class="<if condition="($a == 'three_p')">active"</if>"> <a href="<#:U('User/three_p')#>"><i class="icon icon-cogs"></i> <span>微信动态认证</span></a> </li>
+           <li class="<if condition="($a == 'routemap')">active"</if>"> <a href="<#:U('User/routemap')#>"><i class="icon icon-group"></i> <span>路由管理</span></a> </li>
+      <li class="<if condition="($a == 'authtplset')">active"</if>"> <a href="<#:U('Authset/tplset')#>"><i class="icon icon-th"></i> <span>认证页面</span></a> </li>
+     
+     
+     <li class="submenu <if condition="($a == 'adv')">active"</if>"> <a href="#" id="adv"><i class="icon icon-cloud"></i> <span>广告管理</span></a>
+   	 <ul>
+        <li><a href="<#:U('User/adv')#>">广告管理</a></li>
+        
+         <li><a href="<#:U('User/advrpt')#>">广告统计</a></li>
+		
+      </ul>
+   </li>
+   
+           <li class="submenu <if condition="($a == 'web3g')">active"</if>"> <a href="#" id="web3g"><i class="icon icon-th-large"></i> <span>小微官网</span></a>
+      <ul>
+        <li><a href="<#:U('index/web/index')#>">网站设置</a></li>
+        
+         <li><a href="<#:U('web/catelog')#>">网站分类</a></li>
+		 <li><a href="<#:U('web/arts')#>">文章管理</a></li>
+		  <li><a href="<#:U('web/tempset')#>">模板管理</a></li>
+      </ul>
+    </li>
+     <li class="<if condition="($a == 'comment')">active"</if>"> <a href="<#:U('User/comment')#>"><i class="icon icon-envelope-alt"></i> <span>客户留言</span></a> </li>
+         <li class="submenu <if condition="($a == 'report')">active"</if>" > <a href="#" id="urpt"><i class="icon icon-user"></i> <span>用户统计</span></a>
+      <ul>
+        <li><a href="<#:U('User/userchart')#>">统计报表</a></li>
+        <li><a href="<#:U('User/report')#>">用户列表</a></li>
+       
+
+      </ul>
+    </li>
+    <li class="<if condition="($a == 'online')">active"</if>"> <a href="<#:U('User/rpt')#>"><i class="icon icon-signal"></i> <span>上网统计</span></a> </li>
+   <li class="submenu <if condition="($a == 'advfun')">active"</if>" > <a href="#" id="sale"><i class="icon icon-dashboard"></i> <span>营销管理</span></a>
+      <ul>
+        <li><a href="<#:U('index/Adv/phonelist')#>">手机号码管理</a></li>
+         <li><a href="<#:U('adv/set')#>">短信帐号管理</a></li>
+        <li><a href="<#:U('adv/sms')#>">短信群发</a></li>
+      	<li><a href="<#:U('adv/smslist')#>">短信发送列表</a></li>
+      </ul>
+    </li>
+  
+  </ul>
+</div>
+<!--sidebar-menu-->

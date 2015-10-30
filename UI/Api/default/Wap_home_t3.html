@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> <#$siteinfo.shopname#></title>
+<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta charset="utf-8">
+<link href="<#$Theme['P']['root']#>/wap/css/ty/news.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="<#$Theme['P']['js']#>/swiper/swiper.css">
+<script src="<#$Theme['P']['root']#>/wap/js/ty/iscroll.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var myScroll;
+  function loaded() {
+  myScroll = new iScroll('wrapper', {
+  snap: true,
+  momentum: false,
+  hScrollbar: false,
+  onScrollEnd: function () {
+  document.querySelector('#indicator > li.active').className = '';
+  document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
+  }
+   });
+  }
+  document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
+<style type="text/css">
+#scroller {width:0px;}
+</style>
+
+</head>
+<body id="cate1">
+<style>
+.device {width: 100%;min-height: 195px;position: relative;margin:auto;}
+.swiper-container {min-height: 195px;width: 100%;}
+.swiper-container img{min-height: 195px;max-height:460px;}
+.content-slide {padding: 20px;color: #fff;}
+.title {font-size: 25px;margin-bottom: 10px;}
+.pagination {position:absolute;left:0;text-align:center;margin-top:-25px;width: 100%;z-index:8000;}
+.swiper-pagination-switch {display: inline-block;width:10px;height:10px;border-radius:10px;background: #999;box-shadow: 0px 1px 2px #555 inset;margin: 0 3px;cursor:pointer;}
+.swiper-active-switch {background: #fff;}
+</style>
+  <div class="device" id="swipe-wrap">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+       	<volist name="flash" id="so">
+		 		<div  class="swiper-slide">
+          <a href="<#$so['url']|htmlspecialchars_decode#>">
+            <img src="<#$so['ad_thumb']#>" height="195px;" width="100%">
+          </a>
+        </div> 
+			  </volist>
+      </div>
+    </div>
+    <div class="pagination"></div>
+  </div>
+
+  <script src="<#$Theme['P']['js']#>/swiper/swiper.js"></script>
+  <script>
+  var mySwiper = new Swiper('.swiper-container',{
+    pagination: '.pagination',
+    loop:true,
+    grabCursor: true,
+    paginationClickable: true,autoplay:3000,
+  });
+
+	
+
+/*
+	var count = document.getElementById("swipe-wrap").getElementsByTagName("img").length;	
+	for(i=0;i<count;i++){
+		document.getElementById("swipe-wrap").getElementsByTagName("img").item(i).style.cssText = " width:"+$(document).width()+"px";
+	}
+
+
+
+	window.onresize = function(){ 
+		for(i=0;i<count;i++){
+			document.getElementById("swipe-wrap").getElementsByTagName("img").item(i).style.cssText = " width:"+$(document).width()+"px";
+		}		
+	} 
+*/
+</script>
+<ul class="mainmenu">
+  <volist name="classinfo" id="vo">  
+  <li>
+    <div class="menubtn">
+      <a href="<#:showclass_common($vo,$wechaid)#>">
+        <div class="menumesg">
+          <div class="menuimg">
+            <img src="<#$vo['titlepic']#>" />
+          </div>
+          <div class="menutitle"><#$vo['title']#></div>
+        </div>
+      </a>
+    </div>
+  </li>
+  </volist>	
+  <div class="clr"></div>
+</ul>
+<eq name="copyright" value="0">
+  <div class="copyright"  >
+    <#$siteinfo.shopname#>
+  </div>
+</eq>
+</body>
+</html>
+

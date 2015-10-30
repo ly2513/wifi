@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#></title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<div id="content">
+  	<div id="content-header">
+	    <div id="breadcrumb"> 
+	    	<a href="<#:U('User/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a>
+	    	<a href="#" class="current">模板管理</a>
+	    </div>
+	    <h1>认证模板设置</h1>
+  	</div>
+ 	<div  class="container-fluid">
+	  	<div class="span12">
+	        <div class="">
+	        	<a href="<#:U('Authset/adshowtimeset')#>" class="btn btn-success">设置认证时间</a>
+	        </div>
+	        <div class="widget-box">
+	    	<div class="widget-title">
+	            <ul class="nav nav-tabs">
+	              <li class="active"><a data-toggle="tab" href="#tab1">认证模板</a></li>
+	            </ul>
+	       </div>
+	        <div class="widget-content tab-content">
+	            <div id="tab1" class="tab-pane active">
+	            	<div class="widget-content">
+		            	<ul class="cateradio-t">
+			            	<volist name="tpl" id="list">
+							<if condition="$list['group'] eq 1">
+							<li <eq name="info['tpl_id']" value="$list['id']">  class="active" </eq>>
+								<label>
+									<img src="<#$Theme['P']['root']#>/images/webtpl/<#$list['pic']#>">
+									<input class="radio" type="radio" name="optype" value="<#$list['id']#>"
+									<eq name="info['tpl_id']" value="$list['id']">checked</eq> /> <#$list['tpname']#>
+								</label>
+							</li>
+							</if>
+							</volist>	
+		            	</ul>
+	            		<div style="clear:both;"></div>
+	            	</div>
+	            </div>
+	        </div> 
+	  	</div>
+	</div>
+</div>
+<include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+<script>
+	$(".radio").click(function() {
+		$(".cateradio li").each(function() {
+			$(this).removeClass("active");
+		});
+		var tplid=$(this).val();
+		$(this).parents("li").addClass("active");
+		var myurl = '<#:U('doadv')#>?g=index&m=authset&a=dotplset&tpl='+tplid+ '&r='+ Math.random();
+		$.ajax({
+			url : myurl,
+			async : false,
+			dataType:'json',
+			success:function(json){
+				if(json.status==1){
+					alert(json.message);
+				}else {
+					alert(json.message);
+				}
+			}
+		});
+	});
+</script>
+</body>
+</html>

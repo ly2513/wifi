@@ -1,0 +1,25 @@
+[ 2015-03-12T06:48:20+08:00 ] 140.207.54.76 /index.php/weichat/command/gh_0838150e850f?signature=58ad86377f2d76eee7aba6a98c536502acecd00e&timestamp=1426114100&nonce=273334579
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_authlist WHERE uid =
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_member WHERE id =
+
+[ 2015-03-12T12:28:18+08:00 ] 140.207.54.80 /index.php/weichat/command/gh_0838150e850f?signature=28df36e821446e833870a2c625ddc350b4ccb250&timestamp=1426134498&nonce=896653933
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+
+[ 2015-03-12T15:26:49+08:00 ] 140.207.54.80 /index.php/weichat/command/gh_0838150e850f?signature=8efc796ed81f5f7657140b91119359585e3ee3ab&timestamp=1426145208&nonce=1979077507
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+
+[ 2015-03-12T16:12:33+08:00 ] 113.108.21.69 /index.php/wifiadmin/pub/getuserchart.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-12T16:12:33+08:00 ] 119.147.207.158 /index.php/wifiadmin/pub/getadrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-12T16:56:48+08:00 ] 211.103.232.43 /index.php/api/login/?gw_address=192.168.10.1&gw_port=3000&gw_id=ACA213ACEO3C&mac=10:08:b1:13:1c:37&url=http%3A//www.baidu.com/
+ERR: 无法加载模块:Login
+

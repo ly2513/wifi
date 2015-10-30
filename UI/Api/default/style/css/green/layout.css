@@ -1,0 +1,320 @@
+@CHARSET "UTF-8";
+/************************************************************************************
+smaller than 960
+*************************************************************************************/
+@media screen and (max-width: 960px) {	
+	.AD_ontent .focusPic_PC{ display:none}
+	.AD_ontent .focusPic_Phone{ display:block}
+	/*.AD_ontent .focusPic_Phone,.iphonebox,.iphonebox .webbox,.iphonebox .webbox #wrapper,.iphonebox .webbox #wrapper .swipe,.iphonebox .webbox #wrapper .swipe .imgPhone{ min-height:480px;}*/
+	.AD_ontent .focusPic_Phone,.swiper-container,.swiper-container .swiper-wrapper,.swiper-container .swiper-wrapper .swiper-slide{height:480px; min-height:440px;}
+}
+/************************************************************************************
+smaller than 910
+*************************************************************************************/
+@media screen and (max-width: 910px) {	
+	.login_content .right .phoneBox a{ font-size:26px; line-height:110%}
+	/*.iphonebox{max-width:910px;}*/
+	.swiper-container{max-width:910px;}
+	.pass_content .textBox{ width:35%;}
+	/*.login_content .right1 .loginBtn3{margin-left:10%;}*/
+	.login_content .right1 #btn_onkey{ height:90px}/*20131023*/
+}
+/************************************************************************************
+smaller than 760
+*************************************************************************************/
+@media screen and (max-width: 760px) {	
+	.main_header .content .title{ font-size:30px; position:relative;z-index:13;text-align:center; margin:16px auto 0; width:45%; height:36px; overflow:hidden}
+
+	/**Focus picture**/
+	/*.iphonebox{max-width:760px;}*/
+	.swiper-container{max-width:760px;}
+	/**Focus picture over**/
+	.pass_content .textBox{ width:45%;}
+	.logoTabs li{width:49.6%;}
+	/*.login_content .right1 .loginBtn3{margin-left:5%;}*/
+	.login_content .right1 #btn_onkey{ height:80px}/*20131023*/
+}
+/************************************************************************************
+bigger than 720
+*************************************************************************************/
+@media screen and (min-width: 720px) {
+	.login_content .left2 .l2 .s_iconW1{ display:none}
+	
+}
+/************************************************************************************
+smaller than 720
+*************************************************************************************/
+@media screen and (max-width: 720px) {
+	.login_content .right .loginT_box{line-height:130%;}
+	.login_content .right1 .inputBox{ width:73%;}
+	.login_content .right1 .inputBox_wx{ width:70% !important;}
+	.login_content .left2 .l2 .s_iconW1{ display:none}
+	/*.iphonebox{max-width:720px;}*/
+	.swiper-container{max-width:720px;}
+	.login_content .right1 #btn_onkey{ height:73px}/*20131023*/
+}
+/************************************************************************************
+smaller than 650
+*************************************************************************************/
+@media screen and (max-width: 650px) {
+.font28{ font-size:20px;}
+body{font-size:18px}
+.main_header{height:68px;}
+	.main_header .content .title{ width:69%; }
+	.main_header .content .right2{ display:none}
+	.main_header .content .right3{ font-size:18px;}
+	/*****header****/
+/* 
++++++++++++++++++++++++++++++++   login    ++++++++++++++++++++++++++++++++++++
+*/
+	.login_content .left,.login_content .right,.login_content .right1 .phoneT{ width:100%; margin:0; padding:0;}
+	.login_content .right .loginT_box{width:69%; padding:12px 3%; line-height:180%; float:left;background:#fdfdfd; }
+	.login_content .right .loginT_box p{ margin-top:2px;}
+	.login_content .right .loginBox{ width:25%; float:left;}
+	.login_content .right .loginBox img{ width:100%;}
+	.login_content .right .loginBox .imgT{display:none}
+	.login_content .left1{ padding:2% 0;-moz-box-shadow:0px -1px 4px #d4d4d4; -webkit-box-shadow:0px -1px 4px #d4d4d4; box-shadow:0px -1px 4px #d4d4d4;}
+	.login_content .right1{width:100%;margin:0 0 10px 0;}
+	.login_content .right1 .phoneT,.login_content .right1 .loginT{ text-align:center; font-size:18px}
+	.logoTabs li .weixin_icon{ background-position:-230px 0px;}
+	.logoTabs li .phone_icon{background-position:-238px -63px;}
+	.logoTab_con {padding:20px 12px 5px;}
+	.login_content .right1 .phoneT1{width:65%; margin:4px auto 0px}
+	.login_content .right1 .inputBox{ width:50%; font-size:26px;margin-left:23%; }
+	.login_content .right1 .inputBox_wx{ width:40% !important;}
+	.login_content .right1 .inputIcon1,.login_content .right1 .inputIcon2{ margin-right:8%}
+	.login_content .right1 .inputIcon_wx{ margin-right:20% !important}
+	.login_content .right1 .loginBtn,.login_content .right1 .loginBtn1{ margin-left:23%; width:56%; min-width:56%;padding:3% 0;}
+	.login_content .right1 #btn_onkey{margin-left:23%; width:56%; height:135px}/*20131023*/
+	.login_content .right1 .ch_login{ margin-left:23%}/*20131023*/
+	.login_content .right1 .forgetPass{margin-left:23%}
+	.login_content .right1 .loginBtn_getPass{ width:25%; margin-left:23%}
+	.login_content .left2{ height:30px; margin-bottom:5px}
+	.login_content .left2 .l1{ width:100%; margin:5px 0; float:left}
+	.login_content .left2 .l1 .p_icon{ margin-left:20%}
+	.login_content .left2 .l1 .p_t{ width:55%; text-align:center}
+	.login_content .left2 .l2 .footerT,.login_content .left2 .l2 .s_icon,.login_content .left2 .l2 .s_iconW1{ display:none}
+	.login_content .left2 .l2 .footerT{ width:100%; text-align:center;}
+	/****content****/
+/* 
++++++++++++++++++++++++++++++++   /login  ++++++++++++++++++++++++++++++++++++
+*/
+/* 
++++++++++++++++++++++++++++++++   ad  ++++++++++++++++++++++++++++++++++++
+*/
+	.ad_contentTop{margin:0 auto; padding:85px 0 20px;*padding:20px 0 20px;width:415px;}
+	.ad_contentTop .faceT{ width:335px; margin-top:10px;}
+
+	/**Focus picture**/
+	.AD_ontent{width:100%;}
+	.AD_ontent .focusPic .slider .bd {margin-left:112%;}
+	/*.iphonebox{max-width:650px;}*/
+	.swiper-container{max-width:650px;}
+	/*.AD_ontent .focusPic_Phone,.iphonebox,.iphonebox .webbox,.iphonebox .webbox #wrapper,.iphonebox .webbox #wrapper .swipe,.iphonebox .webbox #wrapper .swipe .imgPhone{ min-height:460px;}*/
+	.AD_ontent .focusPic_Phone,.swiper-container,.swiper-container .swiper-wrapper,.swiper-container .swiper-wrapper .swiper-slide{height:460px; min-height:430px;}
+	/**Focus picture over**/
+/* 
++++++++++++++++++++++++++++++++   /ad  ++++++++++++++++++++++++++++++++++++
+*/
+/* 
++++++++++++++++++++++++++++++++   home  ++++++++++++++++++++++++++++++++++++
+*/
+	.main_header .content .right5{ display:none}
+	.login_content .topT{ display:block}
+	.login_content .left3{-moz-box-shadow:0px 1px 2px #d8d7d7; -webkit-box-shadow:0px 1px 2px #d8d7d7; box-shadow:0px 1px 3px #d8d7d7;border-bottom:1px #d8d7d7 solid;}
+	.login_content .left .info{ width:97%; margin:3% auto 0;}
+	.login_content .left .info .logoT_box .logoT{ height:112px}
+	.login_content .left .info .logoT_dBox{ display:block}
+	.login_content .left .info .logoT_dBox .logoT{ height:20px}
+	.login_content .right .phoneBox{ width:96%; margin:4% auto}
+	.login_content .right .phoneBox1{margin:6% auto 4%}
+	.login_content .right .phoneBox a{line-height:200%}
+	.login_content .right .mapBox{ height:400px;width:100%;border:0;border-bottom:1px #a1d674 solid; overflow:hidden}
+	.login_content .right .mapBox .mapT{ height:400px;width:600px;margin:0 auto;float:none}
+/* 
++++++++++++++++++++++++++++++++   /home  ++++++++++++++++++++++++++++++++++++
+*/
+	.pass_content .textBox{ width:55%;}
+.main_footer{font-size:15px}
+.main_footer .content .leftPhone{ margin:6px 5px 0 0;}
+.main_footer .content .leftT,.main_footer .content .rightT{ margin-top:15px;}
+.pass_contentTop{padding:80px 0 20px;}	
+#goTopBtn{background:url(img/toTop.gif) no-repeat 0 0; background-size:128px 52px; width:60px; height:50px;}
+#goTopBtn:hover{background:url(img/toTop.gif) no-repeat -70px 0;background-size:128px 52px; width:60px; height:50px;}
+/***footer***/
+}
+/************************************************************************************
+smaller than 550;
+*************************************************************************************/
+@media screen and (max-width: 550px) {
+	.login_content .right1 .inputBox{ width:60%;margin-left:20%;}
+	.login_content .right1 .phoneT1{width:70%;}
+	.login_content .right1 .inputIcon1,.login_content .right1 .inputIcon2{ margin-right:2%}
+	.login_content .right1 .loginBtn,.login_content .right1 .loginBtn1{ margin-left:20%; width:66%; min-width:66%;padding:2% 0; font-size:24px}
+	.login_content .right1 #btn_onkey{margin-left:22%; width:300px; height:117px;}/*20131023*/
+	.login_content .right1 .ch_login{ margin-left:21%}/*20131023*/
+	/*.login_content .right1 .loginBtn3{ margin-left:17%;}*/
+	.login_content .right1 .forgetPass{margin-left:19%; font-size:18px}
+	.login_content .right1 .loginBtn_getPass{ width:25%;margin-left:20%}
+	.login_content .left2 .l1 .p_icon{ margin-left:8%}
+	.login_content .left2 .l1 .p_t{ width:72%}
+	.login_content .left2 .l2 .s_iconW1{ width:22%;}
+	/****content****/
+/* 
++++++++++++++++++++++++++++++++   /login  ++++++++++++++++++++++++++++++++++++
+*/
+/* 
++++++++++++++++++++++++++++++++   ad  ++++++++++++++++++++++++++++++++++++
+*/
+	.main_header .content .right4{ margin-top:23px; padding:5px 6px; font-size:16px}
+	/*.iphonebox{max-width:550px;}*/
+	.swiper-container{max-width:550px;}
+	/*.AD_ontent .focusPic_Phone,.iphonebox,.iphonebox .webbox,.iphonebox .webbox #wrapper,.iphonebox .webbox #wrapper .swipe,.iphonebox .webbox #wrapper .swipe .imgPhone{ min-height:410px;}*/
+	.AD_ontent .focusPic_Phone,.swiper-container,.swiper-container .swiper-wrapper,.swiper-container .swiper-wrapper .swiper-slide{height:410px; min-height:390px;}
+/* 
++++++++++++++++++++++++++++++++   /ad  ++++++++++++++++++++++++++++++++++++
+*/
+	.login_content .right .mapBox .mapT{width:500px;}
+.main_footer{ height:130px;margin-top: -190px; }
+	.main_footer .footerBar{width:100%; height:70px; font-size:14px}
+/***footer***/
+}
+/************************************************************************************
+smaller than 500
+*************************************************************************************/
+@media screen and (max-width: 500px) {
+	.main_header .content .title{ font-size:26px;margin-top:20px;width:63%;}
+	.main_header .content .right3{ font-size:20px; margin-top:24px;}
+	.login_content .left1{ padding:3% 0;}
+	.logoTabs li .weixin_icon{ background-position:-230px -2px;}
+	.logoTabs li .phone_icon{background-position:-238px -65px;}
+	.login_content .right1 .inputBox{ width:65%; margin-left:16.5%;}
+	.login_content .right1 .inputBox_wx{ width:53% !important;}
+	.login_content .right1 .phoneT1{width:85%;}
+	.login_content .right1 .inputIcon1,.login_content .right1 .inputIcon2{ margin-right:2%}
+	.login_content .right1 .loginBtn,.login_content .right1 .loginBtn1{ margin-left:16.5%; width:71%; min-width:71%;padding:4% 0;}
+	.login_content .right1 #btn_onkey{margin-left:20%; width:280px; height:112px}/*20131023*/
+	.login_content .right1 .ch_login{ margin-left:18%}/*20131023*/
+	.login_content .right1 .inputIcon_wx{ margin-right:12% !important}
+	/*.login_content .right1 .loginBtn3{ margin-left:15%;}*/
+	.login_content .right1 .forgetPass{margin-left:16.5%}
+	.login_content .right1 .loginBtn_getPass{ width:32%; margin-left:17%}
+	.login_content .left2{ height:25px; margin-bottom:5px}
+	.login_content .left2 .l1 .p_icon{ margin-left:5%}
+	.login_content .left2 .l1 .p_t{ width:78%;}
+	/**Focus picture**/
+	.AD_ontent .focusPic .slider .bd {margin-left:112%;}
+	/*.iphonebox{max-width:500px;}*/
+	.swiper-container{max-width:500px;}
+	/*.AD_ontent .focusPic_Phone,.iphonebox,.iphonebox .webbox,.iphonebox .webbox #wrapper,.iphonebox .webbox #wrapper .swipe,.iphonebox .webbox #wrapper .swipe .imgPhone{ min-height:380px;}*/
+	.AD_ontent .focusPic_Phone,.swiper-container,.swiper-container .swiper-wrapper,.swiper-container .swiper-wrapper .swiper-slide{height:380px; min-height:350px;}
+	/**Focus picture over**/
+	.login_content .right .loginT_box{width:65%;}
+	.login_content .right .loginBox{ width:28%;}
+	.pass_content .textBox{ width:65%;}
+	.login_content .right .mapBox .mapT{width:480px;}
+	.ad_contentTop{width:410px;}
+	.ad_contentTop .faceT{ width:330px; margin-top:9px;}
+}
+/************************************************************************************
+smaller than 420
+*************************************************************************************/
+@media screen and (max-width: 420px) {
+	.main_header .content .title{ font-size:22px; margin-top:24px;width:58%;}
+	.main_header .content .right4{ margin-top:21px; }
+	.login_content .right .loginT_box{width:60%;padding:8px 2%; line-height:140%; }
+	.login_content .right .loginBox{ width:32%;}
+	.login_content .right1 .inputBox{ width:63%;margin-left:14%;}
+	.login_content .right1 .inputBox_wx{ width:50% !important;}
+	.login_content .right1 .inputIcon1,.login_content .right1 .inputIcon2{ margin-right:0}
+	.login_content .right1 .inputIcon_wx{ margin-right:12% !important}
+	.login_content .right1 .loginBtn,.login_content .right1 .loginBtn1{ margin-left:14%; width:70%; min-width:70%}
+	.login_content .right1 #btn_onkey{margin-left:16%; width:250px; height:97px}/*20131023*/
+	.login_content .right1 .ch_login{ margin-left:16%}/*20131023*/
+	.login_content .right1 .forgetPass{margin-left:14%}
+	.login_content .left2 .l1 .p_icon{ margin-left:2%}
+	.login_content .right1 .loginBtn_getPass{ width:45%; margin-left:15%}
+	.login_content .left2 .l1 .p_t{ width:85%;}
+	.login_content .left2 .l2 .s_iconW1{ width:16%;}
+	/*.iphonebox{max-width:420px;}*/
+	.swiper-container{max-width:420px;}
+	.pass_content .textBox{ width:70%;}
+	.login_content .right .mapBox .mapT{width:420px;}
+	/*.AD_ontent .focusPic_Phone,.iphonebox,.iphonebox .webbox,.iphonebox .webbox #wrapper,.iphonebox .webbox #wrapper .swipe,.iphonebox .webbox #wrapper .swipe .imgPhone{ min-height:350px;}*/
+	.AD_ontent .focusPic_Phone,.swiper-container,.swiper-container .swiper-wrapper,.swiper-container .swiper-wrapper .swiper-slide{height:350px; min-height:300px;}
+	.ad_contentTop{width:336px;}
+	.ad_contentTop .faceT{ width:255px; margin-top:6px;}
+
+}
+/************************************************************************************
+smaller than 370
+*************************************************************************************/
+@media screen and (max-width: 370px) {
+.main_header{height:68px;}
+	.main_header .content .title{width:54%;}
+	.main_footer .tBox .fl .p_t{ width:97%; margin-left:2%; font-size:14px;}
+	.main_footer .footerImg{ height:40px;}
+	.main_footer .footerImg .content img{ width:80%}
+
+.main_footer{ height:100px;margin-top: -150px; }
+	.main_footer .footerBar{width:100%; height:70px; font-size:14px}
+	.main_footer .content .leftPhone{ display:none}
+	.login_content .right .mapBox .mapT{width:370px;}
+	.login_content .right1 .phoneT1{width:100%;}
+	.login_content .right1 #btn_onkey{margin-left:20%; width:220px; height:92px;}/*20131023*/
+	.login_content .right1 .ch_login{ margin-left:18%}/*20131023*/
+	/*.AD_ontent .focusPic_Phone,.iphonebox,.iphonebox .webbox,.iphonebox .webbox #wrapper,.iphonebox .webbox #wrapper .swipe,.iphonebox .webbox #wrapper .swipe .imgPhone{ min-height:320px;}*/
+	.AD_ontent .focusPic_Phone,.swiper-container,.swiper-container .swiper-wrapper,.swiper-container .swiper-wrapper .swiper-slide{height:320px; min-height:300px;}
+	.ad_contentTop{width:305px;}
+	.ad_contentTop .faceT{ width:220px; margin-top:5px;}
+}
+
+/************************************************************************************
+smaller than 321
+*************************************************************************************/
+@media screen and (max-width: 321px) {
+body{font-size:14px}
+.font28{ font-size:16px;}
+.main_header{height:45px;}
+ 	.main_header .content .left_1{ width:38px; height:40px; margin-top:5px;}
+	.main_header .content .left_2{ display:none}
+	.main_header .content .left_1 .sIcon{margin:8px 0 0 5px;}
+	.main_header .content .title{ font-size:18px;margin:12px auto 0;text-align:center !important;width:73%}
+	.main_header .content .right3{ font-size:14px; margin-top:20px;}
+	.main_header .content .right1{margin:9px 0px 0 0;}
+	/****header****/
+	.login_contentP{padding-top:46px;*padding-top:0;}
+	.login_content .right .loginT_box{ }
+	.login_content .right1 .inputBox{width:58%;margin-left:18%;}
+	.login_content .right1 .inputBox_wx{ width:43% !important;}
+	.login_content .right1 .loginBtn,.login_content .right1 .loginBtn1{ margin-left:18%; width:66%; min-width:66%}
+	.login_content .right1 #btn_onkey{margin-left:18%; width:66%; height:77px}/*20131023*/
+	.login_content .right1 .forgetPass{margin-left:18%}
+	.login_content .left2{ height:40px; margin-bottom:5px}
+	.login_content .left2 .l1 .p_icon{ margin-left:2%}
+	.login_content .left2 .l1 .p_t{ width:85%; text-align:center}
+	.login_content .left2 .l2 .s_iconW1{ width:7%;}
+	.login_content .right1 .inputIcon_wx{ margin-right:13% !important}
+.main_footer .footerBar{width:100%; height:60px; font-size:12px}
+	.main_footer .tBox .fr .loginBox{font-size:14px; margin-right:2%}
+	.login_content .right1 .loginBtn_getPass{ width:50%; margin-left:18%}
+	.main_header .content .right4{ margin-top:15px;font-size:12px}
+.ad_contentTop{width:290px;}
+	.ad_contentTop .faceT{ width:200px; margin-top:3px;}
+	/**Focus picture**/
+	.AD_ontent .focusPic .slider .bd {margin-left:150%;}
+	.iphonebox{max-width:321px;}
+	/*.AD_ontent .focusPic_Phone,.iphonebox,.iphonebox .webbox,.iphonebox .webbox #wrapper,.iphonebox .webbox #wrapper .swipe,.iphonebox .webbox #wrapper .swipe .imgPhone{ min-height:280px;}*/
+	.AD_ontent .focusPic_Phone,.swiper-container,.swiper-container .swiper-wrapper,.swiper-container .swiper-wrapper .swiper-slide{height:270px; min-height:250px;}
+
+	/**Focus picture over**/
+	.pass_content .textBox{ width:80%; margin-left:5%;}
+	.login_content .right .mapBox .mapT{width:321px;}
+	.pass_contentTop{padding:70px 0 20px;}
+	.logoTabs{height: 50px; font-size:17px; font-weight:bold}
+	.logoTabs li{height:50px;line-height:50px;}
+	.logoTabs li .tab1{ width:75px; margin:0 auto}
+	.logoTabs li .tab2{ width:85px; margin:0 auto}
+	.logoTabs li .weixin_icon{ background-position:-168px -3px; background-size:200px 95px; width:36px; height:42px}
+	.logoTabs li .phone_icon{background-position:-172px -54px;background-size:200px 95px; width:30px; height:50px}
+}

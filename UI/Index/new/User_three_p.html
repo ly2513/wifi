@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/uniform.css" />
+<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/select2.css" />
+
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+
+<div id="content">
+<div id="content-header">
+  <div id="breadcrumb"> <a href="<#:U('user/three_p')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a>  <a href="#" class="current">微信动态认证</a> </div>
+  <h1>微信动态认证</h1>
+</div>
+<div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span8">
+    
+    <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>微信接入参数</h5>
+        </div>
+        <div class="widget-content nopadding">
+			<if condition="$info['weixin_url'] eq null" >
+             请先填写微信原始ID并保存
+            <else/>
+           
+            <div class="control-group">
+              <label class="control-label">URL:</label>
+              <div class="controls">
+                	<#$info.weixin_url#>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Token:</label>
+              <div class="controls">
+                	<#$info.weixin_token#>
+              </div>
+            </div>
+          	</if>
+          	 <div class="form-actions">
+              <a target="_blank" href="https://mp.weixin.qq.com/">进入微信公众平台</a>
+            </div>
+        </div>
+      </div>
+    
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>微信关注认证</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <form action="<#:U('wx_api')#>" method="post" class="form-horizontal">
+
+            <div class="control-group">
+              <label class="control-label">微信原始ID:</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="URL"  name="weixin_id" id="weixin_id" value="<#$info.weixin_id#>" />
+                <span class="help-block">请将微信公众号的原始ID写在此处（开启微信关注认证和设置微信名请在应用设置模块操作）</span> 
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success">保存</button>
+            </div>
+          </form>
+          	
+        </div>
+      </div>
+      
+       <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>第三方微信平台接入<if condition="$info['t_wx_url'] neq null" >（已接入）</if></h5>
+        </div>
+        <div class="widget-content nopadding">
+        <form action="<#:U('three_p')#>" method="post" class="form-horizontal">
+			
+            <div class="control-group">
+              <label class="control-label">URL:</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="URL"  name="t_wx_url" id="t_wx_url" value="<#$info.t_wx_url#>" />
+                <span class="help-block">请将第三方平台接入微信的URL写在此处</span> 
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Token :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="Token" name="t_wx_token" id="t_wx_token" value="<#$info.t_wx_token#>"/>
+             	<span class="help-block">请将第三方平台接入微信的Token写在此处</span> 
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-success">提交</button>
+            </div>
+			 <div class="form-actions">
+              <a target="_blank" href="http://weixin.mbmkt.com.cn">进入起讯科技微信营销平台</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div></div>
+   <include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.uniform.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/select2.min.js"></script> 
+</body>
+</html>

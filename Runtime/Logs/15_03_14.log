@@ -1,0 +1,33 @@
+[ 2015-03-14T00:35:56+08:00 ] 140.207.54.76 /index.php/weichat/command/gh_dd8c103f67bd?signature=f83fb62d5ee2f8136e7805dbbbba29759ddd4335&timestamp=1426264555&nonce=677769099
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_authlist WHERE uid =
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_member WHERE id =
+
+[ 2015-03-14T13:38:39+08:00 ] 14.131.187.74 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-03-14T14:08:03+08:00 ] ERR: 0
+[ 2015-03-14T16:42:13+08:00 ] 14.131.187.74 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-03-14T16:42:13+08:00 ] 14.131.187.74 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-03-14T16:42:34+08:00 ] 14.131.187.74 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+

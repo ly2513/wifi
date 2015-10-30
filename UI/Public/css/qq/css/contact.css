@@ -1,0 +1,45 @@
+#con {
+	WIDTH: 128px; BACKGROUND: url(con_top.png) no-repeat; OVERFLOW: hidden; PADDING-TOP: 31px
+}
+#con .list {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND: url(con_bg.gif) repeat-y; FONT-SIZE: 12px; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+#con .list .contact {
+	PADDING-BOTTOM: 5px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BACKGROUND: url(title_bg.gif) repeat-x; PADDING-TOP: 5px
+}
+#con .list .contact H3 {
+	BORDER-BOTTOM: #efefef 1px solid; TEXT-ALIGN: left; PADDING-BOTTOM: 5px; MARGIN: 0px 0px 3px; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; FONT-FAMILY: "Microsoft Yahei"; COLOR: #2460a3; FONT-SIZE: 11px; FONT-WEIGHT: normal; PADDING-TOP: 1px
+}
+#con .list .contact H3 SPAN {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10px
+}
+#con .list .contact .qq {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; PADDING-LEFT: 7px; WIDTH: 107px; PADDING-RIGHT: 0px; DISPLAY: block; HEIGHT: 24px; COLOR: #666; TEXT-DECORATION: none; PADDING-TOP: 5px
+}
+#con .list .contact .msn {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; PADDING-LEFT: 7px; WIDTH: 107px; PADDING-RIGHT: 0px; DISPLAY: block; HEIGHT: 24px; COLOR: #666; TEXT-DECORATION: none; PADDING-TOP: 5px
+}
+
+#con .list .contact a
+{
+    margin:3px 0px;
+    padding:5px 0px;
+}
+#con .list .contact .qq:hover {
+	BACKGROUND: url(qqhover.gif) no-repeat
+}
+#con .list .contact .msn:hover {
+	BACKGROUND: url(qqhover.gif) no-repeat
+}
+#con .list .contact .qq IMG {
+	MARGIN-RIGHT: 5px
+}
+#con .list .contact .msn IMG {
+	MARGIN-RIGHT: 5px
+}
+#con .list .contact .msn {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 17px; PADDING-RIGHT: 0px; PADDING-TOP: 5px
+}
+#con .list .contact P {
+	PADDING-BOTTOM: 1px; MARGIN: 7px 0px; PADDING-LEFT: 15px; PADDING-RIGHT: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND: url(tabicons_098.gif) no-repeat; COLOR: #666; FONT-SIZE: 11px; PADDING-TOP: 1px
+}

@@ -1,0 +1,67 @@
+<div id="navigation">
+        <div class="container-fluid">
+            <div>
+                <a href="javascript:void(0);" target="_self" id="brand"></a>
+                <a href="javascript:void(0);" target="_self" class="toggle-nav" rel="tooltip" data-placement="bottom" title="Toggle navigation"><i class="icon-reorder"></i></a>
+            </div> 
+            <ul class='main-nav'>
+                <li class='active'>
+                
+                	<if condition="$Think.session.uc_type eq 'agent'">
+                	 <a href="<#:U('Ucenter/Agent/home')#>" target="_self">
+                	<else/>
+                	 <a href="<#:U('Ucenter/User/index')#>" target="_self">
+                	</if>
+                   
+                        <span>管理平台</span>
+                    </a>
+                </li>
+
+                  <li><a href="<#:U('ucenter/open/userguide')#>">使用指南</a></li>
+
+
+               
+
+                
+            </ul>
+
+            <div class="user">
+                <ul class="icon-nav">
+                    <li class='dropdown'>
+                        <a href="#" class='dropdown-toggle' data-toggle="dropdown" title="消息" style="display:none;"><i class="icon-envelope"></i><span class="label label-lightred">4</span></a>
+                    </li>
+                    <li class="dropdown sett" style="display:none;">
+                        <a href="#" class='dropdown-toggle' data-toggle="dropdown" title="系统设置"><i class="icon-cog"></i></a>
+                    </li>
+                    <li class='dropdown colo'>
+                        <a href="#" class='dropdown-toggle' data-toggle="dropdown" title="选择颜色"><i class="icon-tint"></i></a>
+                        <ul class="dropdown-menu pull-right theme-colors">
+                            <li class="subtitle">选择颜色
+                            </li>
+                            <li>
+                                <span class='red'></span>
+                                <span class='orange'></span>
+                                <span class='green'></span>
+                                <span class="brown"></span>
+                                <span class="blue"></span>
+                                <span class='lime'></span>
+                                <span class="teal"></span>
+                                <span class="purple"></span>
+                                <span class="pink"></span>
+                                <span class="magenta"></span>
+                                <span class="grey"></span>
+                                <span class="darkblue"></span>
+                                <span class="lightred"></span>
+                                <span class="lightgrey"></span>
+                                <span class="satblue"></span>
+                                <span class="satgreen"></span>
+                            </li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="<#:U('Home/Index/loginout')#>"  target="_self"  title="退出系统"><i class="icon-signout"></i> 退出</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

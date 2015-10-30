@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a> <a href="#" class="current">模板管理</a> </div>
+    <h1>模板列表</h1>
+ 
+  </div>
+  <div  class="container-fluid">
+        <div class="widget-box">
+    
+    <div class="widget-title">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#tab1">首页模板</a></li>
+              <li><a data-toggle="tab" href="#tab2">列表模板</a></li>
+              <li><a data-toggle="tab" href="#tab3">文章模板</a></li>
+            </ul>
+       </div>
+        <div class="widget-content tab-content">
+            <div id="tab1" class="tab-pane active">
+            	<div class="widget-content">
+            	<ul class="cateradio">
+            	<volist name="tpl" id="list">
+									<if condition="$list['group'] eq 0">
+									<li <eq name="info['home_tpl']" value="$list['id']">  class="active" </eq>><label><img
+											src="<#$Theme['P']['root']#>/images/webtpl/<#$list['pic']#>"><input class="radio" type="radio" name="optype" value="<#$list['id']#>"
+										<eq name="info['home_tpl']" value="$list['id']">checked</eq> /> <#$list['title']#></label></li>
+									</if>
+									</volist>
+            		
+            	</ul>
+            	<div style="clear:both;"></div>
+            	</div>
+            
+            </div>
+            <div id="tab2" class="tab-pane">
+             
+             <div class="widget-content">
+            	<ul class="cateradio">
+            	<volist name="tpl" id="list">
+									<if condition="$list['group'] eq 1">
+									<li <eq name="info['list_tpl']" value="$list['id']"> class="active"</eq>><label><img
+											src="<#$Theme['P']['root']#>/images/webtpl/<#$list['pic']#>"><input class="radio2" type="radio" name="optype2" value="<#$list['id']#>"
+										<eq name="info['list_tpl']" value="$list['id']">checked</eq> /> <#$list['title']#></label></li>
+									</if>
+									</volist>
+            		
+            	</ul>
+            	<div style="clear:both;"></div>
+            	</div>
+             
+            </div>
+            <div id="tab3" class="tab-pane">
+            <div class="widget-content">
+            	<ul class="cateradio">
+            	<volist name="tpl" id="list">
+									<if condition="$list['group'] eq 2">
+									<li <eq name="info['info_tpl']" value="$list['id']"> class="active"</eq>><label><img
+											src="<#$Theme['P']['root']#>/images/webtpl/<#$list['pic']#>"><input class="radio3" type="radio" name="optype3" value="<#$list['id']#>"
+										<eq name="info['info_tpl']" value="$list['id']">checked</eq> /> <#$list['title']#></label></li>
+									</if>
+									</volist>
+            		
+            	</ul>
+            	<div style="clear:both;"></div>
+            	</div>
+            </div>
+          </div>
+        
+  </div>
+</div>
+</div>
+
+   <include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+<script>
+						$(".radio")
+								.click(
+										function() {
+
+											$(".cateradio li").each(function() {
+
+												$(this).removeClass("active");
+
+											});
+
+											$(this).parents("li").addClass(
+													"active");
+
+											var myurl = '/index.php?g=index&m=web&a=home&tpl='
+													+ $(this).val()
+													+ '&r='
+													+ Math.random();
+
+											$.ajax({
+												url : myurl,
+												async : false
+											});
+
+											
+
+											
+
+										});
+
+						$(".radio2")
+								.click(
+										function() {
+
+											$(".cateradio2 li").each(
+													function() {
+
+														$(this).removeClass(
+																"active");
+
+													});
+
+											$(this).parents("li").addClass(
+													"active");
+
+											var myurl = '/index.php?g=index&m=web&a=lists&tpl='
+													+ $(this).val()
+													+ '&r='
+													+ Math.random();
+
+											$.ajax({
+												url : myurl,
+												async : false
+											});
+
+										});
+
+						$(".radio3")
+								.click(
+										function() {
+
+											$(".cateradio3 li").each(
+													function() {
+
+														$(this).removeClass(
+																"active");
+
+													});
+
+											$(this).parents("li").addClass(
+													"active");
+
+											var myurl = '/index.php?g=index&m=web&a=info&tpl='
+													+ $(this).val()
+													+ '&r='
+													+ Math.random();
+
+											$.ajax({
+												url : myurl,
+												async : false
+											});
+
+										});
+
+
+
+						
+
+						$(document).ready(function(){
+							
+							$('#web3g').trigger('click');
+						});
+						</script>
+</body>
+</html>

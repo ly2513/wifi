@@ -1,0 +1,14 @@
+[ 2015-03-15T14:24:44+08:00 ] 140.207.54.73 /index.php/weichat/command/gh_0838150e850f?signature=a95b0893b0b8067205472c4bd314e84d1849ab44&timestamp=1426400684&nonce=1342375330
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+
+[ 2015-03-15T14:26:46+08:00 ] 140.207.54.74 /index.php/weichat/command/gh_0838150e850f?signature=1b76edc5e25d50a974fef5786eca07b2295e0bfe&timestamp=1426400806&nonce=211874301
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+
+[ 2015-03-15T14:56:42+08:00 ] 211.103.232.43 /index.php/api/userauth/noAuth.html
+ERR: 无法加载模块:Userauth
+
+[ 2015-03-15T17:44:11+08:00 ] 211.103.232.43 /index.php/api/login/?gw_address=192.168.10.1&gw_port=3000&gw_id=ACA213ABEFB2&mac=10:08:b1:13:1c:37&url=http%3A//hb.crm2.qq.com/%3FnameAccount%3D800070321%26uid%3D5500041216%26cb%3DJSONP_CALLBACK_513_51
+ERR: 无法加载模块:Login
+

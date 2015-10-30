@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/uniform.css" />
+
+<link  href="<#$Theme['P']['root']#>/kindeditor/themes/default/default.css" type="text/css" rel="stylesheet">
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+
+<div id="content">
+<div id="content-header">
+  <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a>  <a href="#" class="current">广告编辑</a> </div>
+  <h1>广告编辑</h1>
+</div>
+<div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>编辑</h5>
+        </div>
+        <div class="widget-content nopadding">
+
+ 		<form class="form-horizontal" name='form' action="<#:U('doadv')#>" method="post" enctype="multipart/form-data">
+        	 
+       		<div class="control-group">
+       		<div class="span1"></div>
+       			<div class="alert alert-block span10 hide" id="msgbox"> 
+              <h4 class="alert-heading">提示信息</h4>
+             <div id="alertmsg"></div>
+              </div>
+       		</div>
+			<div class="control-group">
+              <label class="control-label">广告位置:</label>
+              <div class="controls">
+               
+              
+                <label>
+                  <input type="radio" name="ad_pos" value="0" checked>首页
+                 </label>
+                            <label>
+                  <input type="radio" name="ad_pos" value="1" checked>验证页面
+                 </label>          
+               
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label"> 广告类别：</label>
+              <div class="controls">
+               
+              
+                <label>
+                 <input type="radio" name="mode" value="0" checked>图片广告
+                 </label>
+                            <label>
+                   <input type="radio" name="mode" value="1">图文广告
+                 </label>          
+               
+              </div>
+            </div>
+            <div class="control-group"  id="wxacc">
+              <label class="control-label">图文标题 :</label>
+              <div class="controls">
+                <input type="text" class="span5" placeholder="图文标题 "  name="title" id="title"  />
+              </div>
+            </div>
+             
+            <div class="control-group"  id="wxacc">
+              <label class="control-label">图文内容 :</label>
+              <div class="controls">
+                <textarea class="textarea_editor span11" rows="20" placeholder="输入内容 ..." name="info"></textarea>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">广告图片:</label>
+              <div class="controls">
+               <input type="file"  name="img">
+                
+              </div>
+              <div class="controls">
+              <span class="help-block blue span8">建议上传图片规格:720*480</span>
+                
+              </div>
+              
+            </div>
+            <div class="control-group" id="wxauth" >
+              <label class="control-label">排序 :</label>
+              <div class="controls">
+                <input type="text" class="span2" placeholder="数值越小越靠前 " name="adsort" id="adsort" value="0"/>
+              </div>
+            </div>
+            
+       
+            <div class="form-actions">
+              <input type="submit" class="btn btn-success" name="sub" value="保存"/>&nbsp;&nbsp;
+              <a href="<#:U('User/adv')#>" class="btn" id="btn-back">返回</a>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</div></div>
+   <include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.uniform.js"></script> 
+<script src="<#$Theme['P']['root']#>/kindeditor/kindeditor-min.js" type="text/javascript"></script>
+	<script src="<#$Theme['P']['root']#>/kindeditor/lang/zh_CN.js" type="text/javascript"></script>
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+<script>
+KindEditor.ready(function(K) {
+	K.create('textarea[name="info"]', {
+		autoHeightMode : true,
+		items:['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template',  'cut', 'copy', 'paste',
+		        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+		        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+		        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+		        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+		        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 
+		        'flash', 'media', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+		        'anchor', 'link', 'unlink', '|', 'about'],
+		        afterUpload:false,
+		        allowFlashUpload:false,
+		        allowFileUpload:false,
+		        allowImageUpload:false,
+		        allowMediaUpload:false,
+	});
+});
+
+$(document).ready(function(){
+	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
+	$('#web3g').trigger('click');
+});
+</script>
+</body>
+</html>

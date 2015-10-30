@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	  <link rel="stylesheet" href="<#$Theme['P']['root']#>/bootadmin/css/compiled/index.css" type="text/css" media="screen" />    
+	
+<body>
+<!-- 引用顶部页面 -->
+    <include file="Pub:Nav"/>
+<!-- 引用左侧页面 -->
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+	    <div class="container-fluid">
+	 <!-- upper main stats -->
+            <div id="main-stats">
+                <div class="row-fluid stats-row">
+                    <div class="span3 stat">
+                        <div class="data">
+                        		认证流量
+                            <span class="number" id="sumauth">0</span>
+                            		次
+                        </div>
+                        <span class="date"><#$Think.now#>
+                        </span>
+                    </div>
+                    <div class="span3 stat">
+                        <div class="data">
+                       	 新增用户
+                            <span class="number" id="sumuser">0</span>
+                           	 人
+                        </div>
+                        <span class="date"><#$Think.now#></span>
+                    </div>
+                    <div class="span3 stat">
+                        <div class="data">
+                       		 商户广告展示
+                            <span class="number" id="sumshopad">0</span>
+                            		次
+                        </div>
+                        <span class="date"><#$Think.now#></span>
+                    </div>
+                    <div class="span3 stat last">
+                        <div class="data">
+                        		投放广告
+                            <span class="number" id="sumad">0</span>
+                            次
+                        </div>
+                        <span class="date"><#$Think.now#></span>
+                    </div>
+                </div>
+            </div>
+            <!-- end upper main stats -->
+    	    <div id="pad-wrapper">
+    			<div class="row-fluid">
+    				<div class="alert hide fade in span11">
+    	            <a class="close" data-dismiss="alert" href="#">×</a>
+    	            <div id="vermsg"></div>
+    	          </div>
+    				
+    				
+    				
+
+    			</div>
+    			
+                <!-- statistics chart built with jQuery Flot -->
+                <div class="row-fluid chart">
+                	<div class="span6">
+                		<h4>
+                        	认证流量统计
+                       	<a id="authbtn" class="hidden"></a>
+                        </h4>
+                        <div class="span12">
+                            <div id="statsChart"></div>
+                        </div>
+                	</div>
+                	<div class="span6">
+                		<h4>
+                        	注册用户统计
+                       	<a id="authbtn" class="hidden"></a>
+                        </h4>
+                        <div class="span12">
+                            <div id="userchart"></div>
+                        </div>
+                	</div>
+                    
+                </div>
+                                <div class="row-fluid section">
+                	<div class="span6">
+                		<h4>
+                        	商户广告统计
+                       	<a id="authbtn" class="hidden"></a>
+                        </h4>
+                        <div class="span12">
+                            <div id="shopadchart"></div>
+                        </div>
+                	</div>
+                	<div class="span6">
+                		<h4>
+                        	投放广告统计
+                       	<a id="authbtn" class="hidden"></a>
+                        </h4>
+                        <div class="span12">
+                            <div id="adchart"></div>
+                        </div>
+                	</div>
+                    
+                </div>
+            </div>
+        </div>
+    
+	<!-- scripts -->
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+<script src="<#$Theme['P']['js']#>/flot/jquery.flot.js"></script> 
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="<#$Theme['P']['js']#>/flot/excanvas.min.js"></script><![endif]-->  
+<script src="<#$Theme['T']['js']#>/index.js"></script> 
+<script>
+
+$(function(){
+	authchart('<#:U('pub/getauthrpt')#>');
+	mchart('<#:U('pub/getuserchart')#>');
+	shopad('<#:U('pub/getadrpt')#>');
+	adchar('<#:U('pub/getpubadrpt')#>');
+	getversion(<#:getvsersion()#>);
+
+});
+</script>
+</body>
+</html>

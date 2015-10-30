@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<!-- libraries -->
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="<#$Theme['P']['root']#>/bootadmin/css/compiled/form-showcase.css" type="text/css" media="screen" />
+
+<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+   	<div class="container-fluid">
+            <div id="pad-wrapper" class="form-page">
+            	<form name="" action="" method="post">
+                <div class="row-fluid form-wrapper">
+                 		<div class="span12">
+                            <h4>网站设置</h4>
+                        </div>
+                    <!-- left column -->
+                    <div class="span8 column">
+                        <form name="">
+                        <div class="alert span10" style="display: none;">
+						  <span id="alertmsg"></span>
+						</div>
+                         	<div class="field-box">
+                                <label>网站名称:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="请输入网站名称" data-placement="right" name="sitename" id="sitename" value="<#:C('sitename')#>"/>
+                            </div>
+                             <div class="field-box">
+                                <label>URL网址:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="请输入网站绑定的URL地址" data-placement="right" name="siteurl" id="siteurl" value="<#:C('siteurl')#>"/>
+                            </div>
+                           <div class="field-box">
+                                <label>备案信息:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="输入网址的备案信息" data-placement="right" name="copyright" id="copyright" value="<#:C('copyright')#>"/>
+                            	
+                            </div>
+                             <div class="field-box">
+                                <label>SEO关键词:</label>
+                                <input class="span8" type="text" name="keyword" id="keyword" value="<#:C('keyword')#>"/>
+                            </div>
+                              <div class="field-box">
+                                <label>网站描述信息:</label>
+                                 <textarea class="span8"  data-toggle="tooltip" data-trigger="focus" title="请输入网站描述信息" data-placement="right" name="content" id="content" ><#:C('content')#></textarea>
+
+                            </div>
+                              <div class="field-box">
+                                <label>联系QQ:</label>
+                                <input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入qq号码" data-placement="right" name="qq" id="qq" value="<#:C('qq')#>"/>
+                             </div>
+                               <div class="field-box">
+                                <label>联系电话:</label>
+                                <input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入电话号码" data-placement="right" name="linktel" id="linktel" value="<#:C('linktel')#>"/>
+                             </div>
+                            <div class="field-box">
+                                <label>地址:</label>
+                                <input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="联系地址" data-placement="right" name="address" id="address"  value="<#:C('address')#>"/>
+                   <input type="hidden" name="files" value="site.php" />
+ 					<input type="hidden" name="action" value="index" />
+                             </div>
+                           
+                              <div class="field-box ">
+                              
+                              
+                               
+                                <input type="submit"   class="btn-glow primary " id="btn_save" value="保存信息">
+                        
+                              
+                              
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span4 column pull-right">
+
+                    </div>
+                </div>
+            	</form>
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/jquery.uniform.min.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+  <script type="text/javascript">
+                     
+
+                        $(function () {
+                        	
+                            // add uniform plugin styles to html elements
+                            $("input:checkbox, input:radio").uniform();
+
+                        });
+                    </script>
+</body>
+</html>

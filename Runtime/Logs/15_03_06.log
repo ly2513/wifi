@@ -1,0 +1,9 @@
+[ 2015-03-06T07:12:18+08:00 ] 119.147.146.189 /index.php/api/ping/%3Fgw_id%253DACA213ACEO3C%2526sys_uptime%253D13543%2526sys_memfree%253D41820%2526sys_load%253D0.25%2526wifidog_uptime%253D13517
+ERR: 非法操作?gw_id%3daca213aceo3c%26sys_uptime%3d13543%26sys_memfree%3d41820%26sys_load%3d0
+
+[ 2015-03-06T08:16:11+08:00 ] 113.108.21.69 /index.php/api/ping/%253Fgw_id%25253DACA213ACEO3C%252526sys_uptime%25253D13543%252526sys_memfree%25253D41820%252526sys_load%25253D0.25%252526wifidog_uptime%25253D13517
+ERR: 非法操作%3fgw_id%253daca213aceo3c%2526sys_uptime%253d13543%2526sys_memfree%253d41820%2526sys_load%253d0
+
+[ 2015-03-06T08:16:11+08:00 ] 180.153.206.38 /index.php/api/ping/%253Fgw_id%25253DACA213ACEO3C%252526sys_uptime%25253D13543%252526sys_memfree%25253D41820%252526sys_load%25253D0.25%252526wifidog_uptime%25253D13517
+ERR: 非法操作%3fgw_id%253daca213aceo3c%2526sys_uptime%253d13543%2526sys_memfree%253d41820%2526sys_load%253d0
+

@@ -1,0 +1,217 @@
+<html><head>
+<meta charset="utf-8">
+<title><#$shopinfo[0]['shopname']#></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="apple-touch-icon-precomposed" href="">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="<#$Theme['T']['css']#>/model1/common.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<section id="wrapper" class="wrapper">
+   
+   <!-- 图片轮播 -->
+   <section class="slide-photos">
+      <ul class="slides">
+       <notempty name="ad">
+	     		<volist name="ad" id="vo">
+	     		<div  class="swiper-slide">
+	     		<eq name="vo['mode']" value="1">
+	     			 <li style="display: list-item; background-image: url(<#$vo.ad_thumb#>);"><a href="<#:U('userauth/showad',array('id'=>$vo['id']))#>">
+		 <img src="<#$vo.ad_thumb#>">
+		 </a></li>
+	     		<else/>
+	     			<li style="display: list-item; background-image: url(<#$vo.ad_thumb#>);">
+		 <img src="<#$vo.ad_thumb#>"></li>
+	     		</eq>
+	     		</div>
+	     		  </volist>   		
+	     		<else/>
+	     		<li style="display: list-item; background-image: url(<#$Theme['P']['root']#>/images/ad/noad01.jpg);"></li>
+	     		<li style="display: list-item; background-image: url(<#$Theme['P']['root']#>/images/ad/noad02.jpg);"></li>
+				
+			</notempty>	
+      
+      
+      
+      
+	 </ul>
+   </section> 
+
+   <!-- 主体 -->
+   <section class="index-wrap">
+      <div class="logo"><img src="<#$shopinfo[0]['logo']#>" alt=""></div>
+      <h1 class="title"><#$shopinfo[0]['shopname']#></h1>
+      <address class="address">
+         地址：<#$shopinfo[0]['address']#>         <br>
+         电话：<#$shopinfo[0]['phone']#>      </address>
+         <a class="tel" href="tel:<#$shopinfo[0]['phone']#>"><#$shopinfo[0]['phone']#></a>
+      
+		<div class="btn-wrap">
+			<a id="foot_daojisi" href="#" class="btn-phone">还有14秒</a>	
+		  </div>
+   </section> 
+   
+   <!-- 底部 -->
+   <div class="foot-space"></div>
+   <footer class="index-foot">起讯无线版权所有</footer>
+   
+   
+
+
+<input type="hidden" id="ad_show_time" value="<#$shopinfo[0]['ad_show_time']#>"/> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js" type="text/javascript"></script>
+<script src="<#$Theme['P']['js']#>/model1/jquery.flexslider.min.js" type="text/javascript"></script>
+<script type="text/javascript">   
+//图片轮播
+$(window).load(function(){
+     $('.slide-photos').flexslider({
+        animation: "slide",
+		slideshowSpeed:5000,
+		animationSpeed:800,
+		pauseOnHover:false,
+		directionNav: false,
+		start: function(slider){
+           $('.index-head').removeClass('loading');
+        }  
+     });
+	 
+});
+</script>
+
+
+<!-- ///////////////////////新开页面只要下面的代码就行 要放在Jquery下面.......//////////////////// -->
+
+<!--如果有倒计时-->
+<script language="javascript">	
+function rptk_oneclick(){
+	showPop();
+
+}
+
+var speed = 1000; // 速度 一般不用修改		
+var djwait = document.getElementById("ad_show_time").value; // 停留时间 单位：秒				
+function updateinfo(){					
+	if(djwait == 0){
+		$("#foot_daojisi").html("点击免费上网");	
+		$("#foot_daojisi").attr("href",'javascript:rptk_oneclick()').removeClass("btn-phone").addClass("btn-go");
+	}else{
+		$("#foot_daojisi").html ( "还有"+djwait+"秒");
+		djwait--;
+		window.setTimeout("updateinfo()",speed);
+	}
+}
+updateinfo();
+</script><!-- //////////////////新开页面只要上面的代码 就行..////////////////////     -->
+
+
+
+</section>
+<!-- 弹窗 -->
+   <section id="popWrap" class="pop-wrap">
+      <section id="popMain" class="pop-main">
+		  <section class="pop-main-in">
+			  <if condition="$authmode['open'] eq true" >
+			  	<eq name="authmode['overmax']" value="0">
+				 <h4>请认证后上网</h4>
+				 <eq name="authmode['wx_f']" value="1">
+				 <!-- <figure class="qr-code-img"><img src="http://wx.xinyiwifi.com/uploads/l/lketel1408253946/0/1/3/7/thumb_53f0420f7f99a.jpg" alt=""></figure> -->
+				 
+				 <div class="qr-code-txt">关注微信<b><#$shopinfo[0]['wx']#></b>即可上网，打开微信-通讯录-+（右上角）-查找公众账号，输入商家公众账号ID：<#$shopinfo[0]['wx']#>，关注即可上网。</div>
+				  <if condition="$is_iphone eq true" >
+				  <a class="btn-weixin" href="wechat://">关注微信</a>
+				 </if>
+				 </eq>
+				 <eq name="authmode['wx']" value="1">
+				 <a class="btn-weixin" href="<#:U('userauth/wxauth')#>">微信认证</a>
+				 </eq>
+				 <eq name="authmode['allow']" value="1">
+				 <a class="btn-phone" href="<#:U('userauth/noAuth')#>">一键上网</a>
+				 </eq>
+				 <eq name="authmode['phone']" value="1">
+				  <a class="btn-phone" href="<#:U('userauth/mobile')#>">手机认证</a>
+				 </eq>
+				 <eq name="authmode['reg']" value="1">
+				  <a class="btn-phone" href="<#:U('userauth/reg')#>">注册会员</a>
+				  <a class="btn-phone" href="<#:U('userauth/login')#>">会员登录</a>
+				 </eq>
+				 <else/>
+				 <h4>暂不能提供上网服务</h4></br>
+			 每日免费上网次数是<#$shopinfo[0]['countmax']#>次
+					
+				</eq>
+			  <else/>
+			  <h4>当前时间不提供上网服务</h4></br>
+			  上网开放时间为每日 <#$authmode.opensh#>:00点至<#$authmode.openeh#>:00点
+			
+			  </if>
+		  </section>
+		  
+      </section>
+	  <section id="popMainCode" class="pop-main" style="display:none;">
+		<div class="pop-main-in">
+			<h4>请认证后上网</h4>
+			 <a class="icon-close" href="javascript:" onclick="hidePop()"></a>
+		  <div id="sendCode"><input type="text" class="input_phone" id="phone" placeholder="请输入您的手机号码获取认证码！"><br>
+				<a href="javascript:sendCode();" class="btn-weixin">提交</a>
+			</div>
+			<div id="loginform" style="display:none;">
+				<input class="input_phone" id="loginkey" type="text" name="token" onfocus="focusStyle()" onblur="blurStyle()" onkeypress="return onKeyPress(event)">
+				<button class="btn-weixin" id="loginbutton" onclick="rptk_weixin_submit('loginkey')" style="border:none;">发送验证码</button>
+			</div>
+			<script>
+				function sjrzbox(){
+					$("#popMain").hide();
+					$("#popMainCode").show();
+				}
+				function rptk_ios_goto_weixin()(){
+					
+					
+				}
+				function sendCode(){
+				/**
+				$.get("/index.php?g=Home&m=Index&a=sendCode",{id:103,phone:$("#phone").val(),code:7685,rptk_user_mac:'',rptk_key:'',rptk_user_ip:'',wecha_id:'',id:103}, function(result){
+					alert(result);					
+					$("#sendCode").hide();
+					$("#loginform").show();
+				 });			*/	
+			}
+			
+			</script>
+			</div>
+	  </section>
+   </section>
+   <div id="bodyMask" class="body-mask" onclick="hidePop()"></div>   
+   <script>
+	  var mask=document.getElementById("bodyMask")
+	  var popbox=document.getElementById("popWrap")
+	  var popMain=document.getElementById("popMain")
+	  //触发弹窗
+	  function showPop(){
+		  mask.style.display="block"
+		  popbox.style.display="block"
+		  var boxHeight=popMain.clientHeight
+		  var wHeight=window.innerHeight
+		  if(wHeight<boxHeight){
+			  popbox.style.position="absolute"
+		  }
+	  }
+	  //关闭弹窗
+	  function hidePop(){
+		  mask.style.display="none";
+		  popbox.style.display="none";
+		  popbox.style.position="fixed";
+		  $("#popMain").show();
+			$("#popMainCode").hide();
+			$("#sendCode").show();//2014-7-21  手机认证修改
+			$("#loginform").hide();//2014-7-21  手机认证修改
+      }	
+   </script>
+   <!--// 弹窗 --> 
+</section>
+
+</body></html>

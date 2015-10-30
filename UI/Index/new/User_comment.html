@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a><a href="#" class="current">留言管理</a> </div>
+    <h1>留言管理</h1>
+ 
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+    
+     
+        <div class="widget-box">
+      
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+      <h5>留言信息</h5>
+           
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                 <th>ID</th>
+	        			<th>用户名</th>
+	        			<th>手机号码</th>
+	        			<th>留言内容</th>
+	        			<th>留言时间</th>
+	        			<th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+               <volist name="lists" id="vo">
+        				<tr class="<eq name="mod" value="1">even gradeC<else/>odd gradeX</eq>">
+	        			<td><#$vo.id#></td>
+	        			<td><#$vo.user#> </td>
+	        			<td><#$vo.phone#></td>
+	        			<td><#$vo.content#></td>
+	        			<td><#$vo.add_time|date='Y-m-d H:i',####></td>
+	        			<td><a href="javascript:drop_confirm('您确定要删除吗?','<#:U('user/delcomment',array('id'=>$vo['id']))#>');" class="btn btn-danger btn-mini">删除</a> </td>
+        			</tr>
+        			</volist>
+               
+              </tbody>
+            </table>
+          </div>
+        
+        </div>
+        
+         <div class="pagination pull-right">
+          	<#$page#>
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+   <include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+
+</body>
+</html>

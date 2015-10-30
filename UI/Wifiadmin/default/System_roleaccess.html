@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<!-- libraries -->
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="<#$Theme['P']['root']#>/bootadmin/css/compiled/form-showcase.css" type="text/css" media="screen" />
+	<style>
+		.trees{}
+		.trees ul li{list-style: none;}
+	</style>
+<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+   	<div class="container-fluid">
+            <div id="pad-wrapper" class="form-page">
+            	<form name="" action="" method="post">
+                <div class="row-fluid form-wrapper">
+                 		<div class="span12">
+                            <h4>角色权限</h4>
+                        </div>
+                    <!-- left column -->
+                    <div class="span8 column">
+                        <form name="" method="post">
+                        <div class="alert span10" style="display: none;">
+						  <span id="alertmsg"></span>
+						</div>
+                         	<div class="trees">
+                         		<ul>
+                         			<li>
+                         				<volist name="trees" id="vo">
+                         					<if condition="$vo['pid'] eq 0">
+                         						<input type="checkbox" name="all" id="ckall" onclick="checkAll();" value="<#$vo.id#>"><#$vo.title#>
+                         						<ul>
+                         							<volist name="trees" id="menu">
+                         							<if condition="$menu['pid'] eq $vo['id']">
+                         								<li>
+                         								<input type="checkbox" name="nodeid[]" id="<#$menu.id#>" value="<#$menu.id#>" <php>if(strpos($acc,"#".$menu['id']."#")>-1){echo "checked";} </php>><#$menu.title#>--<eq name="menu['menuflag']" value="1">(菜单选项)<else/>(功能选项)</eq>
+                         								<ul>
+                         									<volist name="trees" id="sons">
+                         									<if condition="$sons['pid'] eq $menu['id']">
+                         										<li><input type="checkbox" name="nodeid[]" id="<#$sons.id#>" value="<#$sons.id#>" <php>if(strpos($acc,"#".$sons['id']."#")>-1){echo "checked";} </php>><#$sons.title#>--<eq name="sons['menuflag']" value="1">(菜单选项)<else/>(功能选项)</eq></li>
+                         									</if>
+                         									</volist>
+                         								</ul>
+                         								</li>
+                         							</if>
+                         							</volist>
+                         						</ul>
+                         					</if>
+                         				</volist>
+                         			</li>
+                         		</ul>
+                         	
+                         		
+                         	</div>
+                           
+                              <div class="field-box ">
+								<input type="hidden" name="roleid" value="<#$role.id#>" id="roleid">
+                                <input type="submit"   class="btn-glow primary " id="btn_save" value="保存信息">
+                        
+                              
+                              
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span4 column pull-right">
+
+                    </div>
+                </div>
+            	</form>
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/jquery.uniform.min.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+  <script type="text/javascript">
+                     
+
+                        $(function () {
+                        	
+                            // add uniform plugin styles to html elements
+                           $("input:checkbox, input:radio").uniform();
+
+							
+                           
+                        });
+
+                      
+
+                        function checkAll(){
+
+							if($('#ckall').prop('checked')){
+								//全选
+								$(':checkbox').prop('checked',true);
+								$(':checkbox').each(function(){
+										$(this).parent().addClass('checked');
+									})
+							}else{
+								//反选
+								$(':checkbox').prop('checked',false);
+								$(':checkbox').each(function(){
+									$(this).parent().removeClass('checked');
+								})
+								
+							}
+                        }
+                        
+                    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<!-- libraries -->
+<link href="<#$Theme['P']['root']#>/bootadmin/css/compiled/tables.css" type="text/css" rel="stylesheet"  />
+<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+  	
+  
+  
+      <div id="pad-wrapper">
+      	<div class="row head">
+                    <div class="col-md-12">
+                        <h4>商户列表</h4>
+                    </div>
+                </div>
+        <div class="row-fluid form-wrapper">
+        <form method="post">
+        	
+        		<div class="span6 column">
+        				<div>
+        					<div class="span6 field-box">
+                                <label class="span4">商户名称:</label>
+                                <input class="span8" type="text" name="sname">
+                            </div>
+	                         <div class="span6 field-box">
+	                                  <label class="span4">登录帐号:</label>
+	                                <input class="span8" type="text" name="slogin">
+	                         </div>
+        				</div>
+        				<div>
+        					<div class="span6 field-box">
+                                <label class="span4">联系电话:</label>
+                                <input class="span8" type="text" name="phone">
+                            </div>
+	                         <div class="span6 field-box">
+	                                  <label class="span4">代理商:</label>
+	                                <input class="span8" type="text" name="agent">
+	                         </div>
+        				</div>			
+                         <div class="filter-block">
+                 
+                  <input type="submit" class="btn-flat success " value="查询">
+                    
+                </div>
+
+        		</div>
+        	
+        	
+        
+                </form>
+        </div>
+      </div>
+      <div id="pad-wrapper">
+          <!-- orders table -->
+            <div class="table-wrapper orders-table section">
+               	
+
+               
+
+                <div class="">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="col-md-1">
+                                   		 编号
+                                </th>
+                                <th class="col-md-2">
+                                    <span class="line"></span>
+                                   	添加日期
+                                </th>
+                                  <th class="col-md-2">
+                                    <span class="line"></span>
+                                    	登录帐号
+                                </th>
+                                <th class="col-md-2">
+                                    <span class="line"></span>
+                                    	商户名称
+                                </th>
+                                <th class="col-md-1">
+                                    <span class="line"></span>
+                                   		注册上限
+                                </th>
+                                <th class="col-md-1">
+                                    <span class="line"></span>
+                                   	联系人
+                                </th>
+                                <th class="col-md-2">
+                                    <span class="line"></span>
+                                   		 联系电话
+                                </th>
+                                <th >
+                                    <span class="line"></span>
+                                   		代理商
+                                </th>
+                                <th class="col-md-1">
+                                    <span class="line"></span>
+                                    		操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<volist name="lists" id="vo">
+                        		<!-- row -->
+                            <tr class="<eq name="i" value="1">first</eq>">
+                                <td>
+                                   <#$i#>
+                                </td>
+                                <td>
+                                   <#$vo.add_time|date='Y-m-d ',####>
+                                </td>
+                                  <td>
+                                   <#$vo.account#>
+                                </td>
+                                <td>
+                                    <#$vo.shopname#>
+                                </td>
+                                  <td>
+                                     <eq name="vo['linkflag']" value="0"><#$vo.maxcount#><else/>不限</eq>
+                                </td>
+                                <td>
+                                     <#$vo.linker#>
+                                </td>
+                                <td>
+                                    <#$vo.phone#>
+                                </td>
+                                <td>
+                                    <#$vo.agname#>
+                                </td>
+                                <td>
+                                  <a href="<#:U('editshop',array('id'=>$vo['id']))#>">编辑</a>|
+                                   <a href="<#:U('routelist',array('id'=>$vo['id']))#>">路由管理</a>|
+                                  <a href="<#:U('addroute',array('id'=>$vo['id']))#>">添加路由</a>
+                                </td>
+                            </tr>
+                        	</volist>
+                           
+                        </tbody>
+                    </table>
+                </div>
+            
+            	<div class="pagination pull-right">
+            		<#$page#>
+            	</div>
+            </div>
+            <!-- end orders table -->
+          </div>
+    </div>
+
+
+	<!-- scripts -->
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/jquery.uniform.min.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+  <script type="text/javascript">
+                     
+
+                        $(function () {
+                        	
+                            // add uniform plugin styles to html elements
+                            $("input:checkbox, input:radio").uniform();
+
+                        });
+                    </script>
+</body>
+</html>

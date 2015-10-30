@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+@-ms-viewport {width:device-width}
+/*******重构--开始*******/
+html{-webkit-text-size-adjust:none;}
+*{margin:0;padding:0;list-style-type:none;}
+body {font: 16px/1.25 Microsoft YaHei,Tahoma, arial, \5b8b\4f53; margin:0;}
+ul,li{margin: 0;padding: 0;list-style: none;}
+a,button{cursor:pointer;text-decoration:none; border:0}
+a:hover{text-decoration:none; }
+a,img{border:0;}
+img {height: auto;width: auto\9; /* ie8 */}
+.imgB{max-width: 100%;}
+.fl{ float:left;}
+.fr{ float:right;}
+.mr10{ margin-right:10px}
+.mt8{ margin-top:8px}
+.mt10{ margin-top:10px}
+.mt15{ margin-top:15px}
+.lhN{ line-height:0;}
+.font12{ font-size:12px;}
+.font14{ font-size:14px;}
+.font18{ font-size:18px;}
+.font20{ font-size:20px;}
+.font22{ font-size:22px;}
+.font28{ font-size:28px;}
+.font32{ font-size:32px;}
+.font40{ font-size:40px;}
+.font44{ font-size:44px;}
+.boxshadow{-moz-box-shadow:1px 1px 3px #333333; -webkit-box-shadow:1px 1px 3px #333333; box-shadow:1px 1px 3px #333333;}
+.br3{-moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px;}
+.br5{-moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+/*******重构--结束*******/
+/*******清除浮动--开始*******/
+.clearfix:after {content: "."; display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+/*******清除浮动--结束*******/

@@ -1,0 +1,40 @@
+[ 2015-03-20T00:42:09+08:00 ] 14.131.184.107 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+
+[ 2015-03-20T01:07:03+08:00 ] 14.131.184.107 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-03-20T01:08:40+08:00 ] 14.131.184.107 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-03-20T01:12:53+08:00 ] 14.131.184.107 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-03-20T18:22:25+08:00 ] 211.103.232.43 /index.php/api/ping/?gw_id=ACA213ABEFB2&sys_uptime=54621&sys_memfree=41068&sys_load=0.08&wifidog_uptime=54642
+ERR: Lost connection to MySQL server at 'reading initial communication packet', system error: 111
+
+[ 2015-03-20T18:22:25+08:00 ] 211.103.232.43 /index.php/api/ping/?gw_id=ACA213ACEO3C&sys_uptime=55091&sys_memfree=41644&sys_load=0.16&wifidog_uptime=55063
+ERR: Lost connection to MySQL server at 'reading initial communication packet', system error: 111
+
+[ 2015-03-20T19:59:18+08:00 ] ERR: 0
+[ 2015-03-20T19:59:22+08:00 ] ERR: 0
+[ 2015-03-20T20:16:41+08:00 ] 113.108.21.69 /index.php/wifiadmin/pub/getauthrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-20T21:50:44+08:00 ] 119.147.207.158 /index.php/wifiadmin/pub/getpubadrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-20T21:50:44+08:00 ] 180.153.206.34 /index.php/wifiadmin/pub/getpubadrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-20T22:13:12+08:00 ] ERR: 0
+[ 2015-03-20T22:13:48+08:00 ] ERR: 0

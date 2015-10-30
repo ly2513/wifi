@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+<link rel="stylesheet" href="<#$Theme['P']['root']#>/matrix/css/datepicker.css" />
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a> <a href="#" class="current">上网统计</a> </div>
+    <h1>上网统计</h1>
+ 
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+    	<div class="alert alert-block span8 hide" id="msgbox"> 
+              <h4 class="alert-heading">提示信息</h4>
+             <div id="alertmsg"></div>
+              </div>
+    <div class="controls controls-row span8">
+ 	<input type="hidden" name="btnkey" id="btnkey" value="today" sdate="" edate="">
+    <label class="control-label span1">开始日期</label>
+   <input type="text" id="sdate" value="<php>echo date("Y-m-01")</php>" data-date-format="yyyy-mm-dd" class="span2 datepicker" readonly="readonly">
+     <label class="control-label span1">结束日期</label>
+   <input type="text" id="edate" value="<php>echo date("Y-m-d")</php>" data-date-format="yyyy-mm-dd" class="span2 datepicker" readonly="readonly">
+    	<a class="btn btn-success span1" id="query">查询</a>&nbsp;
+    	  <a href="javascript:void(0);" onclick="downjump();" class="btn btn-primary span1">导出</a>
+    </div>
+      <div class="span10">
+            	<a class="btn btn-info" id="today">今日数据统计</a>&nbsp;
+            	<a class="btn btn-info" id="yestoday">昨日统计</a>&nbsp;
+            	<a class="btn btn-info" id="week">最近七天</a>&nbsp;
+            	<a class="btn btn-info" id="month">本月统计</a>
+            </div>
+    </div>
+    <div class="row-fluid">
+      <div class="span12">
+          
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i></span>
+            <h5>统计列表</h5>
+          </div>
+          
+          <div class="widget-content">
+          
+          	<div id="placeholder" ></div>
+         
+          
+          </div>
+        
+        </div>
+        
+      
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['js']#>/flot/jquery.flot.js"></script> 
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="<#$Theme['P']['js']#>/flot/excanvas.min.js"></script><![endif]-->  
+
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap-datepicker.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+<script>
+var daylist=[];
+for(var i=1;i<=31;i++){
+	if(i<10){
+		daylist.push(["0"+i,i+"号"]);
+	}else{
+		daylist.push([i,i+"号"]);
+	}
+}
+var hourlist=[];
+for(var i=0;i<=24;i++){
+	if(i<10){
+		hourlist.push(["0"+i,i+"点"]);
+	}else{
+		hourlist.push([i,i+"点"]);
+	}
+}
+
+function downjump(){
+	var para="&mode="+$('#btnkey').val();
+	para+="&sdate="+$('#btnkey').attr('sdate');
+	para+="&edate="+$('#btnkey').attr('edate');
+	location.href="index.php?g=index&m=user&a=downrpt"+para;
+	
+	
+}
+
+var lines;
+
+$(function () {
+	
+	var stack = 0, bars = true, lines = false, steps = false;  
+	 	$('.datepicker').datepicker();
+	 	// 获得今日数据统计
+  	  	$("#today").bind("click",function(){
+		  	$.ajax({
+			  	url: '<#:U('user/getrpt')#>',
+		        type: "get",
+				data:{'mode':'today'},
+				dataType:'json',
+				error:function(){
+						AlertTips("服务器忙，请稍候再试",2000);
+				},
+				success:function(data){
+						$('#btnkey').val('today');
+						var bt=[];
+						data=eval(data)  ;
+						for(var vo in data){
+							bt.push([data[vo].t,data[vo].ct]);
+						}
+						$.plot($("#placeholder"), [ bt ], {grid: { hoverable: true, clickable: true, borderColor:'#000',borderWidth:1},xaxis:{ticks:hourlist},series:{lines:{fill:true, show: true}, points:
+						    { show: true,
+						    	  }}});
+						
+				}
+			});
+  	  	});
+  	  	// 获得昨日上网统计数据
+  		$("#yestoday").bind("click",function(){
+		  	$.ajax({
+			  	url: '<#:U('user/getrpt')#>',
+		        type: "get",
+				data:{'mode':'yestoday'},
+				dataType:'json',
+				error:function(){
+						AlertTips("服务器忙，请稍候再试",2000);
+				},
+				success:function(data){
+						var bt=[];
+						$('#btnkey').val('yestoday');
+						data=eval(data);
+						for(var vo in data){
+							bt.push([data[vo].t,data[vo].ct]);
+						}
+						$.plot($("#placeholder"), [ bt ], {grid: { hoverable: true, clickable: true, borderColor:'#000',borderWidth:1},xaxis:{ticks:hourlist},series:{lines:{fill:true, show: true}, points:
+						    { show: true,
+						    	  }}});
+						
+				}
+			});
+	  	});
+	  	// 获得最近七天的上网统计
+  		$("#week").bind("click",function(){
+		  	$.ajax({
+			  	url: '<#:U('user/getrpt')#>',
+		        type: "get",
+				data:{'mode':'week'},
+				dataType:'json',
+				error:function(){
+						AlertTips("服务器忙，请稍候再试",2000);
+				},
+				success:function(data){
+					$('#btnkey').val('week');
+					var bt=[];
+					data=eval(data);
+					var templist=[];
+					for(var vo in data){
+ 						templist.push([data[vo].t,data[vo].td]);
+						bt.push([data[vo].t,data[vo].ct]);
+					}
+						$.plot($("#placeholder"), [ bt ], {grid: { hoverable: true, clickable: true, borderColor:'#000',borderWidth:1},xaxis:{ticks:templist},series:{lines:{fill:true, show: true}, points:
+						    { show: true,
+						    	  }}});		
+				}
+			});
+	  	});
+	  	// 获得本月上网统计数据
+  		$("#month").bind("click",function(){
+  		  	$.ajax({
+  			  	url: '<#:U('user/getrpt')#>',
+  		        type: "get",
+  				data:{'mode':'month'},
+  				dataType:'json',
+  				error:function(){
+  						AlertTips("服务器忙，请稍候再试",2000);
+  				},
+  				success:function(data){
+					$('#btnkey').val('month');
+					var bt=[];
+					data=eval(data)  ;
+					for(var vo in data){
+						bt.push([data[vo].t,data[vo].ct]);
+					}
+					 $.plot($("#placeholder"), [ bt ], {grid: { hoverable: true, clickable: true, borderColor:'#000',borderWidth:1},xaxis:{ticks:daylist},series:{lines:{fill:true, show: true}, points:
+					    { show: true,
+					    	  }}});
+  				}
+  			});
+  	  	});
+
+  		$("#query").bind("click",function(){
+			var st=new Date($("#sdate").val());	
+			var et=new Date($("#edate").val());	
+			if(st.getTime()>et.getTime()){
+				AlertTips("开始日期不能大于结束日期",2000);
+					return;
+			}
+
+			$.ajax({
+	  			url: '<#:U('user/getrpt')#>',
+		        type: "get",
+				data:{
+					'mode':'query',
+					'sdate':$("#sdate").val(),
+					'edate':$("#edate").val(),
+					},
+				dataType:'json',
+				error:function(){
+						AlertTips("服务器忙，请稍候再试",2000);
+						},
+				success:function(data){
+					$('#btnkey').val('query');
+					$('#btnkey').attr('sdate',$("#sdate").val());
+					$('#btnkey').attr('edate',$("#edate").val());
+					var bt=[];
+					var templist=[];
+					
+					data=eval(data)  ;
+					for(var vo in data){
+						templist.push([data[vo].t,data[vo].td]);
+						bt.push([data[vo].t,data[vo].ct]);
+					}
+					 var plot= $.plot($("#placeholder"), [ bt ], {xaxis:{ticks:templist},  grid: { hoverable: true, clickable: true, borderColor:'#000',borderWidth:1}, series:{lines:{fill:true, show: true}, points:
+					    { show: true,
+					    	  }}});
+				}
+	  		});
+  	  	});
+  		$("#today").trigger("click");
+});
+
+var previousPoint = null;
+	$("#placeholder").bind("plothover", function (event, pos, item) {
+	
+      if (item) {
+          if (previousPoint != item.dataIndex) {
+              previousPoint = item.dataIndex;
+              
+              $('#tooltip').fadeOut(200,function(){
+					$(this).remove();
+				});
+              var x = item.datapoint[0].toFixed(2),
+					y = item.datapoint[1].toFixed(2);
+                  
+              maruti.flot_tooltip(item.pageX, item.pageY, y+"人次");
+          }
+          
+      } else {
+			$('#tooltip').fadeOut(200,function(){
+					$(this).remove();
+				});
+          previousPoint = null;           
+      }   
+  });	
+maruti = {
+		// === Tooltip for flot charts === //
+		flot_tooltip: function(x, y, contents) {
+			
+			$('<div id="tooltip">' + contents + '</div>').css( {
+				top: y + 5,
+				left: x + 5
+			}).appendTo("body").fadeIn(200);
+		}
+}
+</script>
+</body>
+</html>

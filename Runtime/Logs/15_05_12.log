@@ -1,0 +1,8 @@
+[ 2015-05-12T22:50:34+08:00 ] 140.207.54.76 /index.php/weichat/command/gh_dd8c103f67bd?signature=a252102c6fb6e2f5e4f3d6f5f52ed2dc77093aa0&timestamp=1431442233&nonce=819892384
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_authlist WHERE uid =
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_member WHERE id =
+

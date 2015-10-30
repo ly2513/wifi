@@ -1,0 +1,57 @@
+/*重置*/
+*{padding:0;margin:0}
+a{color:#555;text-decoration:none;outline:none}
+a:hover{color:#3fa9f5}
+a{blr:expression(this.onFocus=this.blur())}
+ul{list-style:none}
+h4,h3,h2,h1{font-weight:normal}
+img{border:none}
+html, body{font:14px/24px "微软雅黑 Light", "微软雅黑",arial,sans-serif;color:#666;min-width:1000px;background:#fff}
+/* 原子类 */
+.l{float:left}
+.r{float:right}
+.g{width:1000px;margin:0 auto}
+.green{color:#48b732}
+.fs24{font-size:24px}
+.hc{text-align:center}
+/*结构*/
+.logoBox{padding:20px 0;height:84px}
+.focusBox{height:400px;position:relative}
+	.focus{position:absolute;height:400px;width:1000px;top:0;left:0;z-index:0}
+	.loginBox{position:absolute;z-index:10;height:376px;width:304px;background:url(../images/loginBox_bg.png) no-repeat;top:0;right:0;padding:24px 28px 0}
+		h1{font-size:24px;line-height:28px;height:28px;color:#48b732}
+		h1 span.r{font-size:14px;color:#808080}
+		h1 span.r a{color:#48b732}
+		.loginBox ul{padding:10px 0}
+		.loginBox li{height:46px;width:250px;padding-left:50px;background:url(../images/iptbg.png) no-repeat;margin-bottom:10px}
+		.loginBox li.l2{background-position:0 -56px}
+		.loginBox li.l3{background:none;height:24px;padding:0 5px;width:290px}
+		.loginBox li.l4{background:none;padding:0;height:50px}
+		.loginBox li.l5{padding:0 5px;background:none;line-height:46px;font-size:18px;color:#48b732}
+		.loginBox li.l6{padding:0 5px;background:none}
+		.loginBox .ipt{height:26px;width:245px;padding:10px 5px 10px 0;border:none;outline:none;font:18px/26px "微软雅黑 Light", "微软雅黑",arial,sans-serif;background:none}
+		#btn-login{height:50px;width:340px;border:none;outline:none;background:url(../images/iptbg.png) no-repeat 0 -112px;cursor:pointer}
+		#btn-login:hover{background-position:0 bottom}
+		.loginLink{padding:32px 35px 0;line-height:24px;height:24px}
+		.loginLink a.r{color:#7ac943}
+.cpr{padding:30px 0 0}
+/*注册页面*/
+h1.g{font-size:24px;background:url(../images/reg_h1_bg.png) no-repeat;padding:25px 30px 5px;line-height:30px;height:30px;width:940px}
+.regBox{background:url(../images/reg_bg.png) repeat-y;overflow:auto}
+#regform{padding:30px 0;width:650px;float:left}
+.rline{height:76px}
+.lab{width:155px;text-align:right;line-height:40px;font-size:16px;color:#4d4d4d;margin-right:15px}
+.dts{font-size:12px;color:#999999;display:none}
+.inputBox input, .inputBox select{display:inline-block;height:40px;border:none;outline:none;background:url(../images/input_bg.png) no-repeat;padding:0 10px;width: 240px;font-size:16px}
+.inputBox #userYYUC_vercode{width:110px;display:block;float:left;background-position:0 -100px;margin-right:5px}
+.inputBox select{width:150px;margin-right:5px;padding:0 0 0 10px;background-position:0 -50px}
+.red{padding:0 7px;color:#ff1d25;font-size:20px}
+#codearea{display:inline-block;height:30px;padding:5px 0;float:left}
+.sidBox{width:300px;float:right;padding-top:20px}
+.sidBox h3{line-height:30px;margin-bottom:5px}
+h3.h32{font-size:18px;color:#48b732}
+.sidBox div{margin-bottom:20px}
+.rline9{padding-left:170px}
+.btn-register{display:block;height:50px;width:260px;background:url(../images/input_bg.png) no-repeat 0 -150px;border:none;outline:none;cursor:pointer}
+.btn-register:hover{background-position:0 -200px}
+.rcpr{padding:40px 0;height:30px;background:url(../images/regb_bg.png) no-repeat}

@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+/* 
+Powered by Hancoson
+http://www.hanguoxing.cn
+ */
+/***********************   header    ************************/
+.main_header{ margin: 0 auto 1px;width:100%; background:#f4f4f4; background-image:url(img/top_bg.png); background-repeat:repeat-x; -moz-box-shadow:0px 1px 2px #d8d7d7; -webkit-box-shadow:0px 1px 2px #d8d7d7; box-shadow:0px 1px 3px #d8d7d7;border-bottom:1px #d8d7d7 solid; top: 0px;position: fixed;z-index:11;}
+	.main_header .content{ width: 96%; margin:0 auto; max-width:920px;_width:920px; top: 0px;z-index:12;}
+*+html .main_header{ margin: 0 auto;width:100%; background:#f4f4f4; background-image:url(img/top_bg.png); background-repeat:repeat-x; height:68px;border-bottom:1px #d8d7d7 solid; position:static}
+	*+html .main_header .content{ width: 96%; margin:0 auto; max-width:920px;_width:920px;}	
+ /*顶部固定*/
+/***********************   /header  ***********************/
+/***********************   footer    ************************/
+html, body, .section { height: 100%; margin:0; padding: 0; }
+body > .section { height: auto; min-height: 100%;}
+.main_footer{ width:100%; height:145px;clear: both; position: relative; z-index: 10; margin-top: -145px; }
+.main_footer1{ height:205px;margin-top: -205px; }
+.main_footer .tBox{ width: 96%; margin:0 auto; max-width:960px;_width:960px; height:60px;font-size:18px; line-height:180%}
+.main_footer .footerImg{width:100%; height:60px; float:left}
+	.main_footer .footerImg .content{ width: 96%; margin:0 auto; max-width:960px;_width:960px;}
+	.main_footer .footerImg .content .loginBox{line-height:150%; margin-right:20px;}
+	.main_footer .footerImg .content .loginBox .icon,.main_footer .tBox .loginBox .icon{ width:29px; height:31px;}
+
+.main_footer .footerBar{width:100%; height:85px; float:left;background:#535353; }
+	.main_footer .content{ width: 96%; margin:0 auto; max-width:920px;_width:920px;}
+	.main_footer .content .leftPhone{ margin:15px 5px 0 0;}
+	.main_footer .content .leftT,.main_footer .content .rightT{ margin-top:18px;position:relative; z-index:10}
+	.main_footer .content .rightT .fontW{ font-family:EuroseWideHeavy,Microsoft YaHei}
+	
+#goTopBtn,#goTopBtn:hover {position: fixed;width:88px;bottom:30px;height:65px;cursor:pointer;display:none; z-index:10}
+/***********************   /footer  ***********************/
+/* 
++++++++++++++++++++++++++++++++   login    ++++++++++++++++++++++++++++++++++++
+*/
+ 	.main_header .content .left_1{ width:45px; height:52px; margin-top:16px;}
+	.main_header .content .left_2{ width:55px; height:52px; margin:16px 0 0 1%; }
+	.main_header .content .title{ margin-top:16px; float:left;z-index:12;width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+	.main_header .content .right2{ margin-top:28px; margin-right:2%;}
+	.main_header .content .right3{ margin-top:28px; display:none}
+/*****header*****/
+.login_content{margin:0 auto; max-width:960px;_width:960px;}
+.login_contentP{padding-top:68px;*padding-top:0;}
+	.login_content .left{ width:66.67%; }
+	.login_content .right{ width:33.33%;}
+	.login_content .right .loginBox{ width:100%; padding:0; line-height:0}
+	.login_content .right .loginBox img{ width:36%; margin:0;}
+	.login_content .right .loginBox .imgT{ width:62%; text-align:center; margin-top:18%;*margin-top:0}
+	.login_content .right .loginT_box{width:92%; padding:4%; line-height:170%}
+	.login_content .right .loginT_box p{ margin-top:3%;}
+	.login_content .left1{ padding:2% 0; margin-bottom:20px}
+	.login_content .left1 .s_icon,.login_content .left1 a{ width:28%;margin-left:4%;_margin-left:2%}
+	.login_content .right1{width:33.33%;}
+	.login_content .right1 .phoneT{ width:100%; line-height:150%; margin-top:4px; text-align:center}
+	.login_content .right1 .phoneT1{ width:100%;line-height:180%; margin-top:4px;}
+	.login_content .right1 .phoneT2{width:100%; text-align:center; margin-top:3px; font-size:20px}
+	.login_content .right1 .weixinImg{ width:140px; height:140px; margin:5px auto;}
+	.login_content .right1 .weixinImg img{ width:140px; height:140px;}
+	.login_content .right1 .inputBox{ width:75%; padding:2%;font: 20px/1.25 Microsoft YaHei,Tahoma, arial, \5b8b\4f53;margin:15px 0 0 7%}
+	.login_content .right1 .inputBox_wx{ width:60% !important;}
+	.login_content .right1 .inputIcon1,.login_content .right1 .inputIcon2,.login_content .right1 .inputIcon3,.pass_content .textBox .inputIcon1,.pass_content .textBox .inputIcon2{ width:26px; height:31px; margin-top:22px ;*margin-top:-5px}
+	.login_content .right1 .inputIcon_wx{ margin-right:11% !important}
+	.login_content .right1 .inputIcon1{*margin-top:20px}
+	.login_content .right1 .loginBtn,.login_content .right1 .loginBtn1{ width:83%; padding:4% 0;margin-top:15px; font:22px/1.25 Microsoft YaHei,Tahoma, arial, \5b8b\4f53; margin-bottom:10px; margin-left:7%;_margin-left:3%}
+	.login_content .right1 #btn_onkey{width:80%; height:100px; margin-top:15px;margin-bottom:20px; margin-left:7%;_margin-left:3%; overflow:hidden}/*20131023*/
+	.login_content .right1 .ch_login{margin:5px 0 15px 7%; padding:5px 0; /*width:120px; height:20px*/}/*20131023*/
+	.login_content .right1 #btn_onkey img{width:100%; height:100%; max-height:150px}/*20131023*/
+	/*.login_content .right1 .loginBtn3{width:auto;padding:15px 5%; margin:30px auto 10px; margin-left:14%; line-height:100%}*/
+	.login_content .right1 .loginBtn3_T{ text-align:center; line-height:150%}
+	.login_content .right1 .forgetPass{ display:none; margin-left:7%;_margin-left:3%}
+	.login_content .right1 .loginBtn_getPass{ width:45%; padding:2% 0;font:16px/1.25 Microsoft YaHei,Tahoma, arial, \5b8b\4f53; border:0;text-align:center; margin-left:7%;_margin-left:3%}
+	.login_content .right1 .loginT{ width:100%;margin:10px 0 0; text-align:center}
+	.login_content .left2{}
+	.login_content .left2 .l1{width:100%}
+	.login_content .left2 .l1 .p_icon,.main_footer .tBox .p_icon{ width:29px; height:30px; margin:0 8px;}
+	.login_content .left2 .l1 .p_t{ width:80%; line-height:150%;}
+	.login_content .left2 .l2{ width:265px; margin:0 auto;*margin-top:20px;text-align:center}
+	.login_content .left2 .l2 .s_icon{ width:130px; height:50px; margin-bottom:5px;}
+	.login_content .left2 .l2 .s_iconW{ width:5px; height:50px; margin-bottom:5px;}
+	.login_content .left2 .l2 .footerT{ width:100%; margin-top:60px; text-align:center}
+/* 
++++++++++++++++++++++++++++++++   /login  ++++++++++++++++++++++++++++++++++++
+*/
+/* 
++++++++++++++++++++++++++++++++   ad  ++++++++++++++++++++++++++++++++++++
+*/
+	.main_header .content .right4{ margin-top:28px; position:relative; z-index:15;right:0}
+.ad_contentTop{margin:0 auto; padding:85px 0 20px;*padding:20px 0 20px;width:380px;}
+	.ad_contentTop .icon-face,.pass_contentTop .icon-face{ width:64px; height:65px; margin-right:15px;}
+	.ad_contentTop .faceT{ width:300px; margin-top:10px;}
+.AD_ontent,.pass_content{margin:0 auto;max-width:960px;_width:960px;}
+	.AD_ontent .topBg,.login_content .right .topBg{ width:80px; height:23px; padding:2px 0 0 38px}
+	.AD_ontent .topLine,.login_content .right .topLine{ width:100%; margin-bottom:3px; height:4px; _overflow:hidden;}
+	/**Focus picture**/
+	.AD_ontent .focusPic_PC{max-width:960px;height:400px;}
+	.AD_ontent .focusPic_Phone{width:100%;display:none; overflow:visible}
+	/**Focus picture over**/
+/* 
++++++++++++++++++++++++++++++++   /ad  ++++++++++++++++++++++++++++++++++++
+*/
+/* 
++++++++++++++++++++++++++++++++   home  ++++++++++++++++++++++++++++++++++++
+*/
+	.main_header .content .right5{ margin-top:28px; width:35%}
+	.main_header .content .right5 .icon,.login_content .topT .icon{ width:20px; height:20px;}
+	.login_content .topT{width:330px; margin:8px auto; display:none}
+	.login_content .left3{}
+	.login_content .left .info{ width:100%; margin:3% 0;}
+	.login_content .left .info .logo{ width:20%; border:#d8d7d7 3px solid; margin-right:2%}
+	.login_content .left .info .logoT_box{ width:76%; line-height:155%; float:left}
+	.login_content .left .info .logoT_box .logoT{ overflow:hidden}
+
+	.login_content .left .info .logoT_dBox{ height:18px; width:100%; display:none}
+	.login_content .left .info .logoT_dBox .logoT_top,.login_content .left .info .logoT_dBox .logoT_down{ width:100%; height:20px}
+	.login_content .left .info .logoT_dBox .logoT_top .icon,.login_content .left .info .logoT_dBox .logoT_down .icon{ width:28px; height:20px; margin:0 auto;}
+	.login_content .right .phoneBox{ width:90%; margin:10% auto}
+	.login_content .right .phoneBox1{margin:14% auto 5%}
+	.login_content .right .phoneBox a{ font-size:26px; line-height:200%}
+	.login_content .right .phoneBox .phoneIcon,.login_content .right .phoneBox .addressIcon{ width:56px; height:54px; margin-right:5%}
+	.login_content .right .topBg{}
+	.login_content .right .topLine{}
+	.login_content .right .mapBox{ width:99.2%; height:250px; border:1px #a1d674 solid; margin:-3px 0 30px 0; position:relative; z-index:0; float:right; background:#f7f6ef}
+	.login_content .right .mapBox .mapT{ width:100%; height:100%;}
+	
+/* 
++++++++++++++++++++++++++++++++   /home  ++++++++++++++++++++++++++++++++++++
+*/
+/* 
++++++++++++++++++++++++++++++++   pass  ++++++++++++++++++++++++++++++++++++
+*/
+.pass_contentTop{margin:0 auto; padding:105px 0 20px;*padding:20px 0 20px; text-align:center; line-height:200%}
+.pass_contentTop .icon-face{ margin:0 auto}
+.pass_content .textBox{ width:35%; margin:0 auto;}
+.pass_content .textBox .inputBox{ width:90%; margin:0 auto; padding:3%;font: 20px/1.25 Microsoft YaHei,Tahoma, arial, \5b8b\4f53;margin-top:15px}
+.pass_content .textBox .inputIcon1,.pass_content .textBox .inputIcon2{ margin:24px -38px 0 0 }
+.pass_content .textBox .loginBtn,.pass_content .textBox .loginBtn1{ width:100%; padding:4% 0;margin-top:15px; font:22px/1.25 Microsoft YaHei,Tahoma, arial, \5b8b\4f53; margin-bottom:10px;}
+.pass_content .textBox .btnT{ text-align:center; margin-top:20px}
+/* 
++++++++++++++++++++++++++++++++   /pass  ++++++++++++++++++++++++++++++++++++
+*/
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<div id="content">
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a> <a href="#" class="current">用户统计</a> </div>
+    <h1>用户列表</h1>
+ 
+  </div>
+  <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+            
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i></span>
+            <h5>统计列表</h5>
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                		<th>编号</th>
+	        			<th>用户名</th>
+	        			<th>手机号码</th>
+	        			<th>MAC地址</th>
+	        			<th>注册时间</th>
+	        			<th>认证模式</th>
+	        			<th>分配IP</th>
+	        		
+                </tr>
+              </thead>
+              <tbody>
+           	<volist name="lists" id="vo">
+        				<tr>
+	        			<td><#$vo.id#></td>
+	        			<td><#$vo.user#> </td>
+	        			<td><#$vo.phone#></td>
+	        			<td><#$vo.mac#></td>
+	        			<td><#$vo.add_time|date='Y-m-d ',####></td>
+	        			<td><#:getAuthWay($vo['mode'])#></td>
+	        			<td><#$vo.login_ip#></td>
+	        			</tr>
+        		</volist>
+               
+              </tbody>
+            </table>
+          </div>
+        
+        </div>
+        
+         <div class="pagination pull-right">
+          	<#$page#>
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+   <include file="Pub:foot"/>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+<script>
+$(document).ready(function(){
+	$('#urpt').trigger('click');
+});
+</script>
+</body>
+</html>

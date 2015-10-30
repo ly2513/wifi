@@ -1,0 +1,139 @@
+<html><head>
+<meta charset="utf-8">
+<title>畅游无线</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="apple-touch-icon-precomposed" href="">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="/UI/Api/default/style/css/model1/common.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<section id="wrapper" class="wrapper">
+   
+   <!-- 图片轮播 -->
+    
+
+   <!-- 主体 -->
+   <section class="index-wrap">
+      
+      
+      
+         <a class="tel" href="t" style="color:#000" >认证完成，您可以正常上网。</a>
+      
+		
+   <iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe></section> 
+   
+   <!-- 底部 -->
+   <div class="foot-space"></div>
+   <footer class="index-foot">畅游无线版权所有</footer>
+   
+   
+
+
+<input type="hidden" id="ad_show_time" value="10"> 
+<script src="/UI/Public/matrix/js/jquery.min.js" type="text/javascript"></script>
+<script src="/UI/Public/js/model1/jquery.flexslider.min.js" type="text/javascript"></script>
+<script type="text/javascript">   
+//图片轮播
+$(window).load(function(){
+     $('.slide-photos').flexslider({
+        animation: "slide",
+		slideshowSpeed:5000,
+		animationSpeed:800,
+		pauseOnHover:false,
+		directionNav: false,
+		start: function(slider){
+           $('.index-head').removeClass('loading');
+        }  
+     });
+	 
+});
+</script>
+
+
+<!-- ///////////////////////新开页面只要下面的代码就行 要放在Jquery下面.......//////////////////// -->
+
+<!--如果有倒计时-->
+<!-- //////////////////新开页面只要上面的代码 就行..////////////////////     -->
+
+
+
+</section>
+<!-- 弹窗 -->
+   <section id="popWrap" class="pop-wrap">
+      <section id="popMain" class="pop-main">
+		  <section class="pop-main-in">
+			  <h4>请认证后上网</h4>
+				 <!-- <figure class="qr-code-img"><img src="http://wx.xinyiwifi.com/uploads/l/lketel1408253946/0/1/3/7/thumb_53f0420f7f99a.jpg" alt=""></figure> -->
+				 
+				 <div class="qr-code-txt">关注微信<b>123123</b>即可上网，打开微信-通讯录-+（右上角）-查找公众账号，输入商家公众账号ID：123123，关注即可上网。</div>
+				  				 				 				 				 				 			  		  </section>
+		  
+      </section>
+	  <section id="popMainCode" class="pop-main" style="display:none;">
+		<div class="pop-main-in">
+			<h4>请认证后上网</h4>
+			 <a class="icon-close" href="javascript:" onclick="hidePop()"></a>
+		  <div id="sendCode"><input type="text" class="input_phone" id="phone" placeholder="请输入您的手机号码获取认证码！"><br>
+				<a href="javascript:sendCode();" class="btn-weixin">提交</a>
+			</div>
+			<div id="loginform" style="display:none;">
+				<input class="input_phone" id="loginkey" type="text" name="token" onfocus="focusStyle()" onblur="blurStyle()" onkeypress="return onKeyPress(event)">
+				<button class="btn-weixin" id="loginbutton" onclick="rptk_weixin_submit('loginkey')" style="border:none;">发送验证码</button>
+			</div>
+			<script>
+				function sjrzbox(){
+					$("#popMain").hide();
+					$("#popMainCode").show();
+				}
+				function rptk_ios_goto_weixin()(){
+					
+					
+				}
+				function sendCode(){
+				/**
+				$.get("/index.php?g=Home&m=Index&a=sendCode",{id:103,phone:$("#phone").val(),code:7685,rptk_user_mac:'',rptk_key:'',rptk_user_ip:'',wecha_id:'',id:103}, function(result){
+					alert(result);					
+					$("#sendCode").hide();
+					$("#loginform").show();
+				 });			*/	
+			}
+			
+			</script>
+			</div>
+	  </section>
+   </section>
+   <div id="bodyMask" class="body-mask" onclick="hidePop()"></div>   
+   <script>
+	  var mask=document.getElementById("bodyMask")
+	  var popbox=document.getElementById("popWrap")
+	  var popMain=document.getElementById("popMain")
+	  //触发弹窗
+	  function showPop(){
+		  mask.style.display="block"
+		  popbox.style.display="block"
+		  var boxHeight=popMain.clientHeight
+		  var wHeight=window.innerHeight
+		  if(wHeight<boxHeight){
+			  popbox.style.position="absolute"
+		  }
+	  }
+	  //关闭弹窗
+	  function hidePop(){
+		  mask.style.display="none";
+		  popbox.style.display="none";
+		  popbox.style.position="fixed";
+		  $("#popMain").show();
+			$("#popMainCode").hide();
+			$("#sendCode").show();//2014-7-21  手机认证修改
+			$("#loginform").hide();//2014-7-21  手机认证修改
+      }	
+   </script>
+   <!--// 弹窗 --> 
+
+
+</body></html>

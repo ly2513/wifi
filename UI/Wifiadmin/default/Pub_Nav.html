@@ -1,0 +1,48 @@
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="brand" href="<#:U('index')#>"><img src="<#$Theme['P']['img']#>/wifilogo-mini.png" /></a>
+            
+
+            <ul class="nav pull-right">        
+            	<li class=" hidden-phone">
+                	
+                   		<a href="<#:U('Index/systemdata')#>">
+                   		<if condition="$authlist_count gt 50000">
+                   			<font color="red">
+                   			<script>
+                   			alert('警告：授权数据量过大，可能造成系统运行缓慢，请立即点击右上角"系统优化"功能进行优化，保证系统运行流畅');
+                   			</script>
+                   			
+                   			系统优化(需优化)
+                   			</font>
+                   			<else/>
+                   			系统优化
+                   		</if>
+                   		</a>
+                </li>       
+               <li class=" hidden-phone">
+                    	<a href="<#:U('Index/liences')#>">应用授权</a>
+                </li>
+                
+                <li class=" hidden-phone">
+                    	<a href="javascript:void(0);">登录帐号:(<#$Think.session.adminmame#>)</a>
+                </li>
+                 <li class=" hidden-phone">
+                    	<a href="<#:U('Index/pwd')#>">修改密码</a>
+                </li>
+                <li class="settings hidden-phone">
+                    <a href="<#:U('login/loginout')#>" role="button">
+                        <i class="icon-share-alt"></i>
+                    </a>
+                </li>
+            </ul>            
+        </div>
+    </div>
+    <!-- end navbar -->

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:Css"/>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=18E7F3FA5b3d576acdfafbee1f491217"></script>
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a></div>
+  <h1>网站设置</h1>
+  </div>
+<!--End-breadcrumbs-->
+  <div class="container-fluid">
+  <hr>
+  <div class="row-fluid">
+    <div class="span8">
+      <div class="widget-box">
+        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+          <h5>编辑</h5>
+        </div>
+        <div class="widget-content nopadding">
+        <form action="<#:U('index/web/doset')#>" method="post" class="form-horizontal">
+
+            <div class="control-group">
+              <label class="control-label">网站名称 :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="网站名称"  name="shopname" id="shopname" value="<#$wapinfo.shopname#>" />
+              	 <span class="help-block">微官网名称，显示在微官网顶部。</span> 
+              </div>
+            </div>
+          
+            <div class="control-group">
+              <label class="control-label">联系电话 :</label>
+              <div class="controls">
+                <input type="text"  class="span11" placeholder="联系电话"  name="tel" id="tel" value="<#$wapinfo.tel#>" maxlength="15"/>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <label class="control-label">联系地址 :</label>
+              <div class="controls">
+                <input type="text" class="span11" placeholder="店铺地址 " name="address" id="address" value="<#$wapinfo.address#>"/>
+             
+              </div>
+            </div>
+             <div class="control-group">
+              <label class="control-label">地图标识 :</label>
+              <div class="controls">
+               <input type="text" class="span4" placeholder="输入地址查询 " name="mapsearch" id="mapsearch" value="<#$wapinfo.address#>"/><button type="button" class="btn btn-info" onclick="GetAdd();">查询</button></br></br>
+                <div id="allmap" style="width:600px;height:500px;"></div>
+              </div>
+             </div>
+              <div class="control-group">
+              <label class="control-label">坐标 :</label>
+              <div class="controls">
+                <input type="text" class="span6" placeholder="坐标 " name="point" id="point" readonly="true" value="<#$wapinfo.point_x#>,<#$wapinfo.point_y#>"/>
+              
+              </div>
+            </div>
+            <div class="form-actions">
+            <input type="hidden" name="point_x" id="point_x" readonly="true" value="<#$wapinfo.point_x#>"/>
+                <input type="hidden"  name="point_y" id="point_y" readonly="true"  value="<#$wapinfo.point_y#>"/>
+            
+              <button type="submit" class="btn btn-success">保存</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+    </div>
+    
+  </div>
+  
+</div>
+</div>
+
+<!--end-main-container-part-->
+
+   <include file="Pub:foot"/>
+
+
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+
+
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+
+function shownotice(t,obj){
+	$('#notice-title').text(t);
+	$('#notice-info').html($(obj).parent().next().html());
+	$('#noticebox').modal({backdrop:false,show:true});
+}
+  
+</script>
+<script>
+var map = new BMap.Map("allmap");
+var px=<empty name="wapinfo.point_x">116.403909<else/><#$wapinfo.point_x#></empty>;
+var py=<empty name="wapinfo.point_y">39.915156<else/><#$wapinfo.point_y#></empty>;
+var myGeo = new BMap.Geocoder();
+map.addControl(new BMap.NavigationControl());  //添加默认缩放平移控件
+map.centerAndZoom(new BMap.Point(px, py), 15);
+var marker1 = new BMap.Marker(new BMap.Point(px, py));  // 创建标注
+marker1.enableDragging();    //可拖拽
+// 将标注添加到地图中
+marker1.addEventListener("click", showInfo);
+marker1.addEventListener("dragend",showInfo);
+function showInfo(e){
+ //alert(e.point.lng + ", " + e.point.lat);
+ $("#point_x").val(e.point.lng);
+ $("#point_y").val(e.point.lat);
+ var s=""+e.point.lng+","+e.point.lat+"";
+ $("#point").val(s);
+}
+map.addOverlay(marker1);   
+map.addEventListener("click", function(e){
+	  	marker1.setPosition(e.point);
+	    $("#point_x").val(e.point.lng);
+	    $("#point_y").val(e.point.lat);
+	    var s=""+e.point.lng+","+e.point.lat+"";
+	    $("#point").val(s);
+});
+function GetAdd(){
+	add=$('#mapsearch').val();
+	myGeo.getPoint(add, function(point){
+		  if (point) {
+		    map.centerAndZoom(point, 16);
+		    marker1.setPosition(point);
+		    $("#point_x").val(point.lng);
+		    $("#point_y").val(point.lat);
+		    var s=""+point.lng+","+point.lat+"";
+		    $("#point").val(s);
+		  }else{
+			  alert('没有找到匹配的坐标信息,请检查搜索的地址是否存在');
+		  }
+	}, "全国");
+}
+
+$(document).ready(function(){
+	
+	$('#web3g').trigger('click');
+});
+</script>
+</body>
+</html>

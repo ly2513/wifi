@@ -1,0 +1,24 @@
+[ 2015-01-20T10:46:21+08:00 ] 211.103.232.43 /index.php/api/userauth/wxauth.html
+ERR: 模板不存在[./UI/Api/default/Userauth_wxauth$model4.html]
+
+[ 2015-01-20T11:10:43+08:00 ] 211.103.232.43 /index.php/api/userauth/showtoken.html
+ERR: 模板不存在[./UI/Api/default/Userauth_showtoken$model6.html]
+
+[ 2015-01-20T11:18:40+08:00 ] 211.103.232.43 /index.php/api/userauth/comments.html
+ERR: 模板不存在[./UI/Api/default/Userauth_comments$model6.html]
+
+[ 2015-01-20T13:32:51+08:00 ] 211.103.232.43 /index.php/adv/saveset.html
+ERR: 无法加载模块:Adv
+
+[ 2015-01-20T14:32:38+08:00 ] 211.103.232.43 /index.php/adv/saveset.html
+ERR: 1062:Duplicate entry '2' for key 'PRIMARY'
+ [ SQL语句 ] : UPDATE `wifi_smscfg` SET `action`=1,`user`='qxtest',`password`='a123456',`id`=2,`uid`=13,`add_time`=1421735558,`update_time`=1421735558 WHERE ( `uid` = 13 )
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : UPDATE `wifi_smscfg` SET `action`=0,`user`='qxtest',`password`='a123456',`id`=1,`uid`=13,`add_time`=1421735558,`update_time`=1421735558 WHERE ( `uid` = 13 )
+
+[ 2015-01-20T14:33:03+08:00 ] 211.103.232.43 /index.php/adv/saveset.html
+ERR: 1062:Duplicate entry '2' for key 'PRIMARY'
+ [ SQL语句 ] : UPDATE `wifi_smscfg` SET `action`=1,`user`='qxtest',`password`='a123456',`id`=2,`uid`=13,`add_time`=1421735583,`update_time`=1421735583 WHERE ( `uid` = 13 )
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : UPDATE `wifi_smscfg` SET `action`=0,`user`='qxtest',`password`='a123456',`id`=1,`uid`=13,`add_time`=1421735583,`update_time`=1421735583 WHERE ( `uid` = 13 )
+

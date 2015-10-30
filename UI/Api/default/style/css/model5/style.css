@@ -1,0 +1,173 @@
+@charset "utf-8";
+/* CSS reset */
+html{color:#666;background:#fff;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;vertical-align:middle;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;font-variant:normal;}sup {vertical-align:text-top;}sub {vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;vertical-align:middle;}input,textarea,select{*font-size:100%;}legend{color:#000;}body {font:13px/1.231 tahoma,arial,helvetica,sans-serif,"宋体";*font-size:small;*font:x-small;}table {width:100%;font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+strong{
+	font-weight: bold;
+}
+
+a, .blue{
+	color: #0176c5;
+	text-decoration: none;
+}
+
+#container{
+	width: 320px;
+	margin: 0 auto;
+}
+
+#header{
+	height: 35px;
+	font-weight: bold;
+	line-height: 35px;
+	border-bottom: 2px solid #e3edec;
+	text-align: center;
+	position: relative;
+}
+#header span{
+	position: absolute;
+	display: inline-block;
+}
+#header span.icon-wifi{
+	left: 8px;
+	top: 11px;
+	width: 37px;
+	height: 16px;
+	background: url(images/wifi.png) left top no-repeat;
+}
+#header span.icon-help{
+	right: 8px;
+	top: 8px;
+	width: 21px;
+	height: 21px;
+	background: url(images/help.png) left top no-repeat;
+}
+
+#body .ad_wifi img{
+	width: 320px;
+}
+
+.phone{
+	padding: 10px;
+}
+
+.phone p{
+	margin-bottom: 10px;
+}
+
+.phone input{
+	width: 96%;
+	padding: 5px;
+}
+
+.phone a{
+	color: #fff;
+	width: 100%;
+	margin-top: 10px;
+	text-align: center;
+	display: inline-block;
+	background: #0176c5;
+	padding: 10px 0;
+	border-radius: 5px;
+}
+
+#body .use_wifi{
+	height: 50px;
+}
+
+#body .use_wifi .free{
+	display: inline-block;
+	width: 37px;
+	height: 40px;
+	vertical-align: middle;
+	margin: 5px 0 0 5px;
+	background: url(images/free.png) left top no-repeat;
+}
+
+#body .use_wifi .wifi_xieyi{
+	height: 45px;
+	padding: 5px 0 0 10px;
+	display: inline-block;
+	border-left: 1px solid #ccc;
+}
+
+#body .free_login{
+	padding: 10px 5px;
+	background: #eeeff3;
+}
+
+#body .free_login span{
+	width: 76px;
+	height: 24px;
+	margin: 10px 0;
+	display: inline-block;
+}
+.free_login a{
+	color: #fff;
+	width: 20%;
+	margin-top: 10px;
+	text-align: center;
+	display: inline-block;
+	background: #0176c5;
+	padding: 10px 0;
+	border-radius: 5px;
+}
+#body .free_login .wechat{
+	background: url(images/wechat.png) left top no-repeat;
+}
+
+#body .free_login .weibo{
+	background: url(images/weibo.png) left top no-repeat;
+}
+
+#body .free_login .tengxun{
+	background: url(images/tengxun.png) left top no-repeat;
+}
+
+#body .used_wifi{
+	text-align: center;
+	padding: 10px 5px 20px;
+}
+
+#footer {
+	color: #fff;
+	height: 33px;
+	text-align: center;
+	line-height: 33px;
+	background-color: #696969;
+	border-top: 2px solid #565656;
+}
+#footer a{
+	color: #fff;
+}
+
+@media screen and (min-width: 480px){
+	#container{
+		width: 480px;
+	}
+	
+	#body .ad_wifi img{
+		width: 480px;
+	}
+		
+	.phone input{
+		width: 97%;
+	}
+}
+
+
+@media screen and (min-width: 640px){
+	#container{
+		width: 640px;
+	}
+	
+	#body .ad_wifi img{
+		width: 640px;
+	}
+		
+	.phone input{
+		width: 97%;
+	}
+}
+
+

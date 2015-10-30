@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<!-- libraries -->
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="<#$Theme['P']['root']#>/bootadmin/css/compiled/form-showcase.css" type="text/css" media="screen" />
+		<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+   	<div class="container-fluid">
+            <div id="pad-wrapper" class="form-page">
+            
+                <div class="row-fluid form-wrapper">
+                 		<div class="span12">
+                            <h4>编辑广告</h4>
+                        </div>
+                    <!-- left column -->
+                    <div class="span8 column">
+                        <form name="doad"  action="__URL__/add"  method="post" enctype="multipart/form-data" >
+                        <div class="alert span10" style="display: none;">
+						  <span id="alertmsg"></span>
+						</div>
+                          <div class="field-box">
+                                <label>广告名称:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="请输入标题" data-placement="right" name="title" id="title" value="<#$info['title']#>"/>
+                            </div>
+                            <div class="field-box">
+                                <label>广告备注:</label>
+                                <textarea rows="" cols="" class="span8" name="info"><#$info.info#></textarea>
+                            </div>
+                           	<div class="field-box">
+                                <label>排序:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="输入广告投放顺序，数字越大越靠后" data-placement="right" name="sort" id="sort" value="<#$info['sort']#>"/>
+                            </div>
+                             	<div class="field-box">
+                                <label>广告图片:</label>
+                              <input type="file"  name="img">
+                            </div>
+                              	<div class="field-box">
+                                <label>有效时间:</label>
+                                 <div class="span4" id="startdt"  >
+                                 	<input type="text" class="span9" value="" name="startdate" id="startdate"  data-date-format="yyyy-mm-dd" readonly> 
+                                 </div>
+                                  <label>到:</label>
+                                <div class="span4" id="enddt" >
+                                	<input type="text" class="span9" value="" name="enddate" id="enddate"  data-date-format="yyyy-mm-dd" readonly> 
+                                </div>
+                                </div>
+                                 
+                               
+                          
+                              <div class="field-box ">
+							
+                                <input type="submit"   class="btn-glow primary " id="btn_save" value="保存信息">
+                                &nbsp;
+								<a class="btn-glow  " href="<#:U('index')#>">返回列表</a>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span4 column pull-right">
+
+                    </div>
+                </div>
+            	
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+            <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.datepicker.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/jquery.uniform.min.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+  
+
+  <script type="text/javascript">
+                
+
+                        $(function () {
+                             var shownow=new Date();
+                             shownow=shownow.getTime();
+                        	 $("#startdate").datepicker().on('changeDate',function(ev){
+                        		  var startTime = ev.date.valueOf();
+                        		 
+                        		  if(startTime<shownow){
+                        		   
+                        		   $("#startdate").focus();
+                        		  }
+                        		});
+                        	 $("#enddate").datepicker().on('changeDate',function(ev){
+                        		 var et = ev.date.valueOf();
+                        		 var t=$("#startdate").val();
+                        		 if($("#startdate").val()==""){
+                        			 		$("#enddate").val("");
+											alert("请先选择投放时间");
+											return;
+											
+                            		 }else{
+		                        		 var dt=Date.parse($("#startdate").val());
+		                        		 if(et<dt){
+		                        			 $("#enddate").val($("#startdate").val());
+		                            		 alert("广告结束时间不能小于开始时间");
+		                        		
+		                            	}
+                            		 }
+                        		 
+                        		 
+                             });
+                            // add uniform plugin styles to html elements
+                            $("input:checkbox, input:radio,input[type=file]").uniform();
+
+                        });
+                    </script>
+</body>
+</html>

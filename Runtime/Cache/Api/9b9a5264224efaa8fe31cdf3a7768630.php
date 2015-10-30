@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit(); echo '亲，请不要重复验证，上网密钥只有一次有效，如失效，请重新获取上网密钥！'; ?>

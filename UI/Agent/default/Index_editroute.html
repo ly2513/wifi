@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--代理商平台</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+</head>
+<body>
+<include file="Pub:top"/>
+<include file="Pub:Nav"/>
+<!--main-container-part-->
+<div id="content">
+  <!--breadcrumbs-->
+    <div id="content-header">
+        <div id="breadcrumb">
+            <a href="<#:U('index/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a>
+            <a href="#" class="current">编辑路由信息</a>
+        </div>
+        <h1>编辑路由信息</h1>
+    </div>
+    <!--End-breadcrumbs-->
+    <div class="container-fluid" >
+        <hr>
+        <div class="row-fluid">
+            <div class="span8">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-align-justify"></i></span>
+                        <h5>编辑路由信息</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form name="do" method="post" action="<#:U('editroute');#>" class="form-horizontal">
+                            <div class="control-group">
+                                <div class="alert span9" style="display: none;margin: 10px 0 10px 150px;">
+                                    <span id="alertmsg"></span>
+                                </div>
+                            </div>    
+                            <div class="control-group">
+                                <label class="control-label">路由器名称:</label>
+                                <div class="controls">
+                                    <input type="text" class="span11" data-toggle="tooltip" data-trigger="focus" title="名称不能超过20个字" data-placement="right" name="routename" id="routename" value="<#$info.routename#>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">MAC地址:</label>
+                                <div class="controls">
+                                    <input class="span11" type="text" name="gw_id" id="gw_id" value="<#$info.gw_id#>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">路由排序:</label>
+                                <div class="controls">
+                                    <input class="span11" type="text" name="sortid" id="sortid" value="<#$info.sortid#>"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <input type="hidden" name="id" id="id" value="<#$info.id#>">　　
+                                <input type="submit" class="btn btn-success" id="btn_save" value="确认编辑" style="margin: 20px;">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="span4 column pull-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+
+function shownotice(t,obj){
+    $('#notice-title').text(t);
+    $('#notice-info').html($(obj).parent().next().html());
+    $('#noticebox').modal({backdrop:false,show:true});
+}
+</script>
+
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+
+	<!-- scripts -->
+    <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+                           
+<!-- call this page plugins -->
+    <script type="text/javascript">
+        
+         
+        $(function () {
+            
+            // add uniform plugin styles to html elements
+            $("input:checkbox, input:radio").uniform();
+           
+           
+            
+        });
+    </script>
+
+</body>
+</html>

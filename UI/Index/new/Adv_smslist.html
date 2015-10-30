@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--会员中心</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:Css"/>
+</head>
+<body>
+   <include file="Pub:top"/>
+   <include file="Pub:nav"/>
+<!--main-container-part-->
+<div id="content">
+<!--breadcrumbs-->
+  <div id="content-header">
+  <div id="breadcrumb"> <a href="<#:U('user/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a><a href="#" class="current">营销管理</a> <a href="#">短信发送列表</a></div>
+  </div>
+<!--End-breadcrumbs-->
+    <div class="container-fluid">
+    <hr>
+    <div class="row-fluid">
+      <div class="span12">
+            
+        <div class="widget-box">
+          <div class="widget-title"> <span class="icon"> <i class="icon-th"></i></span>
+            <h5>统计列表</h5>
+          
+          </div>
+          <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                		<th>编号</th>
+                		<th>提交时间</th>
+	        			<th>手机号码</th>
+	        			<th>短信内容</th>
+	        			<th>字数</th>
+	        			<th>条数</th>
+	        			
+	        			<th>发送时间</th>
+	        			<th>状态</th>
+                </tr>
+              </thead>
+              <tbody>
+           	<volist name="lists" id="vo">
+        				<tr>
+	        			<td><#$vo.id#></td>
+	        			<td><#$vo.add_time|date='Y-m-d H:i',####></td>
+	        			<td><#$vo.phone#></td>
+	        			<td><#$vo.info#></td>
+	        			<td><#$vo.lens#></td>
+	        			<td><#$vo.unit#></td>
+
+	        			<td>
+                  <if condition="$vo['send_time'] eq '' ">无
+                    <else /> <#$vo.send_time|date='Y-m-d H:i',####>
+                  </if>
+                </td>
+	        			<td><#:smsstate($vo['state'])#></td>
+	        			</tr>
+        		</volist>
+               
+              </tbody>
+            </table>
+          </div>
+        
+        </div>
+        
+         <div class="pagination pull-right">
+          	<#$page#>
+          </div>
+        
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--end-main-container-part-->
+
+   <include file="Pub:foot"/>
+
+
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+
+
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+
+$(document).ready(function(){
+	
+	$('#sale').trigger('click');
+});
+</script>
+</body>
+</html>

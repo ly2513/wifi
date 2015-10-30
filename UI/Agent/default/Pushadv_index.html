@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--代理商平台</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+</head>
+<body>
+<include file="Pub:top"/>
+<include file="Pub:Nav"/>
+<!--main-container-part-->
+<div id="content">
+  <!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('index/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a><a href="#" class="current">广告列表</a> </div>
+    <h1>广告列表</h1>
+  </div>
+  <!--End-breadcrumbs-->
+  <div class="container-fluid" >
+    <hr>
+    <div class="row-fluid">
+      <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+        <h5>广告列表</h5>
+      </div>
+      <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                 <th>编号</th>
+                 <th>添加日期</th>
+                 <th>图片信息</th>
+                 <th>投放时间</th>
+                 <th>排序</th>
+                 <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+               <volist name="lists" id="vo">
+                <tr class="<eq name="mod" value="1">even gradeC<else/>odd gradeX</eq>">
+                  <td>
+                     <#$i#>
+                  </td>
+                  <td>
+                     <#$vo.add_time|date='Y-m-d ',####>
+                  </td>
+                    <td>
+                     <img src="<#$vo.pic#>" class="thumb"  style="width:100px;">
+                  </td>
+                  <td>
+                      <#$vo.startdate|date='Y-m-d ',####>到<#$vo.enddate|date='Y-m-d ',####>
+                  </td>
+                    <td>
+                       <#$vo.sort#>
+                  </td>
+                  <td>
+                    <a href="<#:U('edit',array('id'=>$vo['id']))#>" class="btn btn-primary btn-mini">编辑</a>|
+                    <a href="<#:U('del',array('id'=>$vo['id']))#>" class="btn btn-danger btn-mini">删除</a>
+                  </td>
+              </tr>
+              </volist>
+               
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination pull-right">
+            <#$page#>
+          </div>
+    </div>
+  </div>
+</div>
+
+<include file="Pub:foot"/>
+
+
+
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/common.js"></script> 
+
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$('#pushadv').trigger('click');
+});
+</script>
+</body>
+</html>

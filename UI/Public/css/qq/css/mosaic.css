@@ -1,0 +1,59 @@
+﻿.mosaic-block {
+	float:left;
+	position:relative;
+	overflow:hidden;
+	width:290px;
+	height:155px;
+	margin:2px;
+	border:1px solid #ccc;
+	padding:2px;
+	/*background:#fff url(../images/progress.gif) no-repeat center center;*/
+	-webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.mosaic-backdrop {
+	/*display:none;*/
+	position:relative;
+	top:0;
+	height:100%;
+	width:100%;
+	background:#111;
+}
+.mosaic-overlay {
+	/*display:none;*/
+	z-index:5;
+	position:absolute;
+	width:280px;
+	height:100%;
+	margin-left:2px;
+	margin-bottom:2px;
+	background:#111;
+	padding-left:10px;
+	text-decoration:none;
+	font-size:14px;
+	font-weight: bold;
+	font-family:"微软雅黑", "宋体";
+	color:#fff;
+	text-shadow:1px 1px 0 rgb(0,0,0);
+}
+.bar2 .mosaic-overlay {
+
+	height:30px;
+	line-height:30px;
+	opacity:0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	filter:alpha(opacity=80);
+}
+.bar2 .mosaic-overlay:hover {
+	opacity:1;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter:alpha(opacity=100);
+}
+.clearfix {
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.details {
+	margin:20px;
+}

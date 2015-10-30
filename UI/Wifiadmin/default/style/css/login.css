@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+body { background-color:#2E363F;    padding: 0;    margin-top:10%;}
+#loginbox { overflow: hidden !important;    text-align: left;    position: relative; }
+#loginbox form{ width:100%; background:#2E363F; position:relative; top:0; left:0; }
+#loginbox .controls{ padding:0 20px;}
+#loginbox .control-group{ padding:20px 0; margin-bottom:0px;}
+.form-vertical, .form-actions {  margin-bottom: 0; background:none; border-top:1px solid #3f4954; }

@@ -1,0 +1,6 @@
+[ 2015-04-18T02:45:18+08:00 ] 119.147.146.195 /index.php/api/ping/%3Fgw_id%253DACA213ACEO3C%2526sys_uptime%253D84675%2526sys_memfree%253D40996%2526sys_load%253D0.16%2526wifidog_uptime%253D84478
+ERR: 非法操作?gw_id%3daca213aceo3c%26sys_uptime%3d84675%26sys_memfree%3d40996%26sys_load%3d0
+
+[ 2015-04-18T16:04:45+08:00 ] 114.242.249.61 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+

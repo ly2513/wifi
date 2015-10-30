@@ -1,0 +1,27 @@
+[ 2015-01-18T21:57:25+08:00 ] 14.131.179.176 /index.php/authset/tplset.html
+ERR: 无法加载模块:Authset
+
+[ 2015-01-18T23:32:26+08:00 ] 14.131.179.176 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-01-18T23:32:30+08:00 ] 14.131.179.176 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-01-18T23:34:52+08:00 ] 14.131.179.176 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+
+[ 2015-01-18T23:34:56+08:00 ] 14.131.179.176 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+

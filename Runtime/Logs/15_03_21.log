@@ -1,0 +1,22 @@
+[ 2015-03-21T04:51:50+08:00 ] 119.147.146.189 /index.php/api/ping/%3Fgw_id%253DACA213ABEFB2%2526sys_uptime%253D108%2526sys_memfree%253D35940%2526sys_load%253D0.28%2526wifidog_uptime%253D129
+ERR: 非法操作?gw_id%3daca213abefb2%26sys_uptime%3d108%26sys_memfree%3d35940%26sys_load%3d0
+
+[ 2015-03-21T05:50:19+08:00 ] 180.153.206.36 /index.php/api/ping/%253Fgw_id%25253DACA213ABEFB2%252526sys_uptime%25253D108%252526sys_memfree%25253D35940%252526sys_load%25253D0.28%252526wifidog_uptime%25253D129
+ERR: 非法操作%3fgw_id%253daca213abefb2%2526sys_uptime%253d108%2526sys_memfree%253d35940%2526sys_load%253d0
+
+[ 2015-03-21T19:52:24+08:00 ] 14.131.184.107 /index.php/index/js/1.js
+ERR: 无法加载模块:Js
+
+[ 2015-03-21T19:55:25+08:00 ] ERR: 0
+[ 2015-03-21T19:57:15+08:00 ] ERR: 0
+[ 2015-03-21T19:57:19+08:00 ] ERR: 0
+[ 2015-03-21T19:58:01+08:00 ] ERR: 0
+[ 2015-03-21T20:27:49+08:00 ] ERR: 0
+[ 2015-03-21T23:03:39+08:00 ] ERR: 0
+[ 2015-03-21T23:12:21+08:00 ] ERR: 0
+[ 2015-03-21T23:14:48+08:00 ] 113.108.21.69 /index.php/wifiadmin/pub/getauthrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-21T23:14:49+08:00 ] 112.64.235.250 /index.php/wifiadmin/pub/getauthrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+

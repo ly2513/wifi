@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title><#:C('sitename')#>--代理商平台</title>
+<meta name="keywords" content="<#:C('keyword')#>"/>
+<meta name="description" content="<#:C('content')#>"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<include file="Pub:Css"/>
+</head>
+<body>
+<include file="Pub:top"/>
+<include file="Pub:Nav"/>
+<!--main-container-part-->
+<div id="content">
+  <!--breadcrumbs-->
+  <div id="content-header">
+    <div id="breadcrumb"> <a href="<#:U('index/index')#>" title="返回首页" class="tip-bottom"><i class="icon-home"></i>首页</a><a href="#" class="current">路由器列表</a> </div>
+    <h1>路由器列表</h1>
+  </div>
+  <!--End-breadcrumbs-->
+  <div class="container-fluid" >
+    <hr>
+    <div class="row-fluid">
+      <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+        <h5>路由器列表</h5>
+      </div>
+      <div class="widget-content nopadding">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                 <th>编号</th>
+                 <th>添加日期</th>
+                 <th>商户名称</th>
+                 <th>路由器名称</th>
+                 <th>MAC</th>
+                 <th>路由网关/端口</th>
+                 <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+               <volist name="lists" id="vo">
+                <tr class="<eq name="mod" value="1">even gradeC<else/>odd gradeX</eq>">
+                  <td>
+                     <#$i#>
+                  </td>
+                  <td>
+                     <#$vo.add_time|date='Y-m-d ',####>
+                  </td>
+                    <td>
+                     <#$vo.shopname#>
+                  </td>
+                  <td>
+                      <#$vo.routename#>
+                  </td>
+                    <td>
+                       <#$vo.gw_id#>
+                  </td>
+                  <td>
+                      <#$vo.gw_address#>/<#$vo.gw_port#>
+                  </td>
+                  <td>
+                    <a href="<#:U('editroute',array('id'=>$vo['id'],'shopid'=>$vo['shopid']))#>" class="btn btn-primary btn-mini">编辑</a>
+                                  |
+                    <a href="javascript:drop_confirm('您确定要删除吗?','<#:U('delroute',array('id'=>$vo['id'],'shopid'=>$vo['shopid']))#>');"  class="btn btn-danger btn-mini">删除</a>
+                  </td>
+              </tr>
+              </volist>
+               
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination pull-right">
+            <#$page#>
+          </div>
+    </div>
+  </div>
+</div>
+<script src="<#$Theme['P']['js']#>/jquery.js"></script>
+<script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+<script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+<script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+<script src="<#$Theme['P']['root']#>/matrix/js/jquery.ui.custom.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/bootstrap.min.js"></script> 
+<script src="<#$Theme['P']['root']#>/matrix/js/matrix.js"></script> 
+
+
+<script type="text/javascript">
+  // This function is called from the pop-up menus to transfer to
+  // a different page. Ignore if the value returned is a null string:
+  function goPage (newURL) {
+
+      // if url is empty, skip the menu dividers and reset the menu selection to default
+      if (newURL != "") {
+      
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-" ) {
+              resetMenu();            
+          } 
+          // else, send page to designated URL            
+          else {  
+            document.location.href = newURL;
+          }
+      }
+  }
+
+// resets the menu selection upon entry to this page:
+function resetMenu() {
+   document.gomenu.selector.selectedIndex = 2;
+}
+
+function shownotice(t,obj){
+  $('#notice-title').text(t);
+  $('#notice-info').html($(obj).parent().next().html());
+  $('#noticebox').modal({backdrop:false,show:true});
+}
+
+</script>
+</body>
+</html>

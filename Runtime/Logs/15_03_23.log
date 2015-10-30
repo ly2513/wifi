@@ -1,0 +1,23 @@
+[ 2015-03-23T09:17:20+08:00 ] 140.207.54.74 /index.php/weichat/command/gh_0838150e850f?signature=2876cf4c5f3229a1b28cd48d453a4e326a330e8f&timestamp=1427073438&nonce=1472045973
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+
+[ 2015-03-23T09:44:18+08:00 ] 211.103.232.46 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+
+[ 2015-03-23T14:00:35+08:00 ] 211.103.232.46 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+
+[ 2015-03-23T17:01:41+08:00 ] 140.207.54.74 /index.php/weichat/command/gh_0838150e850f?signature=e5f9a58b00cd9860faa48904d860de52f5b1d8f6&timestamp=1427101301&nonce=1586006704
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+
+[ 2015-03-23T19:40:55+08:00 ] 113.45.222.76 /index.php/index/index/images/section4-arrow.png
+ERR: 非法操作images
+
+[ 2015-03-23T19:41:14+08:00 ] 113.45.222.76 /index.php/index/index/js/1.js
+ERR: 非法操作js
+
+[ 2015-03-23T19:58:49+08:00 ] 180.153.206.38 /index.php/index/index/js/1.js
+ERR: 非法操作js
+

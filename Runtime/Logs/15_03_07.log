@@ -1,0 +1,23 @@
+[ 2015-03-07T09:27:10+08:00 ] 211.103.232.43 /index.php/api/ping/?gw_id=ACA213ACEO3C&sys_uptime=22975&sys_memfree=41716&sys_load=0.05&wifidog_uptime=22948
+ERR: Lost connection to MySQL server at 'reading initial communication packet', system error: 111
+
+[ 2015-03-07T16:07:24+08:00 ] 183.60.52.11 /index.php/wifiadmin/pub/getpubadrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-07T16:07:24+08:00 ] 101.226.89.121 /index.php/wifiadmin/pub/getpubadrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-07T16:09:05+08:00 ] ERR: 0
+[ 2015-03-07T16:09:23+08:00 ] ERR: 0
+[ 2015-03-07T16:11:31+08:00 ] ERR: 0
+[ 2015-03-07T16:11:52+08:00 ] ERR: 0
+[ 2015-03-07T16:11:55+08:00 ] ERR: 0
+[ 2015-03-07T16:12:50+08:00 ] ERR: 0
+[ 2015-03-07T16:13:28+08:00 ] ERR: 0
+[ 2015-03-07T16:13:33+08:00 ] ERR: 0
+[ 2015-03-07T16:14:07+08:00 ] ERR: 0
+[ 2015-03-07T16:14:11+08:00 ] ERR: 0
+[ 2015-03-07T16:14:16+08:00 ] ERR: 0
+[ 2015-03-07T16:40:09+08:00 ] ERR: 0
+[ 2015-03-07T16:40:17+08:00 ] ERR: 0
+[ 2015-03-07T17:11:25+08:00 ] ERR: 0

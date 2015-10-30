@@ -1,0 +1,29 @@
+<!--sidebar-menu-->
+<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+  <ul>
+    <li class="<if condition="($nav['a'] == 'index')">active"</if>"><a href="<#:U('Index/index')#>"><i class="icon icon-home"></i> <span>首页</span></a> </li>
+    <li class="<if condition="($nav['a'] == 'account')">active"</if>"><a href="<#:U('Index/account')#>"><i class="icon icon-group"></i> <span>账户管理</span></a> </li>
+    <li class="submenu <if condition="($nav['a'] == 'shop')">active"</if>"><a href="#" id="shop"><i class="icon icon-user"></i> <span>商户管理</span></a>
+   	  <ul> 
+        <li><a href="<#:U('Index/shoplist')#>">商户列表</a></li>
+        <li><a href="<#:U('Index/shopadd')#>">添加商户</a></li>
+      </ul>
+    </li>
+    <li class="submenu <if condition="($nav['a'] == 'adman')">active"</if>"><a href="#" id="adman"><i class="icon icon-cloud"></i> <span>广告管理</span></a>
+      <ul>
+        <li><a href="<#:U('Admanage/shopad')#>">广告列表</a></li>
+        <li><a href="<#:U('Admanage/adrpt')#>">广告统计</a></li>
+      </ul>
+    </li>
+    <li class="submenu <if condition="($nav['a'] == 'pushadv')">active"</if>"><a href="#" id="pushadv"><i class="icon icon-th-large"></i> <span>广告推送管理</span></a>
+      <ul>
+        <li><a href="<#:U('pushadv/set')#>">推送设置</a></li>
+        <li><a href="<#:U('pushadv/index')#>">广告列表</a></li>
+        <li><a href="<#:U('pushadv/add')#>">投放广告</a></li>
+        <li><a href="<#:U('pushadv/rpt')#>">投放统计</a></li>
+      </ul>
+    </li>
+    <li class="<if condition="($nav['a'] == 'report')">active"</if>"><a href="<#:U('Index/report')#>"><i class="icon icon-envelope-alt"></i> <span>资金报表</span></a> </li>
+  </ul>
+</div>
+<!--sidebar-menu-->

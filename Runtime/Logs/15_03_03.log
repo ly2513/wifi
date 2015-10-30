@@ -1,0 +1,9 @@
+[ 2015-03-03T18:09:05+08:00 ] 183.60.52.11 /index.php/wifiadmin/pub/getauthrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-03T22:12:14+08:00 ] 14.131.180.12 /index.php/agent/admanage/shopad.html
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select count(*) as ct from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id where  b.pid=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'limit 0,20' at line 1
+ [ SQL语句 ] : select a.*,b.shopname from wifi_ad  a LEFT JOIN wifi_shop  b on a.uid=b.id  where  b.pid= limit 0,20 
+

@@ -1,0 +1,19 @@
+.wp-pagenavi {
+	clear: both;
+	margin-top:10px;
+}
+.wp-pagenavi A {
+	BORDER-RIGHT: #bfbfbf 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #bfbfbf 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 3px; MARGIN: 2px; BORDER-LEFT: #bfbfbf 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #bfbfbf 1px solid; TEXT-DECORATION: none
+}
+.wp-pagenavi SPAN {
+	BORDER-RIGHT: #bfbfbf 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #bfbfbf 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 3px; MARGIN: 2px; BORDER-LEFT: #bfbfbf 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #bfbfbf 1px solid; TEXT-DECORATION: none
+}
+.wp-pagenavi A:hover {
+	BORDER-LEFT-COLOR: #000; BORDER-BOTTOM-COLOR: #000; BORDER-TOP-COLOR: #000; BORDER-RIGHT-COLOR: #000
+}
+.wp-pagenavi SPAN.current {
+	BORDER-LEFT-COLOR: #000; BORDER-BOTTOM-COLOR: #000; BORDER-TOP-COLOR: #000; BORDER-RIGHT-COLOR: #000
+}
+.wp-pagenavi SPAN.current {
+	FONT-WEIGHT: bold
+}

@@ -1,0 +1,24 @@
+[ 2015-03-11T13:25:04+08:00 ] 140.207.54.80 /index.php/weichat/command/gh_0838150e850f?signature=ed4772cdc7a6c91cf58af18d7657a043cfe8c980&timestamp=1426051504&nonce=165911794
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_authlist WHERE uid =
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_member WHERE id =
+
+[ 2015-03-11T13:47:20+08:00 ] 180.153.214.198 /index.php/user/wx_api.html
+ERR: 模板不存在[./UI/Index/new/User_wx_api.html]
+
+[ 2015-03-11T14:13:56+08:00 ] 113.108.21.69 /index.php/wifiadmin/pub/getuserchart.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-11T14:13:56+08:00 ] 112.64.235.248 /index.php/wifiadmin/pub/getuserchart.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-11T14:13:56+08:00 ] 113.108.21.69 /index.php/wifiadmin/pub/getadrpt.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-03-11T14:19:49+08:00 ] 140.207.54.74 /index.php/weichat/command/gh_dd8c103f67bd?signature=aac4b1c1d67f2550c168813545dfeb663a3df105&timestamp=1426054788&nonce=429270731
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE ( id=20 )' at line 1
+ [ SQL语句 ] : UPDATE `wifi_shop` SET  WHERE ( id=20 )
+

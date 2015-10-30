@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><#:C('sitename')#>-管理后台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<include file="Pub:style"/>
+	<!-- libraries -->
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/uniform.default.css" type="text/css" rel="stylesheet" />
+    <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/select2.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="<#$Theme['P']['root']#>/bootadmin/css/compiled/form-showcase.css" type="text/css" media="screen" />
+	  <link href="<#$Theme['P']['root']#>/bootadmin/css/lib/bootstrap-wysihtml5.css" type="text/css" rel="stylesheet" />
+	
+<body>
+
+
+<include file="Pub:Nav"/>
+   <include file="Pub:Sidebar"/>
+
+	<!-- main container -->
+    <div class="content" style="height: 100%;">
+   	<div class="container-fluid">
+            <div id="pad-wrapper" class="form-page">
+            	
+                <div class="row-fluid form-wrapper">
+                 		<div class="span12">
+                            <h4>编辑系统消息</h4>
+                        </div>
+                    <!-- left column -->
+                    <div class="span8 column">
+                      <form  method="post" action="<#:U('edit')#>">
+                        <div class="alert span10" style="display: none;">
+						  <span id="alertmsg"></span>
+						</div>
+                         	<div class="field-box">
+                                <label>消息标题:</label>
+                                <input class="span8" type="text"  data-toggle="tooltip" data-trigger="focus" title="请输入标题" data-placement="right" name="title" id="title" value="<#$info.title#>"/>
+                            </div>
+                             <div class="field-box">
+                                <label>消息内容:</label>
+                                 <div class="wysi-column">
+                               <textarea rows="6" class="span8 wysihtml5" name="info" id="info"><#$info.info#></textarea>
+                                </div>
+                       
+                            </div>
+                         
+                             
+                           
+                              <div class="field-box ">
+								<input type="hidden" name="id" value="<#$info.id#>"/>
+                                <input type="submit"   class="btn-glow primary " id="btn_save" value="保存信息">
+
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- right column -->
+                    <div class="span4 column pull-right">
+
+                    </div>
+                </div>
+            	
+            </div>
+        </div>
+    </div>
+
+
+	<!-- scripts -->
+ <script src="<#$Theme['P']['js']#>/jquery.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap.min.js"></script>
+    <script src="<#$Theme['P']['root']#>/bootadmin/js/theme.js"></script>
+  <script src="<#$Theme['P']['root']#>/bootadmin/js/common.js"></script>
+   <script src="<#$Theme['P']['root']#>/bootadmin/js/wysihtml5-0.3.0.js"></script>
+   <script src="<#$Theme['P']['root']#>/bootadmin/js/bootstrap-wysihtml5-0.0.2.js"></script>
+
+  <script type="text/javascript">
+  $(function () {
+
+     
+      // wysihtml5 plugin on textarea
+      $(".wysihtml5").wysihtml5({
+          "font-styles": true
+      });
+  });
+
+                    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><#$data['title']#>--<empty name="siteinfo.title"> <#$info['wxname']#><else/> <#$siteinfo.title#></empty></title>
+<link rel="stylesheet" href="<#$Theme['P']['js']#>/jqm/jquery.mobile-1.3.2.min.css" />
+<script src="<#$Theme['P']['js']#>/jquery.min.js"></script>
+<script src="<#$Theme['P']['js']#>/jqm/jquery.mobile-1.3.2.min.js"></script>
+<LINK href="<#$Theme['T']['css']#>/tech/style.css" type=text/css rel=stylesheet>
+<script src="<#$Theme['P']['js']#>/jquery.nicescroll.js"></script>
+<style>
+.ui-content img {
+max-width:100%;}
+</style>
+<script>
+  $(document).ready(function() {
+    $("html").niceScroll({  cursorwidth:4 });  // The document page (html)
+  });
+</script>
+</head>
+<body >
+
+<div data-role="page" id="news">
+		<div data-role="header" data-theme="b">
+		<a href="javascript:history.go(-1);" data-role="button" data-transition="slidefade" data-icon="back" data-rel="back">返回</a>
+		<h1><#$data['title']#></h1>
+		<a href="<#:U('Api/Wap/index',array('sid'=>$siteinfo['uid']))#>" data-icon="home" data-iconpos="left" data-direction="reverse" data-ajax="false">主页</a>
+	</div><!-- /header -->
+	<div data-role="content">
+		
+<div id="wrapper" style="padding:15px;">
+<h1><#$data['title']#></h1>
+<p class="content"><#$data['smalltitle']#></p>
+                
+  
+<p>发布日期:<#$data['add_time']|date="y-m-d h-i-s",####></p>
+<p><#$data['info']|htmlspecialchars_decode#></p>
+<p></p>
+</div>
+	</div><!-- /content -->
+	<div data-theme="a" data-role="footer" data-position="fixed" id="no_login">
+    <div data-role="navbar">
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+	</div>
+</div>
+	
+</div><!-- /page -->
+</body>
+</html>

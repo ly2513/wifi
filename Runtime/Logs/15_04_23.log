@@ -1,0 +1,11 @@
+[ 2015-04-23T00:57:42+08:00 ] 180.153.9.160 /index.php/wifiadmin/pub/getuserchart.html?mode%3Dtoday
+ERR: 1065:Query was empty
+
+[ 2015-04-23T11:07:42+08:00 ] 140.207.54.76 /index.php/weichat/command/gh_dd8c103f67bd?signature=ce990572767dbe6c1dbfce836358d6a4b14a2ae5&timestamp=1429758461&nonce=427921512
+ERR: 1146:Table 'buguniao.wifi_authlist_model' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wifi_authlist_model`
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_authlist WHERE uid =
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : DELETE FROM wifi_member WHERE id =
+
